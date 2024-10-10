@@ -1,0 +1,24 @@
+/* src/components/Navbar.css */
+
+/* Style the navigation bar */
+.navbar {
+    background-color: #424242;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Style the navigation links */
+  .navbar a {
+    color: #ffffff;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+  
+  /* Change link color on hover */
+  .navbar a:hover {
+    color: #ffca28;
+  }
+  

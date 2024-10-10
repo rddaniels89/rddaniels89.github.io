@@ -1,0 +1,32 @@
+/* src/components/QuestCard.css */
+
+/* Style individual quest cards */
+.quest-card {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    width: 300px;
+    margin: 1rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  /* Add hover effects */
+  .quest-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style the quest title */
+  .quest-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Style the quest description */
+  .quest-card p {
+    font-size: 1rem;
+    color: #555555;
+  }
+  

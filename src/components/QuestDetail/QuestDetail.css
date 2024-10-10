@@ -1,0 +1,58 @@
+/* src/components/QuestDetail.css */
+
+/* Style the quest detail container */
+.quest-detail {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Style the quest title */
+  .quest-detail h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Style the description paragraphs */
+  .quest-detail p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333333;
+  }
+  
+  /* Style the rewards heading */
+  .quest-detail h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  /* Style the rewards list */
+  .quest-detail ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+  
+  /* Style individual list items */
+  .quest-detail ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  /* Style the back button */
+  .quest-detail button {
+    background-color: #2196f3;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin-top: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  /* Change background color on hover */
+  .quest-detail button:hover {
+    background-color: #1976d2;
+  }
+  

@@ -1,0 +1,22 @@
+/* src/App.css */
+.App {
+  text-align: center;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.level {
+  padding: 20px;
+}
+
+button {
+  background-color: #61dafb;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+body {
+  font-family: 'Press Start 2P', cursive;
+}
