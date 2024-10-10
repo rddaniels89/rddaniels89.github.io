@@ -1,58 +1,94 @@
-/* src/components/QuestDetail.css */
+/* src/components/QuestCarousel/QuestCarousel.css */
 
-/* Style the quest detail container */
-.quest-detail {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  /* Style the quest title */
-  .quest-detail h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  /* Style the description paragraphs */
-  .quest-detail p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #333333;
-  }
-  
-  /* Style the rewards heading */
-  .quest-detail h3 {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-  }
-  
-  /* Style the rewards list */
-  .quest-detail ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-  }
-  
-  /* Style individual list items */
-  .quest-detail ul li {
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-  }
-  
-  /* Style the back button */
-  .quest-detail button {
-    background-color: #2196f3;
-    color: #ffffff;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    margin-top: 2rem;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-  }
-  
-  /* Change background color on hover */
-  .quest-detail button:hover {
-    background-color: #1976d2;
-  }
-  
+/* Dark background to fit the aesthetic */
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #0f0f1f; /* Dark background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Shadow for depth */
+}
+
+.carousel-control {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #4caf50; /* Neon green for the controls */
+}
+
+.carousel-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.carousel-card {
+  transition: transform 0.5s ease;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #1f1f3f; /* Darker background for cards */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 20px;
+  color: #ffffff;
+}
+
+.small-card {
+  width: 400px; /* Smaller width for side cards */
+  opacity: 0.5;
+  transform: scale(0.8);
+}
+
+.center-card {
+  width: 375px; /* Larger width for the center card */
+  transform: scale(1);
+  border: 2px solid #4caf50; /* Neon green border for the center card */
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.8); /* Glowing effect for the center card */
+}
+
+.quest-details-label {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.details-panel {
+  width: 70%;
+  background: linear-gradient(to bottom right, #1f1f3f, #0f0f1f); /* Gradient for depth */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  color: #e0e0e0;
+  margin-top: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+
+.details-panel h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #4caf50; /* Neon green title */
+}
+
+.details-panel p {
+  margin: 5px 0;
+  color: #cccccc; /* Softer text color */
+}
+
+/* Glowing effect for buttons */
+.details-button, .carousel-control {
+  text-shadow: 0 0 8px rgba(76, 175, 80, 0.7); /* Neon glow effect */
+}
+

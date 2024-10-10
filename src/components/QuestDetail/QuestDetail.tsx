@@ -4,14 +4,14 @@ import { useParams, useNavigate } from 'react-router-dom';
 import quests from '../../data/quests.data';
 import './QuestDetail.css';
 
-interface RouteParams {
-  id: string;
+interface QuestDetailParams {
+  id: number;
 }
 
-const QuestDetail: React.FC = () => {
-  const { id } = useParams();
+const QuestDetail: React.FC<QuestDetailParams> = ({id}) => {
+  
   const history = useNavigate();
-  const quest = quests.find((q) => q.id === parseInt(id ?? '0'));
+  const quest = quests.find((q) => q.id === (id ?? -1));
 
   if (!quest) {
     return <p>Quest not found</p>;
@@ -23,7 +23,7 @@ const QuestDetail: React.FC = () => {
 
   return (
     <div className="quest-detail">
-      <h2>{quest.title}</h2>
+      <h1>{quest.title}</h1>
       {quest.company && <p>Company: {quest.company}</p>}
       <p>{quest.length}</p>
       <p>{quest.description}</p>

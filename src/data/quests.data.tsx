@@ -1,5 +1,5 @@
 // src/data/quests.ts
-interface Quest {
+export interface Quest {
     id: number;
     title: string;
     company?: string;

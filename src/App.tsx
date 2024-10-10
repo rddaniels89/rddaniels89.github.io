@@ -20,9 +20,6 @@ const App: React.FC = () => {
           <Route path="/quests/main" element={<QuestSwitcher type="main" />} />
           <Route path="/quests/side" element={<QuestSwitcher type="side" />} />
 
-          {/* Quest detail route */}
-          <Route path="/quest/:id" element={<QuestDetail />} />
-
           {/* Main Menu */}
           <Route path="/main-menu" element={<MainMenu />} />
         </Routes>

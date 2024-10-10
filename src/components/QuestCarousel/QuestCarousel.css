@@ -1,41 +1,69 @@
-/* src/components/QuestCarousel.css */
+/* src/components/QuestCarousel/QuestCarousel.css */
+
 .carousel-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-control {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.carousel-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px; /* Add some margin for spacing between cards and the details panel */
+}
+
+.carousel-card {
+  transition: transform 0.5s ease;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.small-card {
+  width: 200px; /* Adjust size for smaller cards */
+  opacity: 0.5; /* Dim the smaller cards */
+  transform: scale(0.8); /* Make smaller cards slightly scaled down */
+}
+
+.center-card {
+width: 400px;
   
-  .carousel-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 300px; /* Adjust width as needed */
-    transition: transform 0.5s ease;
-  }
-  
-  .carousel-control {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-  }
-  
-  .details-button {
-    margin-top: 10px;
-    background-color: #4CAF50; /* Green */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .details-button:hover {
-    background-color: #45a049;
-  }
-  
+}
+
+.quest-details-label {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4CAF50;  /* Green color for the "Quest Details" label */
+}
+
+.details-panel {
+  width: 80%;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.details-panel h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.details-panel p {
+  margin: 5px 0;
+}
