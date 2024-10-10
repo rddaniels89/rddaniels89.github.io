@@ -25,6 +25,13 @@ const QuestDetail: React.FC = () => {
     <div className="quest-detail">
       <h2>{quest.title}</h2>
       {quest.company && <p>Company: {quest.company}</p>}
+      <p>{quest.length}</p>
+      <p>{quest.description}</p>
+      <ul>
+        {quest.roles.map((role, index) => (
+          <li key={index}>{role}</li>
+        ))}
+      </ul>
       <p>{quest.fullDescription}</p>
       <h3>Rewards:</h3>
       <ul>
