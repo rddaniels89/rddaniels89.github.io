@@ -18,7 +18,7 @@ const QuestDetail: React.FC = () => {
   }
 
   const goBack = () => {
-    history(-1)
+    history(-1);
   };
 
   return (

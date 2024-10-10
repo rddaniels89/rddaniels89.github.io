@@ -1,6 +1,6 @@
 // src/components/MainMenu.tsx
 import React from 'react';
-import { useNavigate }  from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import './MainMenu.css';
 
 const MainMenu: React.FC = () => {
@@ -19,7 +19,6 @@ const MainMenu: React.FC = () => {
       <h1>Welcome to Alonzo's Adventures</h1>
       <button onClick={goToMainQuests}>Main Quests</button>
       <button onClick={goToSideQuests}>Side Quests</button>
-      <button onClick={goToSideQuests}>Codex</button>
     </div>
   );
 };

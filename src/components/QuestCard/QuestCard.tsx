@@ -1,6 +1,5 @@
 // src/components/QuestCard.tsx
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import './QuestCard.css';
 
 interface Quest {
@@ -16,14 +15,8 @@ interface QuestCardProps {
 }
 
 const QuestCard: React.FC<QuestCardProps> = ({ quest }) => {
-  const history = useNavigate();
-
-  const goToQuestDetail = () => {
-    history(`/quest/${quest.id}`);
-  };
-
   return (
-    <div className="quest-card" onClick={goToQuestDetail}>
+    <div className="quest-card">
       <h3>{quest.title}</h3>
       {quest.company && <p>Company: {quest.company}</p>}
       <p>{quest.description}</p>
