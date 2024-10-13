@@ -1,17 +1,20 @@
-// src/components/QuestDetail.tsx
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import quests from '../../data/quests.data';
+import { useTheme } from '../../context/ThemeContext';  // Assuming you have a ThemeContext to manage work/play modes
 import './QuestDetail.css';
 
 interface QuestDetailParams {
   id: number;
 }
 
-const QuestDetail: React.FC<QuestDetailParams> = ({id}) => {
-  
+const QuestDetail: React.FC<QuestDetailParams> = ({ id }) => {
   const history = useNavigate();
   const quest = quests.find((q) => q.id === (id ?? -1));
+  const themeContext = useTheme();
+  if (!themeContext) return null;
+
+  const { theme, timeOfDay, season, setTheme } = themeContext;
 
   if (!quest) {
     return <p>Quest not found</p>;
@@ -22,24 +25,36 @@ const QuestDetail: React.FC<QuestDetailParams> = ({id}) => {
   };
 
   return (
-    <div className="quest-detail">
+    <div className={`quest-detail `}>
       <h1>{quest.title}</h1>
       {quest.company && <p>Company: {quest.company}</p>}
       <p>{quest.length}</p>
       <p>{quest.description}</p>
-      <ul>
+
+      <h3>Roles:</h3>
+      <ul className="role-badges">
         {quest.roles.map((role, index) => (
-          <li key={index}>{role}</li>
+          <li key={index} className="badge">{role}</li>
         ))}
       </ul>
-      <p>{quest.fullDescription}</p>
-      <h3>Rewards:</h3>
+
+      <h3>Accomplishments:</h3>
       <ul>
-        {quest.rewards.map((reward, index) => (
-          <li key={index}>{reward}</li>
+        {quest.accomplishments.map((accomplishment, index) => (
+          <li key={index}>
+          {accomplishment.description}
+          </li>
         ))}
       </ul>
-      <button onClick={goBack}>Back to Quests</button>
+
+      <h3>{theme === 'play' ? 'Rewards' : 'Lessons Learned'}:</h3>
+      <ul className="learnings">
+        {quest.accomplishments.flatMap((acc) => acc.learnings).map((learning, index) => (
+          <li key={index}>{learning}</li>
+        ))}
+      </ul>
+
+      <button onClick={goBack} className="back-button">Back to Quests</button>
     </div>
   );
 };

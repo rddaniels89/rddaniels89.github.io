@@ -4,6 +4,7 @@ import QuestCard from '../QuestCard/QuestCard';
 import './QuestCarousel.css';
 import quests from '../../data/quests.data';  // Assuming quest data is here
 import QuestDetail from '../QuestDetail/QuestDetail';
+import { useTheme } from '../../context/ThemeContext';
 
 interface QuestCarouselProps {
   type: 'main' | 'side';  // to distinguish between main and side quests
@@ -11,6 +12,10 @@ interface QuestCarouselProps {
 
 const QuestCarousel: React.FC<QuestCarouselProps> = ({ type }) => {
   const [currentIndex, setCurrentIndex] = useState(1);  // Start with the second quest as the centered card
+  const themeContext = useTheme();
+  if (!themeContext) return null;
+
+  const { theme, timeOfDay, season, setTheme } = themeContext;
 
   // Filter quests by type (main or side)
   const filteredQuests = quests.filter((quest) => quest.type === type);
@@ -33,7 +38,7 @@ const QuestCarousel: React.FC<QuestCarouselProps> = ({ type }) => {
   const nextQuest = filteredQuests[(currentIndex + 1) % filteredQuests.length];
 
   return (
-    <div className="carousel-container">
+    <div className={`carousel-container ${theme}`}>
 
       <div className="carousel-cards">
       <button className="carousel-control left" onClick={goToPrevious}>

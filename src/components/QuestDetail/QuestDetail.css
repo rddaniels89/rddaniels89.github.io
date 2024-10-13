@@ -1,94 +1,94 @@
-/* src/components/QuestCarousel/QuestCarousel.css */
+/* src/components/QuestDetail.css */
 
-/* Dark background to fit the aesthetic */
-.carousel-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  background-color: #0f0f1f; /* Dark background */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Shadow for depth */
-}
-
-.carousel-control {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #4caf50; /* Neon green for the controls */
-}
-
-.carousel-cards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.carousel-card {
-  transition: transform 0.5s ease;
-  margin: 0 10px;
-  cursor: pointer;
-  border-radius: 10px;
-  background-color: #1f1f3f; /* Darker background for cards */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  padding: 20px;
-  color: #ffffff;
-}
-
-.small-card {
-  width: 400px; /* Smaller width for side cards */
-  opacity: 0.5;
-  transform: scale(0.8);
-}
-
-.center-card {
-  width: 375px; /* Larger width for the center card */
-  transform: scale(1);
-  border: 2px solid #4caf50; /* Neon green border for the center card */
-  box-shadow: 0 0 20px rgba(76, 175, 80, 0.8); /* Glowing effect for the center card */
-}
-
-.quest-details-label {
-  text-align: center;
-  margin-top: 10px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #4caf50;
-}
-
-.details-panel {
+/* Professional-looking quest detail */
+.quest-detail {
   width: 70%;
-  background: linear-gradient(to bottom right, #1f1f3f, #0f0f1f); /* Gradient for depth */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  font-family: 'Arial', sans-serif; /* Clean, professional font */
+  background-color: var(--secondary-background-color);
+  color: var(--primary-color);
+  border: 2px solid var(--border-color);
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+/* Panel below the carousel that shows quest details */
+.details-panel {
+  width: 80%;
+  background-color: var(--background-color); /* Match with the theme's background */
+  color: var(--primary-color); /* Match text color to theme */
   padding: 20px;
   border-radius: 10px;
   text-align: left;
-  color: #e0e0e0;
-  margin-top: 20px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+.quest-detail h1 {
+  font-size: 1.8rem;
+  color: var(--highlight-color); /* Subtle yellow for play mode */
+}
+
+
+.quest-detail p {
+  margin: 10px 0;
+  color: #b0bec5; /* Softer text color for readability */
+}
+
+.role-badges {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.badge {
+  background-color: var(--accent-color);
+  color: var(--button-color);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
 
 .details-panel h2 {
+  color: var(--highlight-color);
+}
+
+.quest-detail h3 {
+  margin-top: 20px;
   font-size: 1.5rem;
+  color: var(--highlight-color); /* Yellow for play */
+}
+
+.quest-detail.work h3 {
+  color: #2196f3; /* Blue for work */
+}
+
+ul.learnings {
+  margin-top: 10px;
+  padding-left: 20px;
+  list-style-type: disc; /* Simple list style */
+}
+
+.details-panel ul li {
   margin-bottom: 10px;
-  color: #4caf50; /* Neon green title */
+  color: var(--primary-color);
 }
 
-.details-panel p {
-  margin: 5px 0;
-  color: #cccccc; /* Softer text color */
+.back-button {
+  margin-top: 20px;
+  background-color: var(--highlight-color);
+  color: var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Glowing effect for buttons */
-.details-button, .carousel-control {
-  text-shadow: 0 0 8px rgba(76, 175, 80, 0.7); /* Neon glow effect */
+.back-button:hover {
+  background-color: var(--shadow-color);
 }
 
+
+.quest-detail.work .back-button:hover {
+  background-color: #2196f3;
+}

@@ -9,7 +9,10 @@ interface QuestSwitcherProps {
 }
 
 const QuestSwitcher: React.FC<QuestSwitcherProps> = ({ type }) => {
-  const { theme } = useTheme();  // Get the current theme from context
+  const themeContext = useTheme();  // Get the current theme from context
+  if(!themeContext){return null};
+
+  const {theme} = themeContext;
 
   return (
     <>

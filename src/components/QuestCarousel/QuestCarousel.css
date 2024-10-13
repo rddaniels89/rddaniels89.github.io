@@ -1,69 +1,75 @@
-/* src/components/QuestCarousel/QuestCarousel.css */
-
+/* Container for the entire carousel */
 .carousel-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
+  background-color: var(--background-color);
 }
 
+/* Controls for navigating the carousel */
 .carousel-control {
-  background: none;
   border: none;
   font-size: 2rem;
   cursor: pointer;
+  background-color: var(--background-color);
+  color: var(--accent-color);
+  border-radius: 10px;
+  transition: transform 0.5s ease, background-color 0.3s ease;
 }
 
+/* Container for all the cards in the carousel */
 .carousel-cards {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-bottom: 20px; /* Add some margin for spacing between cards and the details panel */
+  margin-bottom: 20px; /* Spacing between cards and details panel */
+  transition: transform 0.5s ease;
 }
 
+/* Individual card styling */
 .carousel-card {
   transition: transform 0.5s ease;
   margin: 0 10px;
+  padding: 15px;
   cursor: pointer;
+  background-color: var(--secondary-background-color);
+  border: 2px solid var(--border-color);
+  box-shadow: 0 4px 10px var(--shadow-color);
+  transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+}
+.carousel-card:hover {
+  transform: scale(1);
+  border-color: var(--hover-color);
+  box-shadow: 0 8px 16px var(--hover-color);
 }
 
 .small-card {
-  width: 200px; /* Adjust size for smaller cards */
-  opacity: 0.5; /* Dim the smaller cards */
-  transform: scale(0.8); /* Make smaller cards slightly scaled down */
+  width: 375px; /* Smaller width for side cards */
+  opacity: 0.5;
+  transform: scale(0.85);
 }
 
+
+/* Larger, centered card */
 .center-card {
-width: 400px;
-  
+  border: 3px solid var(--highlight-color);
 }
-
+.center-card h2, .center-card p {
+  color: var(--highlight-color); /* Same title color as details */
+}
+/* Label for "Quest Details" below the carousel */
 .quest-details-label {
   text-align: center;
   margin-top: 10px;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #4CAF50;  /* Green color for the "Quest Details" label */
+  color: var(--accent-color); /* Use dynamic color for the label */
 }
 
-.details-panel {
-  width: 80%;
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: left;
+.carousel-card h2, .carousel-card p {
+  color: #b0bec5; /* Match title color in the details */
+  font-size: 1.3rem; /* Make sure this size is consistent across sections */
 }
 
-.details-panel h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
 
-.details-panel p {
-  margin: 5px 0;
-}

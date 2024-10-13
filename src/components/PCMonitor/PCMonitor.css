@@ -1,0 +1,22 @@
+/* Work mode PC screen style */
+.pc-monitor {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    background-color: #f0f0f0; /* Light gray for the "screen" background */
+    border: 5px solid #dcdcdc; /* Muted border for work mode */
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 
+      0 0 10px rgba(200, 200, 200, 0.5), 
+      0 0 30px rgba(200, 200, 200, 0.5);
+    transition: box-shadow 0.5s ease-in-out;
+  }
+  
+  /* Hover state for a subtle shadow effect */
+  .pc-monitor:hover {
+    box-shadow: 
+      0 0 15px rgba(200, 200, 200, 0.8),
+      0 0 40px rgba(200, 200, 200, 0.8); /* Softer shadow on hover */
+  }
+  

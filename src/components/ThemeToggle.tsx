@@ -5,7 +5,10 @@ import TVScreen from './TVScreen/TVScreen';
 import PCMonitor from './PCMonitor/PCMonitor';
 
 const ThemeToggle: React.FC = () => {
-  const { theme } = useTheme();
+  const themeContext = useTheme();  // Get the current theme from context
+  if(!themeContext){return null};
+
+  const {theme} = themeContext;
 
   return (
     <div className={`app-container ${theme}`}>

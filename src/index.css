@@ -11,3 +11,127 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* index.css */
+
+/* Default variables */
+:root {
+  --background-color: #e0f7fa; /* Day default */
+  --primary-color: #212121;
+  --accent-color: #80deea;
+  --highlight-color: #00acc1;
+  --border-color: #b3e5fc;
+  --shadow-color: rgba(0, 188, 212, 0.5);
+  --hover-color: #00acc1;
+}
+
+/* Time of day: Subtle difference between day and night */
+.day {
+  --background-color: #3e444f; /* Muted cool gray for day */
+}
+
+.night {
+  --background-color: #22272f; /* Darker muted gray-blue for night */
+}
+
+/* Seasonal themes */
+.spring.day {
+  --background-color: #dff0d8; /* Lighter pastel green */
+  --primary-color: #3e4b33; /* Darker forest green text */
+  --accent-color: #a8e986; /* Bright pastel green/yellow for accents */
+  --secondary-background-color: #f0f8e8; /* Slightly off-white for card backgrounds */
+  --highlight-color: #7cb342; /* Bright green for buttons and badges */
+  --border-color: #b6d3a1; /* Subtle border color */
+  --shadow-color: rgba(124, 179, 66, 0.3); /* Light green shadow */
+  --hover-color: #7cb342; /* Hover state for buttons and links */
+}
+
+
+.spring.night {
+  --background-color: #455a4f; /* Dark muted green for night */
+  --primary-color: #e0f7e8; /* Soft white-green text */
+  --accent-color: #81c784; /* Muted green for smooth transition */
+  --secondary-background-color: #37493e; /* Slightly darker card background */
+  --highlight-color: #81c784; /* Matching green for highlights */
+  --border-color: #607d8b; /* Card borders and hover states */
+  --shadow-color: rgba(56, 142, 60, 0.5); /* Dark green shadow */
+  --hover-color: #4caf50; /* Hover state for buttons and links */
+}
+
+
+
+.summer.day {
+  --background-color: #ffe4b5; /* Soft peach for summer day */
+  --primary-color: #5d4037; /* Darker brown text for readability */
+  --accent-color: #fcbf49; /* Warm orange accent */
+  --secondary-background-color: #ffefd5; /* Light cream background */
+  --highlight-color: #ff7043; /* Bright orange for buttons */
+  --border-color: #fbc49c; /* Subtle orange border */
+  --shadow-color: rgba(255, 112, 67, 0.3); /* Warm orange shadow */
+  --hover-color: #ff7043; /* Hover state for buttons and links */
+}
+
+
+
+.summer.night {
+  --background-color: #5d4037; /* Dark brown for summer night */
+  --primary-color: #ffe5d5; /* Light peach text */
+  --accent-color: #f48fb1; /* Soft pinkish hue for accents */
+  --secondary-background-color: #6d4c41; /* Darker brown for card backgrounds */
+  --highlight-color: #ff8a65; /* Brighter peach for highlights */
+  --border-color: #d7ccc8; /* Subtle beige border */
+  --shadow-color: rgba(244, 143, 177, 0.5); /* Pink shadow */
+  --hover-color: #ff8a65; /* Hover state for buttons and links */
+}
+
+
+
+.autumn.day {
+  --background-color: #fff3e0;  /* Soft orange pastel for Autumn Day */
+  --primary-color: #d84315;     /* Darker orange text for contrast */
+  --accent-color: #ffab91;      /* Light pastel orange */
+  --secondary-background-color: #fff3e0; /* Cards or panel background */
+  --highlight-color: #ff7043;   /* For buttons, badges, etc */
+  --border-color: #ff8a65;      /* Card borders or hover states */
+  --shadow-color: rgba(255, 112, 67, 0.5); /* Box shadow color */
+  --hover-color: #ff7043;       /* Hover color for interactive elements */
+}
+
+
+.autumn.night {
+  --background-color: #3e2723; /* Dark brown for autumn night */
+  --primary-color: #ffccbc; /* Light cream-orange text */
+  --accent-color: #ff8a50; /* Warm orange accent for smooth transition */
+  --secondary-background-color: #4e342e; /* Slightly lighter brown for cards */
+  --highlight-color: #ff7043; /* Bright orange for buttons */
+  --border-color: #bf360c; /* Deep red-brown border */
+  --shadow-color: rgba(255, 112, 67, 0.5); /* Dark orange shadow */
+  --hover-color: #ff7043; /* Hover state for buttons and links */
+}
+
+
+
+/* Winter Day */
+.winter.day {
+  --background-color: #e0f7fa;  /* Softer cyan-blue for Winter Day */
+  --primary-color: #212121;     /* Darker text for contrast */
+  --accent-color: #80deea;      /* Slightly darker cyan */
+  --secondary-background-color: #e0f7fa; /* Cards or panel background */
+  --highlight-color: #00acc1;   /* For buttons, badges, etc */
+  --border-color: #b3e5fc;      /* Card borders or hover states */
+  --shadow-color: rgba(0, 188, 212, 0.5); /* Box shadow color */
+  --hover-color: #00acc1;       /* Hover color for interactive elements */
+}
+
+/* Winter Night */
+.winter.night {
+  --background-color: #37474f;  /* Muted blue-gray for Winter Night */
+  --primary-color: #e0f2f1;     /* Lighter text for better readability */
+  --accent-color: #80deea;      /* Same cyan as day for smoother transition */
+  --secondary-background-color: #455a64; /* Cards or panel background */
+  --highlight-color: #4fc3f7;   /* For buttons, badges, etc */
+  --border-color: #607d8b;      /* Card borders or hover states */
+  --shadow-color: rgba(38, 166, 154, 0.5); /* Box shadow color */
+  --hover-color: #4fc3f7;       /* Hover color for interactive elements */
+}
+

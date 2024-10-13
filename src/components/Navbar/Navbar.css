@@ -1,24 +1,150 @@
-/* src/components/Navbar.css */
-
-/* Style the navigation bar */
 .navbar {
-    background-color: #424242;
-    padding: 0.5rem 1rem;
-    display: flex;
-    justify-content: center;
-  }
-  
-  /* Style the navigation links */
-  .navbar a {
-    color: #ffffff;
-    margin: 0 1rem;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.2s;
-  }
-  
-  /* Change link color on hover */
-  .navbar a:hover {
-    color: #ffca28;
-  }
-  
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  background-color: var(--background-color);
+  border-bottom: 3px solid var(--accent-color);
+}
+
+.navbar a {
+  color: var(--primary-color);
+  margin: 0 1rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+  color: var(--accent-color);
+}
+
+.navbar .theme-toggle {
+  background-color: var(--button-background);
+  color: var(--button-color);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 15px; /* Rounded corners */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar .theme-toggle:hover {
+  background-color: var(--button-hover-color); /* Adjust hover state color */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for hover */
+}
+
+.navbar .date-time-toggle {
+  background-color: var(--button-background);
+  color: var(--button-color);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-left: auto;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar .date-time-toggle:hover {
+  background-color: var(--button-hover-color);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  padding: 15px;
+}
+
+.dropdown-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu .group-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.dropdown-menu li {
+  margin-bottom: 10px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.radio-group label {
+  margin-bottom: 5px;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Navbar.css */
+.slider {
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(to right, var(--background-color), var(--hover-color));
+  outline: none;
+  -webkit-appearance: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--highlight-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--highlight-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+.season-control {
+  position: relative;
+  width: 100%;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.season-icon {
+  font-size: 1.5rem; /* Adjust based on design */
+}
+
+.winter-icon, .spring-icon, .summer-icon, .autumn-icon {
+  position: relative;
+}
