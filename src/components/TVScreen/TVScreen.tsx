@@ -1,17 +1,26 @@
-// src/components/TVScreen/TVScreen.tsx
 import React from 'react';
-import QuestCarousel from '../QuestCarousel/QuestCarousel';
 import './TVScreen.css';
 
 interface TVScreenProps {
-  type: 'main' | 'side';
+  type?: 'main' | 'side';
+  children?: React.ReactNode;
 }
 
-const TVScreen: React.FC<TVScreenProps> = ({ type }) => {
+const TVScreen: React.FC<TVScreenProps> = ({ type, children }) => {
   return (
-    <div className="tv-screen">
-      <h1>{type === 'main' ? "Alonzo’s Main Quests" : "Alonzo’s Side Quests"}</h1>
-      <QuestCarousel type={type} />  {/* Pass the quest type to the carousel */}
+    <div className="tv-frame-container">
+      <div className="tv-screen">
+        <div className="tv-content">
+          {type ? (
+            <>
+              <h1>{type === 'main' ? "Alonzo’s Main Quests" : "Alonzo’s Side Quests"}</h1>
+              {children}
+            </>
+          ) : (
+            <div>{children}</div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

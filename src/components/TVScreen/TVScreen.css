@@ -1,18 +1,91 @@
-/* src/components/TVScreen.css */
+
+/* Main container for TV content */
+.tv-frame-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1400px; /* Fixed height for the entire TV frame */
+  width: 2125px; /* Fixed width for the TV frame */
+  background-color: #333;
+  background-image: url('../../assets/tvScreen.png'); /* Path to your TV image */
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden; /* Prevent internal scrolling */
+}
+
+/* TV screen content area with fixed width and height */
 .tv-screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: black; /* Simulating a TV screen background */
-    color: white;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  
+  width: 1365px; /* Fixed width for the screen */
+  height: 1185px; /* Fixed height for the screen */
+  background-color: var(--background-color); /* Screen background color */
+  position: absolute;
+  top: 30px; /* Fine-tune to fit inside the TV frame */
+  left: 195px; /* Fine-tune to horizontally center inside the TV frame */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  border-radius: 95px 20px 10px 15px; /* Adjust to match TV corners */
+  overflow-y: auto; /* Allow vertical scrolling inside the TV screen */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7); /* Soft glow effect */
+}
+
+.tv-navbar {
+  width: 100%; /* Full width inside TV screen */
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: #444;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Separate navbar with a shadow */
+}
+
+.navbar-links a {
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+/* Customize scrollbar styling (optional) */
+.tv-screen::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.tv-screen::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 102, 0, 0.8); /* Color of the scrollbar thumb */
+  border-radius: 4px;
+}
+
+.tv-screen::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.2); /* Scrollbar background color */
+}
+
+/* Title styling */
+.tv-screen h1 {
+  color: #ff6600; /* Retro color */
+  font-family: 'Press Start 2P', sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+/* Buttons styling */
+.quest-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.quest-button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #ff6600;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.quest-button:hover {
+  background-color: #ff3300;
+}

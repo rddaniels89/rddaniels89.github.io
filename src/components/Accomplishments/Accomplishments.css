@@ -1,0 +1,67 @@
+.accomplishment-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.accomplishment-filter-panel {
+  width: 275px;
+  padding: 20px;
+  background-color: var(--primary-color);
+  border-right: 1px solid var(--border-color);
+}
+
+.accomplishment-filter-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: var(--background-color);
+  border: none;
+  border-radius: 5px;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.accomplishment-filter-button:hover {
+  background-color: var(--hover-color);
+}
+
+.accomplishment-filter-button.active {
+  background-color: var(--highlight-color);
+}
+
+.role-count {
+  background-color: var(--accent-color);
+  color: #fff;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+}
+
+.accomplishment-detail {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+.placeholder-text {
+  color: var(--hover-color);
+  font-style: italic;
+  text-align: center;
+  margin-top: 20%;
+}
+
+.role-group {
+  margin-bottom: 30px;
+}
+
+.accomplishment-entry {
+  padding: 2px;
+  background-color: var(--secondary-background-color);
+}

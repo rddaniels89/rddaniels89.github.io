@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 import './Navbar.css';
-import { interpolateCSSVariables } from '../../utils/interpolateColor';
 
 const Navbar: React.FC = () => {
   const { theme, setTheme, season, setSeason, timeOfDay, setTimeOfDay, overrideFlag, setOverrideFlag } = useTheme()!;
@@ -48,6 +47,7 @@ const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         <Link to="/main-menu">Main Menu</Link>
         <Link to="/quests/main">Main Quests</Link>
         <Link to="/quests/side">Side Quests</Link>
+        <Link to="/accomplishments">Accomplishments</Link>
         <Link to="/codex">Codex</Link>
       </div>
 

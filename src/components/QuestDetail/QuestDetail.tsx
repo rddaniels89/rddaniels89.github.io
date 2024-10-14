@@ -28,7 +28,7 @@ const QuestDetail: React.FC<QuestDetailParams> = ({ id }) => {
     <div className={`quest-detail `}>
       <h1>{quest.title}</h1>
       {quest.company && <p>Company: {quest.company}</p>}
-      <p>{quest.length}</p>
+      <p>{quest.startDate.toDateString()}</p> - <p>{quest.startDate.toDateString()}</p>
       <p>{quest.description}</p>
 
       <h3>Roles:</h3>
@@ -48,11 +48,16 @@ const QuestDetail: React.FC<QuestDetailParams> = ({ id }) => {
       </ul>
 
       <h3>{theme === 'play' ? 'Rewards' : 'Lessons Learned'}:</h3>
+
       <ul className="learnings">
-        {quest.accomplishments.flatMap((acc) => acc.learnings).map((learning, index) => (
-          <li key={index}>{learning}</li>
-        ))}
-      </ul>
+  {quest.accomplishments
+    .flatMap((acc) => acc.learnings)
+    .filter((learning, index, self) => self.indexOf(learning) === index) // Remove duplicates
+    .map((learning, index) => (
+      <li key={index}>{learning}</li>
+    ))}
+</ul>
+
 
       <button onClick={goBack} className="back-button">Back to Quests</button>
     </div>

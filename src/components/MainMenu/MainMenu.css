@@ -7,8 +7,8 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Gradient background */
-    color: #ffffff;
+    background: linear-gradient(135deg, var(--background-color) 0%, var(--primary-color) 100%); /* Gradient background */
+    color: var(--primary-color);
     text-align: center;
   }
   
@@ -20,7 +20,7 @@
   
   /* Style the buttons */
   .main-menu button {
-    background-color: #ffca28;
+    background-color: var(--accent-color);
     color: #000000;
     border: none;
     padding: 1rem 2rem;
@@ -33,6 +33,6 @@
   
   /* Change background color on hover */
   .main-menu button:hover {
-    background-color: #ffc107;
+    background-color: var(--border-color);
   }
   
