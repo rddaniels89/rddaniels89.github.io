@@ -10,21 +10,22 @@ export const interpolateColor = (color1: string, color2: string, factor: number)
     const hex = (x: number) => x.toString(16).padStart(2, '0');
   
     // Parse the hex colors into RGB components
-    const c1 = parseInt(color1.slice(1), 16);
-    const c2 = parseInt(color2.slice(1), 16);
+    const parseColor = (color: string) => {
+      const c = parseInt(color.slice(1), 16);
+      return {
+        r: (c >> 16) & 0xff,
+        g: (c >> 8) & 0xff,
+        b: c & 0xff,
+      };
+    };
   
-    const r1 = (c1 >> 16) & 0xff;
-    const g1 = (c1 >> 8) & 0xff;
-    const b1 = c1 & 0xff;
-  
-    const r2 = (c2 >> 16) & 0xff;
-    const g2 = (c2 >> 8) & 0xff;
-    const b2 = c2 & 0xff;
+    const c1 = parseColor(color1);
+    const c2 = parseColor(color2);
   
     // Interpolate between the two colors' RGB components
-    const r = Math.round(r1 + factor * (r2 - r1));
-    const g = Math.round(g1 + factor * (g2 - g1));
-    const b = Math.round(b1 + factor * (b2 - b1));
+    const r = Math.round(c1.r + factor * (c2.r - c1.r));
+    const g = Math.round(c1.g + factor * (c2.g - c1.g));
+    const b = Math.round(c1.b + factor * (c2.b - c1.b));
   
     return `#${hex(r)}${hex(g)}${hex(b)}`;
   };

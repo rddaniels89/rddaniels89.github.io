@@ -11,7 +11,7 @@ interface QuestCarouselProps {
 }
 
 const QuestCarousel: React.FC<QuestCarouselProps> = ({ type }) => {
-  const [currentIndex, setCurrentIndex] = useState(1);  // Start with the second quest as the centered card
+  const [currentIndex, setCurrentIndex] = useState(0);  // Start with the second quest as the centered card
   const themeContext = useTheme();
   if (!themeContext) return null;
 
@@ -32,6 +32,8 @@ const QuestCarousel: React.FC<QuestCarouselProps> = ({ type }) => {
     );
   };
 
+
+  
   // Get the quests for display, ensuring 3 cards are shown
   const previousQuest = filteredQuests[(currentIndex - 1 + filteredQuests.length) % filteredQuests.length];
   const currentQuest = filteredQuests[currentIndex];

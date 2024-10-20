@@ -1,0 +1,30 @@
+/* Work theme specific styles */
+body.work {
+    background-color: #f8f8f8; /* Light, clean background */
+    color: #333; /* Dark text */
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar.work {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar.work a {
+    color: #333;
+}
+
+.navbar.work a:hover {
+    color: #6b0f1a; /* Oxblood hover */
+}
+
+button.work {
+    background-color: #6b0f1a;
+    color: white;
+}
+
+button.work:hover {
+    background-color: #501216;
+}
+
+/* Additional styles specific to the Work theme */

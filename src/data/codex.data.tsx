@@ -3,6 +3,7 @@ export interface Codex {
     title: string;            // Title of the blog post
     dateAuthored: string;     // Date when the post was authored (format: YYYY-MM-DD)
     timeToRead: string;       // Estimated reading time (e.g., "5 min read")
+    audioUrl: string;         //Audio of blog post
     categories: string[];     // Categories or tags for the blog post
     sources?: Source[];       // Optional sources or references for the post (could be URLs or citations)
     content: string;
@@ -20,6 +21,7 @@ export interface Codex {
     title: 'Understanding React Hooks',
     dateAuthored: '2023-10-01',
     timeToRead: '5 min read',
+    audioUrl: "",
     categories: ['React', 'JavaScript'],
     sources: [
       {
@@ -36,6 +38,7 @@ export interface Codex {
     title: 'Understanding React Hooks',
     dateAuthored: '2023-11-01',
     timeToRead: '6 min read',
+    audioUrl: "",
     categories: ['Test', 'HelloWorld'],
     sources: [
       {

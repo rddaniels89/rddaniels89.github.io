@@ -2,24 +2,23 @@
 import React from 'react';
 import { useTheme } from '../../context/ThemeContext';
 import TVScreen from '../TVScreen/TVScreen';
-import PCMonitor from '../PCMonitor/PCMonitor';
+import WorkFrame from '../WorkFrame/WorkFrame';
 
 interface QuestSwitcherProps {
-  type: 'main' | 'side';
+  type?: 'main' | 'side';
+  children?: React.ReactNode;
 }
 
-const QuestSwitcher: React.FC<QuestSwitcherProps> = ({ type }) => {
-  const themeContext = useTheme();  // Get the current theme from context
-  if(!themeContext){return null};
-
+const QuestSwitcher: React.FC<QuestSwitcherProps> = ({ type, children }) => {
+  const themeContext = useTheme()!;  // Get the current theme from context
   const {theme} = themeContext;
 
   return (
     <>
       {theme === 'play' ? (
-        <TVScreen type={type} />  // Render TVScreen (Play) for the given quest type
+        <TVScreen type={type} children={children}/>  // Render TVScreen (Play) for the given quest type
       ) : (
-        <PCMonitor type={type} />  // Render PCMonitor (Work) for the given quest type
+        <WorkFrame type={type} children={children}/>  // Render PCMonitor (Work) for the given quest type
       )}
     </>
   );

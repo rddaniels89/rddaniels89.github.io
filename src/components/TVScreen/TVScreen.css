@@ -34,14 +34,6 @@
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7); /* Soft glow effect */
 }
 
-.tv-navbar {
-  width: 100%; /* Full width inside TV screen */
-  padding: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  background-color: #444;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Separate navbar with a shadow */
-}
 
 .navbar-links a {
   padding: 10px;
@@ -64,28 +56,8 @@
 
 /* Title styling */
 .tv-screen h1 {
-  color: #ff6600; /* Retro color */
+  color: var(--accent-color); /* Retro color */
   font-family: 'Press Start 2P', sans-serif;
   text-align: center;
   margin: 0;
-}
-
-/* Buttons styling */
-.quest-buttons {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-}
-
-.quest-button {
-  padding: 10px 20px;
-  margin-top: 10px;
-  background-color: #ff6600;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-.quest-button:hover {
-  background-color: #ff3300;
 }

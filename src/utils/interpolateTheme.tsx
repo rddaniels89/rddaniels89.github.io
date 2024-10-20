@@ -1,6 +1,7 @@
 // utils/interpolateTheme.tsx
 
 import { ThemeProperties, themes } from "../data/styles.data";
+import { getContrastingTextColor } from "./colorUtils";
 
 // Helper function to interpolate between two colors (in HEX format)
 const interpolateColor = (color1: string, color2: string, factor: number): string => {
@@ -34,15 +35,17 @@ const interpolateColor = (color1: string, color2: string, factor: number): strin
 
 
     const { day, night } = themes[season];
-  
+    const backgroundColor = interpolateColor(day.backgroundColor, night.backgroundColor, factor);
+    const primaryColor = getContrastingTextColor(backgroundColor);
     return {
-      backgroundColor: interpolateColor(day.backgroundColor, night.backgroundColor, factor),
-      primaryColor: interpolateColor(day.primaryColor, night.primaryColor, factor),
+      backgroundColor: backgroundColor,
+      primaryColor: primaryColor,
       accentColor: interpolateColor(day.accentColor, night.accentColor, factor),
       borderColor: interpolateColor(day.borderColor, night.borderColor, factor),
       hoverColor: interpolateColor(day.hoverColor, night.hoverColor, factor),
       shadowColor: interpolateColor(day.shadowColor, night.shadowColor, factor),
-      highlightColor: interpolateColor(day.highlightColor, night.highlightColor, factor)
+      highlightColor: interpolateColor(day.highlightColor, night.highlightColor, factor),
+      secondaryBackgroundColor: interpolateColor(day.secondaryBackgroundColor, night.secondaryBackgroundColor, factor)
     };
   };
   

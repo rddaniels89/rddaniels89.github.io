@@ -2,7 +2,7 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 import TVScreen from './TVScreen/TVScreen';
-import PCMonitor from './PCMonitor/PCMonitor';
+import WorkFrame from './WorkFrame/WorkFrame';
 
 const ThemeToggle: React.FC = () => {
   const themeContext = useTheme();  // Get the current theme from context
@@ -13,7 +13,7 @@ const ThemeToggle: React.FC = () => {
   return (
     <div className={`app-container ${theme}`}>
       {/* Conditionally render TVScreen or PCMonitor */}
-      {theme === 'play' ? <TVScreen type={'main'} /> : <PCMonitor type={'main'} />}
+      {theme === 'play' ? <TVScreen type={'main'} /> : <WorkFrame type={'main'} />}
     </div>
   );
 };

@@ -6,6 +6,7 @@ export interface ThemeProperties {
     hoverColor: string;
     shadowColor: string;
     highlightColor: string;
+    secondaryBackgroundColor:string;
   }
   
   export interface SeasonalTheme {
@@ -13,25 +14,39 @@ export interface ThemeProperties {
     night: ThemeProperties;
   }
   
+
+  export const workTheme: ThemeProperties = {
+    backgroundColor: "#f5f5f5",
+    primaryColor: "#333333",
+    accentColor: "#6b0f1a ",
+    borderColor: "#d0d0d0",
+    hoverColor: "#006666",
+    shadowColor: "rgba(0, 0, 0, 0.1)",
+    highlightColor: "#6b0f1a ",
+    secondaryBackgroundColor:"#e0e0e0"
+  }
+
   export const themes: Record<string, SeasonalTheme> = {
     autumn: {
       day: {
         backgroundColor: "#fff3e0",
-        primaryColor: "#d84315",
+        primaryColor: "#4A2E14",
         accentColor: "#ffab91",
         borderColor: "#ff8a65",
         hoverColor: "#ff7043",
         shadowColor: "rgba(255, 112, 67, 0.5)",
-        highlightColor: "#ff7043"
+        highlightColor: "#ff7043",
+        secondaryBackgroundColor:"#fff3e0"
       },
       night: {
           backgroundColor: "#3e2723",
-          primaryColor: "#ffccbc",
+          primaryColor: "#FFFFFF",
           accentColor: "#ff8a50",
           borderColor: "#bf360c",
           hoverColor: "#ff7043",
           shadowColor: "rgba(255, 112, 67, 0.5)",
-          highlightColor: "#ff7043"
+          highlightColor: "#ff7043",
+          secondaryBackgroundColor:"#4e342e"
       }
     },
     winter: {
@@ -42,7 +57,8 @@ export interface ThemeProperties {
           borderColor: "#b3e5fc",
           hoverColor: "#00acc1",
           shadowColor: "rgba(0, 188, 212, 0.5)",
-          highlightColor: "#00acc1"
+          highlightColor: "#00acc1",
+          secondaryBackgroundColor:"#e0f7fa"
       },
       night: {
           backgroundColor: "#37474f",
@@ -51,7 +67,8 @@ export interface ThemeProperties {
           borderColor: "#607d8b",
           hoverColor: "#4fc3f7",
           shadowColor: "rgba(38, 166, 154, 0.5)",
-          highlightColor: "#4fc3f7"
+          highlightColor: "#4fc3f7",
+          secondaryBackgroundColor:"#455a64"
       }
     },
     spring: {
@@ -62,7 +79,8 @@ export interface ThemeProperties {
             borderColor: "#b6d3a1", /* Subtle border color */
             hoverColor: "#7cb342", /* Hover state for buttons and links */
             shadowColor: "rgba(124, 179, 66, 0.3)",
-            highlightColor: "#7cb342"
+            highlightColor: "#7cb342",
+            secondaryBackgroundColor:"#f0f8e8"
         },
         night: {
             backgroundColor: "#455a4f",
@@ -71,7 +89,8 @@ export interface ThemeProperties {
             borderColor: "#607d8b",
             hoverColor: "#4caf50",
             shadowColor: "rgba(56, 142, 60, 0.5)",
-            highlightColor: "#81c784"
+            highlightColor: "#81c784",
+            secondaryBackgroundColor:"#37493e"
         }
       },
       summer: {
@@ -82,7 +101,8 @@ export interface ThemeProperties {
             borderColor: "#fbc49c",
             hoverColor: "#ff7043",
             shadowColor: "rgba(255, 112, 67, 0.3)",
-            highlightColor: "#ff7043"
+            highlightColor: "#ff7043",
+            secondaryBackgroundColor:"#ffefd5"
         },
         night: {
             backgroundColor: "#5d4037",
@@ -91,7 +111,8 @@ export interface ThemeProperties {
             borderColor: "#d7ccc8",
             hoverColor: "#ff8a65",
             shadowColor: "rgba(244, 143, 177, 0.5)",
-            highlightColor: "#ff8a65"
+            highlightColor: "#ff8a65",
+            secondaryBackgroundColor:"#6d4c41"
         }
       },
     // Define other seasons like spring and summer

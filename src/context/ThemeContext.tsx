@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { interpolateCSSVariables } from '../utils/interpolateColor'; // Import the interpolation function
 import { interpolateTimeOfDay } from '../utils/interpolateTheme';
 import { time } from 'console';
-import { ThemeProperties } from '../data/styles.data';
+import { ThemeProperties, workTheme } from '../data/styles.data';
 
 type ThemeType = 'work' | 'play';
 type Season = 'spring' | 'summer' | 'autumn' | 'winter';
@@ -38,6 +38,13 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   // Effect to set initial season and time of day based on current date
   useEffect(() => {
 
+    if(theme == "work"){
+
+      const props = workTheme;
+      applyTheme(props);
+      return;
+    }
+    
     if(!overrideFlag)
     {
       const hours = new Date().getHours();
@@ -61,7 +68,8 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     applyTheme(props)
     
   
-  }, [season, timeOfDay, overrideFlag]);
+  }, [theme, season, timeOfDay, overrideFlag]);
+  
 
   
   return (
@@ -74,6 +82,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 };
 
 const applyTheme = (theme: ThemeProperties) => {
+
   document.documentElement.style.setProperty('--background-color', theme.backgroundColor);
   document.documentElement.style.setProperty('--primary-color', theme.primaryColor);
   document.documentElement.style.setProperty('--accent-color', theme.accentColor);
@@ -81,6 +90,8 @@ const applyTheme = (theme: ThemeProperties) => {
   document.documentElement.style.setProperty('--hover-color', theme.hoverColor);
   document.documentElement.style.setProperty('--shadow-color', theme.shadowColor);
   document.documentElement.style.setProperty('--highlight-color', theme.highlightColor);
+  document.documentElement.style.setProperty('--secondary-background-color', theme.secondaryBackgroundColor);
+  
 };
 
 
