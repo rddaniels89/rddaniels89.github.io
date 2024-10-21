@@ -1,0 +1,36 @@
+.collapsible-section {
+    margin-bottom: 20px;
+    background-color: #f5f5f5; /* Background to differentiate sections */
+    border: 2px solid #6b0f1a; /* Accent border */
+    border-radius: 5px;
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+  
+  .collapsible-title {
+    cursor: pointer;
+    padding: 10px;
+    color: #6b0f1a; /* Accent color */
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+
+  .collapsible-title {
+    cursor: pointer;
+    padding: 10px;
+    color: #6b0f1a; /* Accent color */
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+
+  
+  .collapsible-content {
+    padding: 10px;
+  }
+  
+  .toggle-icon {
+    font-size: 1.2em;
+  }
+  

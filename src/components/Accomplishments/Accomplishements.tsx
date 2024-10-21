@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import './Accomplishments.css';  // You will add styling for layout here
 import quests from '../../data/quests.data';  // Importing quest data
-import { useTheme } from '../../context/ThemeContext';
+import CollapsibleSection from '../CollapsibleSection/CollapsibleSection';
 
 const Accomplishments: React.FC = () => {
   const [selectedRoles, setSelectedRoles] = useState<string[]>([]);
@@ -12,7 +12,7 @@ const Accomplishments: React.FC = () => {
       ...accomplishment,
       company: quest.company,
       startDate: quest.startDate, // Convert start date
-      endDate: quest.endDate.getDate() == new Date(2038,2,10).getDate()
+      endDate: quest.endDate.getDate() === new Date(2038,2,10).getDate()
         ? new Date()// Use current date for ongoing jobs
         : quest.endDate // Convert end date
     }))
@@ -44,25 +44,30 @@ const Accomplishments: React.FC = () => {
     ? [] 
     : allAccomplishments.filter(acc => selectedRoles.includes(acc.role));
 
-  // Get the unique list of learnings for the selected roles
-  const uniqueLearnings = useMemo(() => {
-    return Array.from(new Set(filteredAccomplishments.flatMap(acc => acc.learnings)));
-  }, [filteredAccomplishments]);
-
-  // Get the unique list of companies for the selected roles
-  const uniqueCompanies = useMemo(() => {
-    return Array.from(new Set(filteredAccomplishments.map(acc => acc.company)));
-  }, [filteredAccomplishments]);
-
-  // Get the date range for the selected roles
-  const dateRange = useMemo(() => {
-    if (filteredAccomplishments.length === 0) return null;
-    const startDates = filteredAccomplishments.map(acc => acc.startDate).sort((a, b) => a.getTime() - b.getTime());
-    const endDates = filteredAccomplishments.map(acc => acc.endDate).sort((a, b) => b.getTime() - a.getTime());
+  const getDateRangeForRole = (role: string) => {
+    const accomplishmentsForRole = filteredAccomplishments.filter(acc => acc.role === role);
+    if (accomplishmentsForRole.length === 0) return null;
+    const startDates = accomplishmentsForRole.map(acc => acc.startDate).sort((a, b) => a.getTime() - b.getTime());
+    const endDates = accomplishmentsForRole.map(acc => acc.endDate).sort((a, b) => b.getTime() - a.getTime());
     const firstStartDate = startDates[0];
     const lastEndDate = endDates[0];
-    return `${firstStartDate.toLocaleDateString()} – ${lastEndDate.toLocaleDateString()}`;
-  }, [filteredAccomplishments]);
+    return `${firstStartDate.toLocaleDateString()} – ${lastEndDate.getDate() === new Date().getDate() ? "Present": lastEndDate.toLocaleDateString()}`;
+    
+  };
+
+  const getUniqueLearningsForRole = (role: string) => {
+    const learningsForRole = filteredAccomplishments
+      .filter(acc => acc.role === role)
+      .flatMap(acc => acc.learnings);
+    return Array.from(new Set(learningsForRole)); // Unique learnings
+  };
+  
+  const getUniqueCompaniesForRole = (role: string) => {
+    const companiesForRole = filteredAccomplishments
+      .filter(acc => acc.role === role)
+      .map(acc => acc.company);
+    return Array.from(new Set(companiesForRole)); // Unique companies for each role
+  };
 
   return (
     <div className="accomplishment-layout">
@@ -92,29 +97,38 @@ const Accomplishments: React.FC = () => {
                 <h2>{role}</h2>
 
                 {/* Date Range */}
-                {dateRange && <p><strong>Date Range:</strong> {dateRange}</p>}
+                {getDateRangeForRole(role) && (
+  <p><strong>Date Range:</strong> {getDateRangeForRole(role)}</p>
+)}
+
 
                 {/* Accomplishments */}
-                <h3>Accomplishments:</h3>
-                {filteredAccomplishments
-                  .filter(acc => acc.role === role)
-                  .map((acc, index) => (
-                    <div key={index} className="accomplishment-entry">
-                      <p>{acc.description}</p>
-                    </div>
-                ))}
-
+ <CollapsibleSection title="Accomplishments">
+    {filteredAccomplishments
+      .filter(acc => acc.role === role)
+      .map((acc, index) => (
+        <div key={index} className="accomplishment-entry">
+          <p>{acc.description}</p>
+        </div>
+    ))}
+  </CollapsibleSection>
                 {/* Learnings */}
-                <h3>Learnings:</h3>
-                <ul>
-                  {uniqueLearnings.map((learning, index) => (
-                    <li key={index}>{learning}</li>
-                  ))}
-                </ul>
+
+<CollapsibleSection title="Learnings">
+    
+      {getUniqueLearningsForRole(role).map((learning, index) => (
+                <div key={index} className="accomplishment-entry">
+                <p>{learning}</p>
+              </div>
+      ))}
+    
+  </CollapsibleSection>
+
 
                 {/* Companies */}
                 <h3>Companies:</h3>
-                <p>{uniqueCompanies.join(', ')}</p>
+<p>{getUniqueCompaniesForRole(role).join(', ')}</p>
+
               </div>
             ))}
           </div>

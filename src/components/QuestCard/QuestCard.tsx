@@ -17,7 +17,7 @@ interface QuestCardProps {
 const QuestCard: React.FC<QuestCardProps> = ({ quest }) => {
   return (
     <div className="quest-card">
-      <h3>{quest.id}. {quest.title}</h3>
+      <h3>{quest.title}</h3>
       {quest.company && <p>Company: {quest.company}</p>}
       <p>{quest.description}</p>
     </div>

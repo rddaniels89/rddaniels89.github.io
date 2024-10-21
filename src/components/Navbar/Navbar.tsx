@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
         </button>
 
         <>
-        {theme == 'play' ? (
+        {theme === 'play' ? (
         <button className="date-time-toggle" onClick={toggleDropdown} > <FontAwesomeIcon icon={faPaintRoller}/>
         Theme
       </button>) :(<p></p>)

@@ -16,15 +16,15 @@ export interface ThemeProperties {
   
 
   export const workTheme: ThemeProperties = {
-    backgroundColor: "#f5f5f5",
-    primaryColor: "#333333",
-    accentColor: "#6b0f1a ",
-    borderColor: "#d0d0d0",
-    hoverColor: "#006666",
-    shadowColor: "rgba(0, 0, 0, 0.1)",
-    highlightColor: "#6b0f1a ",
-    secondaryBackgroundColor:"#e0e0e0"
-  }
+    backgroundColor: "#f5f5f5",      // Light background for contrast
+    primaryColor: "#333333",         // Darker text for contrast
+    accentColor: "#6b0f1a",          // Accent color used prominently
+    borderColor: "#6b0f1a",          // Accent border for important elements
+    hoverColor: "#6b0f1a",           // Hover color matches the accent
+    shadowColor: "rgba(0, 0, 0, 0.1)", // Soft shadows for depth
+    highlightColor: "#6b0f1a",       // Accent color for highlights
+    secondaryBackgroundColor: "#e0e0e0" // Muted secondary background
+  };
 
   export const themes: Record<string, SeasonalTheme> = {
     autumn: {
