@@ -1,68 +1,76 @@
+/* === WORKFRAME CONTAINER (SLEEK MODE) === */
 .workframe-container {
+  /* Instead of forcing a square aspect, let it fill the screen’s width/height */
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100dvh;  /* 80% of the viewport height */
-  width: calc(100dvh * 2);  /* Maintain aspect ratio of the TV (height * aspect ratio) */
+  align-items: flex-start;  /* content starts at top, can scroll down */
+  width: 100vw;             /* fill viewport width */
+  height: 100vh;            /* fill viewport height */
+  margin: 0;                /* remove default margins */
+  overflow: auto;           /* allow scrolling if content is tall */
 
-  position: relative;
-  overflow: hidden;
+  /* Optional: If you want a subtle background for the container
+     (comment out if not needed) */
+  background-color: var(--secondary-background-color);
 }
 
+/* === WORKFRAME BOX === */
 .workframe {
-  width: 70%;  /* 85% of the tv-frame-container width */
-  height: 86%; /* 75% of the tv-frame-container height */
+  /* Let it shrink or grow to fit content, but cap at some max width for a professional look */
+  width: 90%;
+  max-width: 100dvw;        
+  
+  /* We don’t need absolute positioning or top/left offsets for a sleek container */
+  position: relative;
+  margin: 2rem auto;        /* center it within .workframe-container */
+  
   background-color: var(--background-color);
-  position: absolute;
-  top: 1%; /* Adjust as needed to vertically center within TV frame */
-  left: 8%; /* Adjust to horizontally center */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  border-radius: 8px;       /* smaller radius for a professional look */
+  
+  /* Optional subtle shadow for a card-like feel */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  
   padding: 20px;
-  border-radius: 95px 20px 10px 15px; /* Adjust to match TV corners */
-  overflow-y: auto;
+  overflow-y: auto;         /* scroll inside if content is very tall */
   overflow-x: hidden;
+}
 
-  }
-    
+/* === NAVBAR LINKS (Sleek, Professional) === */
+.navbar-links a {
+  padding: 10px;
+  color: var(--highlight-color);  /* can be a subdued professional color */
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
 
+/* === SCROLLBAR (Optional) === */
+.workframe::-webkit-scrollbar {
+  width: 6px;
+}
+.workframe::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 4px;
+}
+.workframe::-webkit-scrollbar-track {
+  background-color: var(--secondary-background-color);
+}
 
-  .navbar-links a {
-    padding: 10px;
-    color: var(--highlight-color); /* More professional color */
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif; /* More professional font */
-    font-weight: bold;
-  }
-  /* Customize scrollbar styling (optional) */
-  .workframe::-webkit-scrollbar {
-    width: 6px; /* Width of the scrollbar */
-  }
-  
-  .workframe::-webkit-scrollbar-thumb {
-    background-color:var(--accent-color); /* Color of the scrollbar thumb */
-    border-radius: 4px;
-  }
-  
-  .workframe::-webkit-scrollbar-track {
-    background-color: var(--secondary-background-color); /* Scrollbar background color */
-  }
-  
-  /* Title styling */
-  .workframe h1 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    color: var(--primary-color); /* Make the color match the professional tone */
-    text-align: center;
-    padding-bottom: 10px; /* Spacing under the title */
-    border-bottom: 2px solid var(--secondary-color); /* Underline the title */
-  }
-  
-  .workframe p {
-    font-family: 'Open Sans', sans-serif;
-    color: var(--primary-color);
-    line-height: 1.5;
-    font-size: 16px;
-  }
+/* === HEADINGS & TEXT === */
+.workframe h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--secondary-color);
+  margin-top: 0;    /* remove extra top margin for a cleaner look */
+}
+
+.workframe p {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--primary-color);
+  line-height: 1.5;
+  font-size: 16px;
+  margin-bottom: 1rem;
+}

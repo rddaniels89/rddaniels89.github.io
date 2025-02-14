@@ -1,24 +1,30 @@
 import React, { useMemo, useState } from 'react';
-import './Accomplishments.css';  // You will add styling for layout here
-import quests from '../../data/quests.data';  // Importing quest data
-import CollapsibleSection from '../CollapsibleSection/CollapsibleSection';
+import './Accomplishments.css';
+import quests from '../../data/quests.data';
+
+interface Accomplishment {
+  description: string;
+  role: string;
+  company: string;
+  startDate: Date;
+  endDate: Date;
+  learnings: string[];
+}
 
 const Accomplishments: React.FC = () => {
-  const [selectedRoles, setSelectedRoles] = useState<string[]>([]);
+  const [selectedRole, setSelectedRole] = useState<string | null>(null);
 
-  // Flatten all accomplishments and attach company name and job duration to each accomplishment
-  const allAccomplishments = quests.flatMap(quest =>
+  // Flatten all accomplishments
+  const allAccomplishments: Accomplishment[] = quests.flatMap(quest =>
     quest.accomplishments.map(accomplishment => ({
       ...accomplishment,
-      company: quest.company,
-      startDate: quest.startDate, // Convert start date
-      endDate: quest.endDate.getDate() === new Date(2038,2,10).getDate()
-        ? new Date()// Use current date for ongoing jobs
-        : quest.endDate // Convert end date
+      company: quest.company!,
+      startDate: quest.startDate,
+      endDate: quest.endDate,
     }))
   );
 
-  // Get unique roles and calculate the number of accomplishments for each role
+  // Count how many items per role
   const roleCounts = useMemo(() => {
     const counts: { [key: string]: number } = {};
     allAccomplishments.forEach(acc => {
@@ -27,110 +33,94 @@ const Accomplishments: React.FC = () => {
     return counts;
   }, [allAccomplishments]);
 
-  // Sort roles by number of accomplishments (descending)
-  const sortedRoles = Object.keys(roleCounts).sort((a, b) => roleCounts[b] - roleCounts[a]);
+  // Sort roles descending by count
+  const sortedRoles = Object.keys(roleCounts).sort(
+    (a, b) => roleCounts[b] - roleCounts[a]
+  );
 
-  // Handle role selection
-  const handleRoleClick = (role: string) => {
-    if (selectedRoles.includes(role)) {
-      setSelectedRoles(selectedRoles.filter(r => r !== role)); // Deselect role
-    } else {
-      setSelectedRoles([...selectedRoles, role]); // Select role
-    }
+  // Filter for the currently selected role
+  const filtered = selectedRole
+    ? allAccomplishments.filter(acc => acc.role === selectedRole)
+    : [];
+
+  // Helpers
+  const getDateRange = (accomplishments: Accomplishment[]) => {
+    if (!accomplishments.length) return null;
+    const sortedByStart = [...accomplishments].sort((a, b) => a.startDate.getTime() - b.startDate.getTime());
+    const sortedByEnd = [...accomplishments].sort((a, b) => b.endDate.getTime() - a.endDate.getTime());
+    const firstStart = sortedByStart[0].startDate;
+    const lastEnd = sortedByEnd[0].endDate;
+    return `${firstStart.toLocaleDateString()} – ${
+      lastEnd.getTime() >= new Date().getTime() ? 'Present' : lastEnd.toLocaleDateString()
+    }`;
   };
 
-  // Filter accomplishments based on selected roles
-  const filteredAccomplishments = selectedRoles.length === 0 
-    ? [] 
-    : allAccomplishments.filter(acc => selectedRoles.includes(acc.role));
-
-  const getDateRangeForRole = (role: string) => {
-    const accomplishmentsForRole = filteredAccomplishments.filter(acc => acc.role === role);
-    if (accomplishmentsForRole.length === 0) return null;
-    const startDates = accomplishmentsForRole.map(acc => acc.startDate).sort((a, b) => a.getTime() - b.getTime());
-    const endDates = accomplishmentsForRole.map(acc => acc.endDate).sort((a, b) => b.getTime() - a.getTime());
-    const firstStartDate = startDates[0];
-    const lastEndDate = endDates[0];
-    return `${firstStartDate.toLocaleDateString()} – ${lastEndDate.getDate() === new Date().getDate() ? "Present": lastEndDate.toLocaleDateString()}`;
-    
+  const getUniqueCompanies = (accomplishments: Accomplishment[]) => {
+    const companies = accomplishments.map(acc => acc.company);
+    return Array.from(new Set(companies));
   };
 
-  const getUniqueLearningsForRole = (role: string) => {
-    const learningsForRole = filteredAccomplishments
-      .filter(acc => acc.role === role)
-      .flatMap(acc => acc.learnings);
-    return Array.from(new Set(learningsForRole)); // Unique learnings
-  };
-  
-  const getUniqueCompaniesForRole = (role: string) => {
-    const companiesForRole = filteredAccomplishments
-      .filter(acc => acc.role === role)
-      .map(acc => acc.company);
-    return Array.from(new Set(companiesForRole)); // Unique companies for each role
+  const getUniqueLearnings = (accomplishments: Accomplishment[]) => {
+    return Array.from(
+      new Set(accomplishments.flatMap(acc => acc.learnings))
+    );
   };
 
   return (
     <div className="accomplishment-layout">
-      {/* Side Panel for Role Selection */}
+      {/* === SIDE PANEL FOR ROLES === */}
       <div className="filter-panel">
         <h3>Roles</h3>
-        {sortedRoles.map((role, index) => (
+        {sortedRoles.map(role => (
           <button
-            key={index}
-            className={`accomplishment-filter-button ${selectedRoles.includes(role) ? 'active' : ''}`}
-            onClick={() => handleRoleClick(role)}
+            key={role}
+            className={`accomplishment-filter-button ${selectedRole === role ? 'active' : ''}`}
+            onClick={() => setSelectedRole(role === selectedRole ? null : role)}
           >
             {role} <span className="role-count">{roleCounts[role]}</span>
           </button>
         ))}
       </div>
 
-      {/* Center Panel for Displaying Accomplishments */}
+      {/* === MAIN DETAIL AREA === */}
       <div className="accomplishment-detail">
-        {selectedRoles.length === 0 ? (
-          <p className="placeholder-text">Please select a role to view related accomplishments.</p>
+        {!selectedRole ? (
+          <p className="placeholder-text">Please select a role to view accomplishments.</p>
         ) : (
-          <div>
-            {/* Role Title */}
-            {selectedRoles.map((role) => (
-              <div key={role} className="role-group">
-                <h2>{role}</h2>
-
-                {/* Date Range */}
-                {getDateRangeForRole(role) && (
-  <p><strong>Date Range:</strong> {getDateRangeForRole(role)}</p>
-)}
-
-
-                {/* Accomplishments */}
- <CollapsibleSection title="Accomplishments">
-    {filteredAccomplishments
-      .filter(acc => acc.role === role)
-      .map((acc, index) => (
-        <div key={index} className="accomplishment-entry">
-          <p>{acc.description}</p>
-        </div>
-    ))}
-  </CollapsibleSection>
-                {/* Learnings */}
-
-<CollapsibleSection title="Learnings">
-    
-      {getUniqueLearningsForRole(role).map((learning, index) => (
-                <div key={index} className="accomplishment-entry">
-                <p>{learning}</p>
+          <div className="role-content">
+            {/* TOP SUMMARY: ROLE NAME, DATE RANGE, COMPANIES */}
+            <div className="role-summary">
+              <h2>{selectedRole}</h2>
+              <p>
+                <strong>Date Range:</strong> {getDateRange(filtered)}
+              </p>
+              <p>
+                <strong>Companies:</strong> {getUniqueCompanies(filtered).join(', ')}
+              </p>
+            </div>
+              {/* Right Column: Learnings */}
+              <div >
+                <h3>Learnings</h3>
+                <ul className="accomplishment-list">
+                  {getUniqueLearnings(filtered).map((learning, i) => (
+                    <li key={i} className="accomplishment-item">
+                      {learning}
+                    </li>
+                  ))}
+                </ul>
               </div>
-      ))}
-    
-  </CollapsibleSection>
-
-
-                {/* Companies */}
-                <h3>Companies:</h3>
-<p>{getUniqueCompaniesForRole(role).join(', ')}</p>
-
+            {/* TWO-COLUMN LAYOUT: ACCOMPLISHMENTS VS LEARNINGS */}
+              {/* Left Column: Accomplishments */}
+              <div>
+                <h3>Accomplishments</h3>
+                <ul className="accomplishment-list">
+                  {filtered.map((acc, i) => (
+                    <li key={i} className="accomplishment-item">
+                      {acc.description}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            ))}
           </div>
         )}
       </div>

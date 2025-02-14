@@ -54,7 +54,8 @@ export const interpolateCSSVariables = (type: TransitionType, current: string, n
       'border-color',
       'hover-color',
       'shadow-color',
-      'highlight-color' 
+      'highlight-color',
+      'secondary-background-color'
     ];
   
     // Interpolate and apply each property

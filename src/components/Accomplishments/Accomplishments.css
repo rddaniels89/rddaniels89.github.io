@@ -1,118 +1,177 @@
-/* Overall container layout */
+/* === ACCOMPLISHMENT LAYOUT REFINEMENTS === */
 .accomplishment-layout {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px; /* Spacing between side and center panels */
-    padding: 20px;
-    height: auto; /* Full viewport height */
-    background-color: #f5f5f5; /* Background color */
-    overflow: visible; /* Prevent extra scrollbar */
-  }
-  
-  /* Side panel with role filters */
-  .filter-panel {
-    width: 250px;
-    background-color: #e0e0e0; /* Secondary background color */
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    top: 0;
-  }
-  
-  /* Scrollbar styling */
-  .filter-panel::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  .filter-panel::-webkit-scrollbar-thumb {
-    background-color: #6b0f1a; /* Accent color */
-    border-radius: 4px;
-  }
-  
-  .filter-panel::-webkit-scrollbar-track {
-    background-color: #f5f5f5;
-  }
-  
-  /* Filter button styling */
-  .accomplishment-filter-button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: var(--background-color);
-    border: 2px solid var(--accent-color);
-    border-radius: 5px;
-    color: var(--primary-color);
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    width: 100%;
-  }
-  
-  .accomplishment-filter-button:hover {
-    background-color: #6b0f1a; /* Hover effect using accent color */
-    color: #f5f5f5; /* White text on hover */
-  }
-  
-  .accomplishment-filter-button.active {
-    background-color: #6b0f1a; /* Active state accent */
-    color: #fff; /* White text */
-  }
-  
-  /* Role count bubble */
-  .role-count {
-    background-color: #6b0f1a; /* Accent color */
-    color: #fff;
-    border-radius: 50%;
-    padding: 5px 10px;
-    font-size: 0.9rem;
-  }
-  
-  /* Detail panel styling */
-  .accomplishment-detail {
-    flex-grow: 1;
-    padding: 20px 20px 50px 20px;
-    width: 800px;
-    background-color: #e0e0e0; /* Secondary background */
-    color: #333333; /* Primary color */
-    border-radius: 10px;
-    box-shadow: 0px 2px 5px var(--shadow-color);
-    overflow: visible;
-  }
-  
-  .accomplishment-detail::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  .accomplishment-detail::-webkit-scrollbar-thumb {
-    background-color: #6b0f1a; /* Accent color */
-    border-radius: 4px;
-  }
-  
-  .accomplishment-detail::-webkit-scrollbar-track {
-    background-color: #f5f5f5;
-  }
-  
-  /* Accomplishment entry styling */
-  .accomplishment-entry {
-    background-color: #f5f5f5;
-    padding: 4px 8px;
-    margin-bottom: 4px;
-    border-radius: 5px;
-    border-bottom: 4px solid #6b0f1a; /* Accent border */
-    border-left: 4px solid #6b0f1a; /* Accent border */
-  }
-  .accomplishment-entry:hover {
-    transform: scale(1.02); /* Slight scaling on hover */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  height: auto;
+  background-color: var(--background-color);
+  overflow: visible;
+  overflow-x: auto; /* Add horizontal scrolling if needed */
 }
-  /* Headings and text */
-  h2 {
-    color: #6b0f1a; /* Use accent color for headings */
-    font-weight: bold;
-  }
+
+/* Side Panel - Filters */
+.filter-panel {
+  width: 260px;
+  background: var(--secondary-background-color);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px var(--shadow-color);
+}
+
+/* Scrollbar */
+.filter-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.filter-panel::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 4px;
+}
+
+.filter-panel::-webkit-scrollbar-track {
+  background-color: var(--background-color);
+}
+
+/* === FILTER BUTTONS === */
+.accomplishment-filter-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 8px;
+  background-color: var(--background-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
+  font-weight: bold;
+}
+
+.accomplishment-filter-button:hover {
+  background: var(--hover-color);
+  color: var(--highlight-color);
+}
+
+.accomplishment-filter-button.active {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+}
+
+/* === BADGE FOR ROLE COUNT === */
+.role-count {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* === ACCOMPLISHMENT PANEL === */
+.accomplishment-detail {
+  flex-grow: 1;
+  width: 85%; /* Ensure content scales properly */
+  max-width: 900px; /* Prevent excessive widening on large screens */
+  background: var(--secondary-background-color);
+  color: var(--primary-color);
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px var(--shadow-color);
+  padding: 25px;
+  overflow-x: auto; /* Allow scrolling if content overflows */
+}
+
+/* Scrollbars */
+.accomplishment-detail::-webkit-scrollbar {
+  width: 8px;
+}
+
+.accomplishment-detail::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 4px;
+}
+
+.accomplishment-detail::-webkit-scrollbar-track {
+  background-color: var(--background-color);
+}
+.accomplishment-list {
+  display: grid;
+  /* Each column is min 250px wide, and we add more columns as space allows */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px; /* Space between items */
+  margin-top: 20px;
+}
+
+.accomplishment-list {
+  /* Remove bullet points */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+   column-count: 2;
+       column-gap: 20px;
   
-  ul {
-    list-style-type: disc;
-    padding-left: 20px;
-  }
+}
+.accomplishment-list {
+  column-count: 2;
+  column-gap: 20px;
+}
+.accomplishment-item {
+  background: var(--background-color);
+  padding: 12px 16px;
+  margin-bottom: 10px;  /* space between cards */
   
+  /* Card-like borders & shadow */
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-color);
+  border-bottom: 3px solid var(--shadow-color);
+  box-shadow: 1px 2px 4px var(--shadow-color);
+
+  /* For a slightly more compact look, you could reduce padding or margin */
+  line-height: 1.4;
+  font-size: 0.95rem;
+
+  /* Hover effect to simulate a 'lift' */
+  transition: transform 0.15s ease-in-out, background 0.2s ease;
+}
+.accomplishment-item:hover {
+  transform: translateY(-2px);
+  background: var(--hover-color);
+}
+
+
+/* === HEADINGS === */
+h2 {
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+/* === COLLAPSIBLE SECTION TOGGLE === */
+.accomplishment-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 6px;
+  background: var(--secondary-background-color);
+  color: var(--primary-color);
+  transition: all 0.2s ease;
+}
+
+.accomplishment-toggle:hover {
+  background: var(--hover-color);
+}
+
+.accomplishment-toggle .arrow {
+  transition: transform 0.3s ease;
+}
+
+.accomplishment-toggle.open .arrow {
+  transform: rotate(180deg);
+}

@@ -1,7 +1,7 @@
 .collapsible-section {
     margin-bottom: 20px;
-    background-color: #f5f5f5; /* Background to differentiate sections */
-    border: 2px solid #6b0f1a; /* Accent border */
+    background-color: var(--secondary-background-color); /* Background to differentiate sections */
+    border: 2px solid var(--accent-color); /* Accent border */
     border-radius: 5px;
     overflow: hidden;
     transition: height 0.3s ease;
@@ -19,7 +19,7 @@
   .collapsible-title {
     cursor: pointer;
     padding: 10px;
-    color: #6b0f1a; /* Accent color */
+    color: var(--accent-color);
     display: flex;
     justify-content: space-between;
     font-weight: bold;
