@@ -2,7 +2,7 @@
   "name": "alonzo-axioms",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://developerzo.github.io/zowilliams.github.io/",
+  "homepage": "https://developerzo.github.io/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
@@ -14,6 +14,7 @@
     "@types/node": "^16.18.113",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
+    "classnames": "^2.5.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-render-iff": "^3.0.0",

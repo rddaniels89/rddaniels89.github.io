@@ -43,11 +43,6 @@ const AppContent: React.FC = () => {
               <MainMenu /> 
             </QuestSwitcher>} />
 
-            <Route path="/" element={<QuestSwitcher>
-              <Navbar />
-              <MainMenu /> 
-            </QuestSwitcher>} />
-
             <Route path="/accomplishments" element={<QuestSwitcher type="main">
               <Navbar />
               <Accomplishments /> 

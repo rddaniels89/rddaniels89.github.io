@@ -1,14 +1,26 @@
-/* Container for the entire carousel */
-.carousel-container {
+/***************************************
+ *  Common Styles for Carousel Container
+ ***************************************/
+ .carousel-container {
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--background-color);
-  width:90dvh;
+  width: 100%; /* or your preferred dimension */
 }
 
-/* Controls for navigating the carousel */
-.carousel-control {
+/* Desktop Layout */
+.carousel-cards {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin: 20px 0;
+  transition: transform 0.5s ease;
+}
+
+.carousel-control .left  {
   border: none;
   font-size: 2rem;
   cursor: pointer;
@@ -16,23 +28,22 @@
   color: var(--accent-color);
   border-radius: 10px;
   transition: transform 0.5s ease, background-color 0.3s ease;
+  flex-direction: row;
 }
 
-/* Container for all the cards in the carousel */
-.carousel-cards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  margin-bottom: 20px; /* Spacing between cards and details panel */
-  margin-top: 20px;
-  transition: transform 0.5s ease;
+.carousel-control .right  {
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  background-color: var(--background-color);
+  color: var(--accent-color);
+  border-radius: 10px;
+  transition: transform 0.5s ease, background-color 0.3s ease;
+  flex-direction: row;
 }
 
-/* Individual card styling */
+/* Card styling */
 .carousel-card {
-  transition: transform 0.5s ease;
-  margin: 0 10px;
   padding: 15px;
   cursor: pointer;
   background-color: var(--secondary-background-color);
@@ -46,32 +57,81 @@
   box-shadow: 0 8px 16px var(--hover-color);
 }
 
+/* Side cards */
 .small-card {
-  width: 375px; /* Smaller width for side cards */
+  width: 375px;
   opacity: 0.5;
   transform: scale(0.85);
 }
 
-
-/* Larger, centered card */
+/* Center card */
 .center-card {
   border: 3px solid var(--highlight-color);
 }
-.center-card h2, .center-card p {
-  color: var(--highlight-color); /* Same title color as details */
+.center-card h2,
+.center-card p,
+.carousel-card h2,
+.carousel-card p {
+  color: var(--highlight-color);
+  font-size: 1.3rem;
 }
-/* Label for "Quest Details" below the carousel */
+
+/* Quest details label & panel */
 .quest-details-label {
   text-align: center;
   margin-top: 10px;
   font-size: 1.2rem;
   font-weight: bold;
-  color: var(--accent-color); /* Use dynamic color for the label */
+  color: var(--accent-color);
+}
+.details-panel {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 85dvw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.carousel-card h2, .carousel-card p {
-  color: var(--highlight-color); /* Match title color in the details */
-  font-size: 1.3rem; /* Make sure this size is consistent across sections */
+/***************************************
+ *  Mobile Layout (max-width: 768px)
+ ***************************************/
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 90vw;
+    padding: 10px;
+    
+  }
+
+  /* Stack the cards and controls vertically */
+  .carousel-cards {
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  /* Hide side cards on mobile to avoid squishing */
+  .small-card {
+    display: none;
+  }
+
+  /* Keep center card at a more comfortable width */
+  .center-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    transform: none;  /* remove scaling if it was applied */
+  }
+
+  /* Controls: smaller size on mobile */
+  .carousel-control {
+    font-size: 1.5rem;
+    padding: 5px;
+    
+  }
+
+  /* Adjust quest details panel for mobile */
+  .details-panel {
+    max-width: 100dvw;
+  }
 }
-
-

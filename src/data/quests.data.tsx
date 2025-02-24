@@ -178,7 +178,7 @@ const quests: Quest[] = [
   },
   {
     id: 3,
-    title: 'Interim Leadership Challenge',
+    title: 'Leadership and Code',
     company: 'Lendr',
     workTitle: 'Team Lead / Interim Director of Engineering',
     description:
@@ -308,7 +308,7 @@ const quests: Quest[] = [
   },
   {
     id: 6,
-    title: 'Foundations at the Aerospace Giant',
+    title: 'Aerospace Foundations',
     company: 'The Boeing Company',
     workTitle: 'ITCFP Participant / Developer',
     description:

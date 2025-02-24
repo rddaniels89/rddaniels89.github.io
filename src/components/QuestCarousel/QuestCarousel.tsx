@@ -5,6 +5,8 @@ import './QuestCarousel.css';
 import quests from '../../data/quests.data';  // Assuming quest data is here
 import QuestDetail from '../QuestDetail/QuestDetail';
 import { useTheme } from '../../context/ThemeContext';
+import { useIsMobile } from '../../utils/useIsMobile';
+import classNames from 'classnames';
 
 interface QuestCarouselProps {
   type: 'main' | 'side';  // to distinguish between main and side quests
@@ -13,10 +15,13 @@ interface QuestCarouselProps {
 const QuestCarousel: React.FC<QuestCarouselProps> = ({ type }) => {
   const [currentIndex, setCurrentIndex] = useState(0);  // Start with the second quest as the centered card
   const themeContext = useTheme();
+  const isMobile = useIsMobile(768);
+
   if (!themeContext) return null;
 
   const { theme, timeOfDay, season, setTheme } = themeContext;
 
+  
   // Filter quests by type (main or side)
   const filteredQuests = quests.filter((quest) => quest.type === type);
 
@@ -33,19 +38,25 @@ const QuestCarousel: React.FC<QuestCarouselProps> = ({ type }) => {
   };
 
 
-  
+    const containerClasses = classNames('carousel-container', {
+    mobile: isMobile,
+  });
   // Get the quests for display, ensuring 3 cards are shown
   const previousQuest = filteredQuests[(currentIndex - 1 + filteredQuests.length) % filteredQuests.length];
   const currentQuest = filteredQuests[currentIndex];
   const nextQuest = filteredQuests[(currentIndex + 1) % filteredQuests.length];
 
   return (
-    <div className={`carousel-container ${theme}`}>
-
-      <div className="carousel-cards">
-      <button className="carousel-control left" onClick={goToPrevious}>
+    <div className={`${containerClasses} ${theme}`}>
+      <div className='carousel-control'>
+      <button className="left" onClick={goToPrevious}>
         ◀
       </button>
+      <button className="right" onClick={goToNext}>
+        ▶
+      </button>
+      </div>
+      <div className="carousel-cards">
         {/* Previous Quest */}
         <div className="carousel-card small-card" onClick={goToPrevious}>
           <QuestCard quest={previousQuest} />
@@ -61,9 +72,6 @@ const QuestCarousel: React.FC<QuestCarouselProps> = ({ type }) => {
         <div className="carousel-card small-card" onClick={goToNext}>
           <QuestCard quest={nextQuest} />
         </div>
-        <button className="carousel-control right" onClick={goToNext}>
-        ▶
-      </button>
       </div>
       <div className="quest-details-label">Quest Details</div>
 
