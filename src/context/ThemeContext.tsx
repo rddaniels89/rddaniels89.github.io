@@ -4,7 +4,7 @@ import { interpolateTimeOfDay } from '../utils/interpolateTheme';
 import { time } from 'console';
 import { ThemeProperties, workTheme } from '../data/styles.data';
 
-type ThemeType = 'work' | 'play';
+export type ThemeType = 'work' | 'play';
 type Season = 'spring' | 'summer' | 'autumn' | 'winter';
 
 interface ThemeContextProps {

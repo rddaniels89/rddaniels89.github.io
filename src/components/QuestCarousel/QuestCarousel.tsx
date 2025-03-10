@@ -59,18 +59,18 @@ const QuestCarousel: React.FC<QuestCarouselProps> = ({ type }) => {
       <div className="carousel-cards">
         {/* Previous Quest */}
         <div className="carousel-card small-card" onClick={goToPrevious}>
-          <QuestCard quest={previousQuest} />
+          <QuestCard quest={previousQuest} theme={theme} />
         </div>
 
         {/* Centered Quest */}
         <div className="carousel-card center-card">
-          <QuestCard quest={currentQuest} />
+          <QuestCard quest={currentQuest} theme={theme}/>
 
         </div>
 
         {/* Next Quest */}
         <div className="carousel-card small-card" onClick={goToNext}>
-          <QuestCard quest={nextQuest} />
+          <QuestCard quest={nextQuest} theme={theme} />
         </div>
       </div>
       <div className="quest-details-label">Quest Details</div>

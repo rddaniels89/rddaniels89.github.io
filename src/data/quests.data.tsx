@@ -2,42 +2,51 @@
 
 export interface Quest {
   id: number;
-  title: string;
+  titles: {
+    retro: string;
+    sleek: string;
+  };
   company?: string;
-  workTitle: string; // Added field
+  workTitle: string; // Shared field
   description: string;
   accomplishments: Accomplishment[];
   type: 'main' | 'side';
   startDate: Date;
   endDate: Date;
   roles: string[];
+  tags?: string[];       // New property to help with filtering and categorization
+  externalLink?: string; // Optional external reference (e.g., project or company website)
 }
 
 export interface Accomplishment {
   description: string;
-  role: string; // Role in which it was achieved
-  learnings: string[]; // What was learned or the reward achieved
+  role: string;       // Role in which it was achieved
+  learnings: string[]; // What was learned or the 'reward' achieved
 }
 
 const quests: Quest[] = [
   {
     id: 1,
-    title: 'Rise of the Architect',
+    titles: {
+      retro: 'Rise of the Architect',
+      sleek: 'Senior Consultant & Software Architect at Inspire11',
+    },
     company: 'Inspire11',
     workTitle: 'Senior Consultant and Software Architect',
     description:
-      'Led architectural strategy across multiple teams, improving code consistency and efficiency.',
+      'Led architectural strategy across multiple teams to improve code consistency and efficiency.',
     type: 'main',
     startDate: new Date('2023-04-30'),
     endDate: new Date(2038, 2, 10), // Ongoing
     roles: ['Senior Consultant', 'Software Architect'],
+    tags: ['Architecture', 'Leadership', 'Consulting'],
     accomplishments: [
       {
         description:
           'Resolved a critical production issue within one month by collaborating with the lead developer, despite limited recent experience with React.',
         role: 'Senior Consultant',
         learnings: [
-          'Learned to quickly adapt to unfamiliar technologies to solve complex problems.',
+          '...adapt quickly to unfamiliar technologies to solve complex problems.',
         ],
       },
       {
@@ -45,23 +54,23 @@ const quests: Quest[] = [
           'Stabilized a struggling team by assuming the UI architect role, enhancing performance and code quality.',
         role: 'Software Architect',
         learnings: [
-          'Learned effective team leadership and how to provide architectural guidance to large teams.',
+          '...provide architectural guidance and effective team leadership.',
         ],
       },
       {
         description:
-          'Introduced a React pattern for stateless components, enhancing code reusability across multiple teams.',
+          'Introduced a React pattern for stateless components, increasing code reusability across teams.',
         role: 'Software Architect',
         learnings: [
-          'Learned to abstract patterns to create innovative and reusable solutions.',
+          'Abstract patterns to create innovative and reusable solutions.',
         ],
       },
       {
         description:
-          'Improved cross-team communication by establishing regular meetings, reducing delays and aligning development with management.',
+          'Improved cross-team communication by establishing regular meetings, reducing delays and ensuring project alignment.',
         role: 'Software Architect',
         learnings: [
-          'Learned the importance of effective communication in project alignment and team efficiency.',
+          'Emphasize effective communication for project success.',
         ],
       },
       {
@@ -69,7 +78,7 @@ const quests: Quest[] = [
           'Collaborated with design teams to implement global components, enhancing UI consistency.',
         role: 'Software Architect',
         learnings: [
-          'Learned how cross-functional collaboration can improve user interface design.',
+          'Cross-functional collaboration improves user interface design.',
         ],
       },
       {
@@ -77,30 +86,33 @@ const quests: Quest[] = [
           'Translated requirements and Figma designs into technical directives and user stories, streamlining development processes.',
         role: 'Software Architect',
         learnings: [
-          'Learned to effectively bridge design and development teams.',
+          'Bridge design and development teams efficiently.',
         ],
       },
       {
         description:
-          'Mentored senior developers through pair programming, enhancing their leadership skills and team capabilities.',
+          'Mentored senior developers through pair programming, bolstering leadership skills and team capability.',
         role: 'Software Architect',
         learnings: [
-          'Learned to mentor others and develop leadership within the team.',
+          'Mentor others to foster team growth.',
         ],
       },
       {
         description:
-          'Increased team velocity by optimizing workflows and meeting management targets.',
+          'Optimized workflows and met management targets, increasing overall team velocity.',
         role: 'Software Architect',
         learnings: [
-          'Learned to balance team capabilities with management expectations to enhance productivity.',
+          'Balance team capabilities with management expectations.',
         ],
       },
     ],
   },
   {
     id: 2,
-    title: "The Modernizer's Quest",
+    titles: {
+      retro: "The Modernizer's Quest",
+      sleek: 'Senior Consultant & Software Architect at Productive Edge',
+    },
     company: 'Productive Edge',
     workTitle: 'Senior Consultant and Software Architect',
     description:
@@ -109,13 +121,14 @@ const quests: Quest[] = [
     startDate: new Date('2020-02-01'),
     endDate: new Date('2024-05-01'),
     roles: ['Senior Consultant', 'Software Architect'],
+    tags: ['Legacy Modernization', 'Cloud', 'SaaS'],
     accomplishments: [
       {
         description:
-          'Collaborated with clients to define project scopes and requirements, often assuming complete ownership of Azure instances.',
+          'Collaborated with clients to define project scopes and requirements, often assuming full ownership of Azure instances.',
         role: 'Senior Consultant',
         learnings: [
-          'Learned to manage client relationships and cloud infrastructure effectively.',
+          'Manage client relationships and cloud infrastructure effectively.',
         ],
       },
       {
@@ -123,7 +136,7 @@ const quests: Quest[] = [
           'Led development using .NET C#, Java Spring Boot, React, Angular, Flutter, and Windows UWP, enhancing full-stack expertise.',
         role: 'Software Architect',
         learnings: [
-          'Learned to work effectively across diverse technologies.',
+          'Work effectively across diverse technologies.',
         ],
       },
       {
@@ -131,7 +144,7 @@ const quests: Quest[] = [
           'Completed FreedomPay certification and integrated secure payment solutions for client projects.',
         role: 'Software Architect',
         learnings: [
-          'Learned to navigate certifications and implement secure integrations.',
+          'Navigate certifications and implement secure integrations.',
         ],
       },
       {
@@ -139,7 +152,7 @@ const quests: Quest[] = [
           'Remotely debugged kiosk hardware with technicians, improving client support and problem-solving skills.',
         role: 'Software Architect',
         learnings: [
-          'Learned remote troubleshooting and effective client communication.',
+          'Troubleshoot remotely and communicate effectively with clients.',
         ],
       },
       {
@@ -147,7 +160,7 @@ const quests: Quest[] = [
           'Encapsulated proprietary software into executables to overcome Docker limitations, ensuring secure API calculations.',
         role: 'Software Architect',
         learnings: [
-          'Learned to devise innovative solutions for integrating proprietary software.',
+          'Devise innovative solutions for integrating proprietary software.',
         ],
       },
       {
@@ -155,15 +168,15 @@ const quests: Quest[] = [
           'Standardized project scaffolding for reusable coding patterns, accelerating project initiation.',
         role: 'Software Architect',
         learnings: [
-          'Learned to optimize project setups for increased efficiency.',
+          'Optimize project setups for efficiency.',
         ],
       },
       {
         description:
-          'Fostered team cohesion by leading by example and explaining client-focused decisions transparently.',
+          'Fostered team cohesion by leading by example and transparently explaining client-focused decisions.',
         role: 'Software Architect',
         learnings: [
-          'Learned effective leadership and team motivation strategies.',
+          'Implement effective leadership and team motivation strategies.',
         ],
       },
       {
@@ -171,75 +184,83 @@ const quests: Quest[] = [
           'Transitioned monolithic systems to multi-tenant SaaS models using a meta-database, enabling efficient instance proliferation.',
         role: 'Software Architect',
         learnings: [
-          'Learned pragmatic approaches to system modernization and multi-tenant architectures.',
+          'Apply pragmatic approaches to system modernization and multi-tenant architectures.',
         ],
       },
     ],
   },
   {
     id: 3,
-    title: 'Leadership and Code',
+    titles: {
+      retro: 'Leadership and Code',
+      sleek: 'Team Lead / Interim Director of Engineering at Lendr',
+    },
     company: 'Lendr',
     workTitle: 'Team Lead / Interim Director of Engineering',
     description:
-      'Steered the engineering team during a pivotal transition, aligning technical strategies with business objectives.',
+      'Steered the engineering team through a pivotal transition, aligning technical strategies with business objectives.',
     type: 'main',
     startDate: new Date('2018-10-01'),
     endDate: new Date('2020-02-01'),
     roles: ['Team Lead', 'Interim Director of Engineering'],
+    tags: ['Team Leadership', 'Engineering Transition'],
     accomplishments: [
       {
         description:
           'Upgraded the application from .NET to .NET Core on the first day, enhancing performance and scalability.',
         role: 'Team Lead',
         learnings: [
-          'Learned to execute critical upgrades under tight deadlines.',
+          'Execute critical upgrades under tight deadlines.',
         ],
       },
       {
         description:
-          'Refactored the entire business application in three months, turning team velocity from negative to positive.',
+          'Refactored the entire business application in three months, reversing negative team velocity.',
         role: 'Team Lead',
         learnings: [
-          'Learned the significant impact of refactoring on productivity and quality.',
+          'Refactoring can significantly boost productivity and quality.',
         ],
       },
       {
         description:
-          'Supported technical initiatives to meet business goals, reducing defects and preparing for new features in a regulatory environment.',
+          'Supported technical initiatives to meet business goals, reducing defects and preparing for regulatory changes.',
         role: 'Interim Director of Engineering',
         learnings: [
-          'Learned to align technical work with strict business and regulatory objectives.',
+          'Align technical work with strict business and regulatory requirements.',
         ],
       },
       {
         description:
-          'Co-led technical implementation and communicated effectively with management during leadership transition.',
+          'Co-led technical oversight with the architect while reporting directly to the executive board during a leadership transition.',
         role: 'Interim Director of Engineering',
         learnings: [
-          'Learned that clear communication is vital in high-pressure leadership roles.',
+          'Clear communication is essential in high-pressure leadership roles.',
         ],
       },
     ],
   },
   {
     id: 4,
-    title: "The Solo Developer's Journey",
+    titles: {
+      retro: "The Solo Developer's Journey",
+      sleek: 'Senior Consultant at SWC Technology Partners',
+    },
     company: 'SWC Technology Partners',
     workTitle: 'Senior Consultant',
     description:
-      'Delivered projects as a solo developer, enhancing application features and achieving project goals.',
+      'Delivered projects as a solo developer, enhancing application features and ensuring project success.',
     type: 'main',
     startDate: new Date('2017-10-01'),
     endDate: new Date('2018-10-01'),
     roles: ['Senior Consultant'],
+    tags: ['Solo Development', 'Consulting'],
     accomplishments: [
       {
         description:
-          'Enhanced desktop applications using WinForms and Kendo UI, improving user experience.',
+          'Enhanced desktop applications using WinForms and Kendo UI to improve user experience.',
         role: 'Senior Consultant',
         learnings: [
-          'Learned to adapt quickly to new technologies and frameworks.',
+          'Adapt quickly to new technologies and frameworks.',
         ],
       },
       {
@@ -247,30 +268,33 @@ const quests: Quest[] = [
           'Improved existing systems by writing scripts under the mentorship of an architect.',
         role: 'Senior Consultant',
         learnings: [
-          'Learned the value of mentorship in skill development.',
+          'Value mentorship for rapid skill development.',
         ],
       },
       {
         description:
-          'Developed accountability for project estimates, ensuring precise and timely delivery within a 10% margin.',
+          'Developed accountability for project estimates, ensuring precise delivery within a 10% margin.',
         role: 'Senior Consultant',
         learnings: [
-          'Learned to accurately assess abilities and manage time effectively.',
+          'Assess abilities and manage time effectively.',
         ],
       },
       {
         description:
-          'Enhanced problem-solving abilities by monitoring progress and seeking help proactively.',
+          'Enhanced problem-solving by monitoring progress and proactively seeking assistance.',
         role: 'Senior Consultant',
         learnings: [
-          'Learned to balance independence with seeking assistance when needed.',
+          'Balance independence with collaboration.',
         ],
       },
     ],
   },
   {
     id: 5,
-    title: "The Developer's Forge",
+    titles: {
+      retro: "The Developer's Forge",
+      sleek: 'Developer at Manor Resources',
+    },
     company: 'Manor Resources',
     workTitle: 'Developer',
     description:
@@ -279,36 +303,40 @@ const quests: Quest[] = [
     startDate: new Date('2016-08-01'),
     endDate: new Date('2017-09-01'),
     roles: ['Developer'],
+    tags: ['Development', 'Mentorship', 'Testing'],
     accomplishments: [
       {
         description:
-          'Contributed to a car loan application by developing code, enhancing functionality.',
+          'Contributed to a car loan application by developing code to enhance functionality.',
         role: 'Developer',
         learnings: [
-          'Learned foundational coding skills in a team environment.',
+          'Gain foundational coding skills in a team environment.',
         ],
       },
       {
         description:
-          'Significantly improved proficiency through mentorship from senior developers.',
+          'Improved proficiency through mentorship from senior developers.',
         role: 'Developer',
         learnings: [
-          'Learned effective debugging and problem-solving techniques.',
+          'Utilize effective debugging and problem-solving techniques.',
         ],
       },
       {
         description:
-          'Increased test coverage using AutoFixture and Moq, ensuring faster delivery and response to issues.',
+          'Increased test coverage using AutoFixture and Moq, enabling faster delivery and more robust responses to issues.',
         role: 'Developer',
         learnings: [
-          'Learned that comprehensive testing improves product quality.',
+          'Comprehensive testing improves product quality.',
         ],
       },
     ],
   },
   {
     id: 6,
-    title: 'Aerospace Foundations',
+    titles: {
+      retro: 'Aerospace Foundations',
+      sleek: 'ITCFP Participant / Developer at The Boeing Company',
+    },
     company: 'The Boeing Company',
     workTitle: 'ITCFP Participant / Developer',
     description:
@@ -317,13 +345,14 @@ const quests: Quest[] = [
     startDate: new Date('2012-06-01'),
     endDate: new Date('2016-08-01'),
     roles: ['ITCFP Participant', 'Developer'],
+    tags: ['IT Fundamentals', 'Development', 'Automation'],
     accomplishments: [
       {
         description:
-          'Rotated through various IT roles as an ITCFP Participant, gaining broad exposure to different domains.',
+          'Rotated through various IT roles as an ITCFP Participant, gaining broad exposure across domains.',
         role: 'ITCFP Participant',
         learnings: [
-          'Learned foundational IT skills and processes across multiple areas.',
+          'Establish a strong foundation in IT processes.',
         ],
       },
       {
@@ -331,66 +360,74 @@ const quests: Quest[] = [
           'Developed and deployed C# MVC applications to automate financial operations.',
         role: 'Developer',
         learnings: [
-          'Learned foundational skills in financial application development.',
+          'Acquire foundational skills in financial application development.',
         ],
       },
       {
         description:
-          'Improved SDLC practices, enhancing code quality and project management.',
+          'Improved SDLC practices, thereby enhancing code quality and project management.',
         role: 'Developer',
         learnings: [
-          'Learned to enhance SDLC processes for better outcomes.',
+          'Refine SDLC processes for better outcomes.',
         ],
       },
     ],
   },
   {
     id: 7,
-    title: "The Game Developer's Path",
+    titles: {
+      retro: "The Game Developer's Path",
+      sleek: 'Game Developer (Personal Projects)',
+    },
     workTitle: 'Game Developer (Personal Projects)',
     description:
-      'Explored the world of game development using Unity, enhancing skills in C# and game physics.',
+      'Explored game development using Unity, enhancing skills in C# and game physics.',
     type: 'side',
     startDate: new Date('2012-06-01'),
     endDate: new Date(2038, 2, 10), // Ongoing
     roles: ['Game Developer (Personal Projects)'],
+    tags: ['Game Development', 'Unity', 'Personal Project'],
     accomplishments: [
       {
         description:
           'Self-directed learning in Unity for game development, focusing on C# and game mechanics.',
         role: 'Game Developer (Personal Projects)',
         learnings: [
-          'Learned skills in game development and programming.',
-          'Learned creativity in game mechanics and physics.',
+          'Build proficiency in game development and programming.',
+          'Cultivate creativity in game mechanics and physics.',
         ],
       },
     ],
   },
   {
     id: 8,
-    title: 'Mastering the AI Frontier',
+    titles: {
+      retro: 'Mastering the AI Frontier',
+      sleek: 'AI Enthusiast',
+    },
     workTitle: 'AI Enthusiast',
     description:
-      'Explored AI and machine learning technologies, integrating advanced tools into personal and professional projects.',
+      'Explored AI and machine learning technologies, integrating advanced tools into both personal and professional projects.',
     type: 'side',
     startDate: new Date('2022-11-01'),
     endDate: new Date(2038, 2, 10), // Ongoing
     roles: ['AI Enthusiast'],
+    tags: ['AI', 'Machine Learning', 'Innovation'],
     accomplishments: [
       {
         description:
-          'Used ChatGPT to build the dynamic resume website you\'re currently viewing. Wrote minimal code (ChatGPT has a hard time with css just like any developer).',
+          "Used ChatGPT to build the dynamic resume website you're currently viewing. Wrote minimal code (ChatGPT struggles with CSS, just like any developer).",
         role: 'AI Enthusiast',
         learnings: [
-          'Learned how to build a complex site with very little programming effort.',
+          'Leverage AI to build complex sites with minimal programming effort.',
         ],
       },
       {
         description:
-          'Experimented with AI models using Oogabooga and Hugging Face, enhancing practical understanding of machine learning.',
+          'Experimented with AI models using Oogabooga and Hugging Face to deepen practical understanding of machine learning.',
         role: 'AI Enthusiast',
         learnings: [
-          'Learned hands-on AI model deployment and experimentation.',
+          'Deploy and experiment with AI models hands-on.',
         ],
       },
       {
@@ -398,23 +435,23 @@ const quests: Quest[] = [
           'Enhanced Python skills and utilized Jupyter notebooks for data analysis and model interaction.',
         role: 'AI Enthusiast',
         learnings: [
-          'Learned to leverage Python and Jupyter notebooks for AI development.',
+          'Leverage Python and Jupyter for efficient AI development.',
         ],
       },
       {
         description:
-          'Explored OpenAI APIs and OpenAI Playground, testing the conversation API and understanding advanced language models.',
+          'Explored OpenAI APIs and the OpenAI Playground, testing conversational APIs and learning advanced language model techniques.',
         role: 'AI Enthusiast',
         learnings: [
-          'Learned to integrate AI APIs into applications and workflows.',
+          'Integrate AI APIs into applications and workflows effectively.',
         ],
       },
       {
         description:
-          'Applied AI tools like ChatGPT, Udio, Claude, and MidJourney for a variety of projects, including personal creative endeavors and professional development, such as developing this resume website.',
+          'Applied AI tools like ChatGPT, Udio, Claude, and MidJourney across various projects, enhancing both creative and professional endeavors.',
         role: 'AI Enthusiast',
         learnings: [
-          'Learned to utilize AI tools creatively to enhance productivity and project outcomes.',
+          'Utilize AI tools creatively to boost productivity and project outcomes.',
         ],
       },
       {
@@ -422,15 +459,15 @@ const quests: Quest[] = [
           'Gained insights into AI as a force multiplier, shifting focus from correctness to rapid knowledge acquisition and solution generation.',
         role: 'AI Enthusiast',
         learnings: [
-          'Learned that AI tools serve as force multipliers, enhancing productivity and facilitating quick learning.',
+          'Recognize AI tools as productivity multipliers.',
         ],
       },
       {
         description:
-          'Integrated AI tools into software development workflows, offloading routine tasks and increasing efficiency.',
+          'Integrated AI tools into software development workflows, offloading routine tasks and increasing overall efficiency.',
         role: 'AI Enthusiast',
         learnings: [
-          'Learned to leverage AI for faster product development with higher granularity.',
+          'Leverage AI for faster product development with greater precision.',
         ],
       },
     ],

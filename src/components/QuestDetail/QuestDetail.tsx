@@ -26,7 +26,7 @@ const QuestDetail: React.FC<QuestDetailParams> = ({ id }) => {
 
   return (
     <div className={`quest-detail `}>
-      <h1>{quest.title}</h1>
+      <h1>{theme === 'work' ? quest.titles.sleek : quest.titles.retro}</h1>
       {quest.company && <p>Company: {quest.company}</p>}
       <p>{quest.startDate.toLocaleDateString()} - {quest.endDate.getDate() === new Date(2038,2,10).getDate() ? "Present": quest.endDate.toLocaleDateString()}</p>
       <p>{quest.description}</p>

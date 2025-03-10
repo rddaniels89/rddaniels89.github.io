@@ -100,7 +100,7 @@ const Accomplishments: React.FC = () => {
             </div>
               {/* Right Column: Learnings */}
               <div >
-                <h3>Learnings</h3>
+                <h3>Learned how to...</h3>
                 <ul className="accomplishment-list">
                   {getUniqueLearnings(filtered).map((learning, i) => (
                     <li key={i} className="accomplishment-item">

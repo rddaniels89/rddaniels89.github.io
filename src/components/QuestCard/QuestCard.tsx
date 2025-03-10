@@ -1,23 +1,19 @@
 // src/components/QuestCard.tsx
 import React from 'react';
 import './QuestCard.css';
+import { ThemeType } from '../../context/ThemeContext';
+import { Quest } from '../../data/quests.data';
 
-interface Quest {
-  id: number;
-  title: string;
-  company?: string;
-  description: string;
-  type: 'main' | 'side';
-}
 
 interface QuestCardProps {
   quest: Quest;
+  theme: ThemeType;
 }
 
-const QuestCard: React.FC<QuestCardProps> = ({ quest }) => {
+const QuestCard: React.FC<QuestCardProps> = ({ quest, theme }) => {
   return (
     <div className="quest-card">
-      <h3>{quest.title}</h3>
+      <h3>{theme === 'work' ? quest.titles.sleek : quest.titles.retro}</h3>
       {quest.company && <p>Company: {quest.company}</p>}
       <p>{quest.description}</p>
     </div>
