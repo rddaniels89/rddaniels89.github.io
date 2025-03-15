@@ -1,6 +1,6 @@
 // src/App.tsx
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useParams } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import Navbar from './components/Navbar/Navbar';
 import MainMenu from './components/MainMenu/MainMenu';
@@ -61,10 +61,9 @@ const AppContent: React.FC = () => {
 
 // App component that wraps the AppContent with ThemeProvider and Router
 const App: React.FC = () => {
-  const basename = process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : '';
   return (
     <ThemeProvider>
-      <Router basename={basename}>
+      <Router basename="">
         <AppContent />
       </Router>
     </ThemeProvider>
