@@ -96,12 +96,6 @@ const Navbar: React.FC = () => {
       <Link to="/accomplishments">
         <FontAwesomeIcon icon={faMedal} /> {labels[theme]["accomplishments"]}
       </Link>
-      <Link to="/quests/main">
-        <FontAwesomeIcon icon={faTasks} /> {labels[theme]["main"]}
-      </Link>
-      <Link to="/quests/side">
-        <FontAwesomeIcon icon={faList} /> {labels[theme]["side"]}
-      </Link>
 
       {/* Divider for visual separation */}
       <hr className="menu-divider" />
@@ -132,13 +126,6 @@ const Navbar: React.FC = () => {
         <Link to="/accomplishments">
           <FontAwesomeIcon icon={faMedal} /> {labels[theme]["accomplishments"]}
         </Link>
-        <Link to="/quests/main">
-          <FontAwesomeIcon icon={faTasks} /> {labels[theme]["main"]}
-        </Link>
-        <Link to="/quests/side">
-          <FontAwesomeIcon icon={faList} /> {labels[theme]["side"]}
-        </Link>
-    
 
         {/* Mode Toggle */}
         <button className="mode-toggle" onClick={() => setTheme(theme === "play" ? "work" : "play")}>

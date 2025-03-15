@@ -4,7 +4,6 @@ import { Routes, Route, Navigate, useParams, useNavigate, useLocation } from 're
 import Navbar from './components/Navbar/Navbar';
 import MainMenu from './components/MainMenu/MainMenu';
 import Accomplishments from './components/Accomplishments/Accomplishments';
-import QuestCarousel from './components/QuestCarousel/QuestCarousel';
 import QuestSwitcher from './components/QuestSwitcher/QuestSwitcher';
 import QuestDetail from './components/QuestDetail/QuestDetail';
 import NotFound from './components/NotFound/NotFound';
@@ -60,23 +59,7 @@ const AppRoutes: React.FC = () => {
             <MainMenu />
           </QuestSwitcher>
         } />
-        
-        {/* Main Quests (Professional Experience) */}
-        <Route path="/quests/main" element={
-          <QuestSwitcher type="main">
-            <Navbar />
-            <QuestCarousel type="main" />
-          </QuestSwitcher>
-        } />
-        
-        {/* Side Quests (Personal Projects) */}
-        <Route path="/quests/side" element={
-          <QuestSwitcher type="side">
-            <Navbar />
-            <QuestCarousel type="side" />
-          </QuestSwitcher>
-        } />
-        
+                
         {/* Individual Quest Detail */}
         <Route path="/quests/:id" element={
           <QuestSwitcher>
