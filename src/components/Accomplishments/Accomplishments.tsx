@@ -219,13 +219,13 @@ const Accomplishments: React.FC = () => {
             {theme === 'play' ? (
               <>
                 <div className="pixel-icon">📜</div>
-                <h2>Select Your Quest Log!</h2>
-                <p>Choose a class or guild from the left panel to view your epic journey.</p>
+                <h2>Select My Quest Log!</h2>
+                <p>Choose a class or guild from the left panel to view my epic journey.</p>
               </>
             ) : (
               <>
                 <h2>Professional Journey</h2>
-                <p>Please select a role or company from the left panel to explore your career accomplishments.</p>
+                <p>Please select a role or company from the left panel to explore my career accomplishments.</p>
               </>
             )}
           </div>

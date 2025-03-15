@@ -1,319 +1,361 @@
-/* Enhanced Accomplishments styling for Work Theme */
+/* Corrected CSS for Accomplishments Component */
 
-/* Work theme specific styling */
-.accomplishment-layout.work {
-  font-family: 'Inter', 'Roboto', sans-serif;
-}
-
-/* Filter panel */
-.accomplishment-layout.work .filter-panel {
-  background-color: var(--background-color);
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  padding: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.accomplishment-layout.work .filter-panel:hover {
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-}
-
-/* View mode selector */
-.accomplishment-layout.work .view-mode-selector {
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid var(--accent-color);
-  margin-bottom: 1.5rem;
-}
-
-.accomplishment-layout.work .view-mode-btn {
-  font-family: 'Inter', 'Roboto', sans-serif;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  padding: 10px 0;
-  transition: all 0.3s ease;
-  background-color: transparent;
-  color: var(--primary-color);
-}
-
-.accomplishment-layout.work .view-mode-btn.active {
-  background-color: var(--accent-color);
-  color: white;
-}
-
-/* Filter panel heading */
-.accomplishment-layout.work .filter-panel h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  margin: 1.5rem 0 1rem;
-  padding-bottom: 8px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  letter-spacing: 0.3px;
-}
-
-/* Filter buttons */
-.accomplishment-layout.work .accomplishment-filter-button {
-  background-color: transparent;
-  border: 1px solid rgba(107, 15, 26, 0.2);
-  border-radius: 8px;
-  color: var(--primary-color);
-  font-weight: 500;
-  font-size: 0.95rem;
-  padding: 10px 12px;
-  margin-bottom: 8px;
-  transition: all 0.25s ease;
-  text-align: left;
-}
-
-.accomplishment-layout.work .accomplishment-filter-button:hover {
-  background-color: rgba(107, 15, 26, 0.05);
-  transform: translateY(-2px);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-}
-
-.accomplishment-layout.work .accomplishment-filter-button.active {
-  background-color: var(--accent-color);
-  color: white;
-  border-color: transparent;
-}
-
-.accomplishment-layout.work .role-count {
-  background-color: rgba(107, 15, 26, 0.1);
-  color: var(--accent-color);
-  font-weight: 600;
-  border-radius: 20px;
-  padding: 3px 8px;
-  font-size: 0.8rem;
-  transition: all 0.25s ease;
-}
-
-.accomplishment-layout.work .accomplishment-filter-button.active .role-count {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-/* Main content area */
-.accomplishment-layout.work .accomplishment-detail {
-  background-color: var(--background-color);
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  padding: 2rem;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.accomplishment-layout.work .accomplishment-detail:hover {
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-}
-
-/* Accent element */
-.accomplishment-layout.work .accomplishment-detail::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Main layout structure */
+.accomplishment-layout {
+  display: flex;
   width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-color), transparent);
-}
-
-/* Empty state */
-.accomplishment-layout.work .empty-state {
-  text-align: center;
-  padding: 3rem 1rem;
-}
-
-.accomplishment-layout.work .empty-state h2 {
-  color: var(--primary-color);
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  letter-spacing: 0.3px;
-}
-
-.accomplishment-layout.work .empty-state p {
-  color: var(--primary-color);
-  opacity: 0.7;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  max-width: 500px;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Role summary */
-.accomplishment-layout.work .role-summary {
-  margin-bottom: 2.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(107, 15, 26, 0.1);
+/* Main heading styling */
+.page-title, h1 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin: 15px 0 30px;
+  border-bottom: 2px solid #8b0000;
+  padding-bottom: 8px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.accomplishment-layout.work .role-summary h2 {
-  color: var(--primary-color);
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
-  letter-spacing: 0.3px;
+/* Filter panel structure - styled to match Image 1 */
+.filter-panel {
+  width: 300px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  flex-shrink: 0;
 }
 
-.accomplishment-layout.work .date-range {
-  color: var(--accent-color);
-  font-style: italic;
-  font-size: 1rem;
-  opacity: 0.8;
-  margin-bottom: 1.5rem;
-  display: block;
+/* Tab control layout */
+.view-mode-selector {
+  display: flex;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-.accomplishment-layout.work .career-story {
-  padding: 1.5rem;
-  background-color: rgba(107, 15, 26, 0.02);
-  border-left: 3px solid var(--accent-color);
-  border-radius: 0 8px 8px 0;
-  margin: 1.5rem 0;
+.view-mode-btn {
+  flex: 1;
+  padding: 8px 12px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background-color: #f0f0f0;
 }
 
-.accomplishment-layout.work .career-story p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: var(--primary-color);
-  margin: 0;
+.view-mode-btn.active {
+  background-color: #8b0000;
+  color: white;
+  border-color: #8b0000;
 }
 
-/* Journey milestones */
-.accomplishment-layout.work .journey-milestone {
-  margin-bottom: 2.5rem;
-  padding-left: 1.5rem;
-  border-left: 3px solid var(--accent-color);
-  position: relative;
+/* Roles section title */
+.filter-panel h3 {
+  margin: 15px 0;
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
 }
 
-.accomplishment-layout.work .journey-milestone::before {
-  content: '';
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
+/* Filter buttons styling to match Image 1 */
+.accomplishment-filter-button {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-bottom: 8px !important;
+  padding: 10px 12px !important;
+  text-align: left !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  background-color: white !important;
+  border: 1px solid #ddd !important;
+  color: #333 !important;
+  font-size: 14px !important;
+}
+
+.accomplishment-filter-button:hover {
+  background-color: #f9f9f9 !important;
+}
+
+.accomplishment-filter-button.active {
+  border-color: #8b0000 !important;
+}
+
+/* Role count badge styling to match Image 1 */
+.role-count {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 26px !important;
+  height: 26px !important;
+  border-radius: 50% !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  background-color: #8b0000 !important;
+  color: white !important;
+  margin-left: 8px !important;
+}
+
+/* Main content area - styled to match Image 1 */
+.accomplishment-detail {
+  flex: 1;
+  border-radius: 5px;
+  padding: 20px;
+  overflow: auto;
   background-color: white;
-  border: 3px solid var(--accent-color);
-  left: -9px;
-  top: 24px;
+  border: 1px solid #ddd;
 }
 
-.accomplishment-layout.work .milestone-header {
+/* Empty state styling - centered with elegant typography */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  padding: 40px 20px;
+}
+
+.empty-state h2 {
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #8b0000;
+  font-size: 22px;
+}
+
+.empty-state p {
+  color: #666;
+  font-size: 14px;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+/* Role content styling - for when a role is selected */
+.role-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Role summary section */
+.role-summary {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.role-summary h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.date-range {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.career-story {
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+}
+
+.career-story p {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Journey milestone sections */
+.journey-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.journey-milestone {
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+}
+
+.milestone-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
 }
 
-.accomplishment-layout.work .milestone-header h3 {
-  color: var(--primary-color);
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin: 0;
-  letter-spacing: 0.3px;
+.milestone-header h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
 }
 
-.accomplishment-layout.work .milestone-date {
-  color: var(--primary-color);
-  opacity: 0.7;
-  font-style: italic;
-  font-size: 0.9rem;
+.milestone-date {
+  font-size: 14px;
+  color: #666;
 }
 
-/* Skills list */
-.accomplishment-layout.work .milestone-skills h4,
-.accomplishment-layout.work .milestone-accomplishments h4 {
-  color: var(--primary-color);
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 1.5rem 0 1rem;
-  letter-spacing: 0.3px;
-}
-
-.accomplishment-layout.work .skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 1rem;
-}
-
-.accomplishment-layout.work .skill-item {
-  background-color: rgba(107, 15, 26, 0.05);
-  color: var(--accent-color);
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  border: 1px solid rgba(107, 15, 26, 0.1);
-  transition: all 0.25s ease;
-}
-
-.accomplishment-layout.work .skill-item:hover {
-  background-color: rgba(107, 15, 26, 0.1);
-  transform: translateY(-2px);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-}
-
-/* Accomplishment list */
-.accomplishment-layout.work .accomplishment-list {
+.milestone-content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 15px;
-  margin-top: 1rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-.accomplishment-layout.work .accomplishment-item {
-  background-color: white;
-  padding: 1rem 1.2rem;
-  border-radius: 8px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
-  position: relative;
-  border-left: 3px solid var(--accent-color);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  transition: all 0.25s ease;
+.milestone-accomplishments h4,
+.milestone-skills h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #444;
 }
 
-.accomplishment-layout.work .accomplishment-item:hover {
-  background-color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+.accomplishment-list,
+.skills-list {
+  margin: 0;
+  padding-left: 20px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .accomplishment-layout.work .accomplishment-list {
-    grid-template-columns: 1fr;
-  }
+.accomplishment-item,
+.skill-item {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: #333;
 }
 
+/* Color variables for play theme */
+.play .filter-panel {
+  background-color: var(--secondary-background-color);
+  border-color: var(--border-color);
+}
+
+.play .view-mode-btn {
+  border-color: var(--border-color);
+  color: var(--primary-color);
+}
+
+.play .view-mode-btn.active {
+  background-color: var(--accent-color);
+  border-color: var(--border-color);
+}
+
+.play h3 {
+  color: var(--primary-color);
+}
+
+.play .accomplishment-filter-button {
+  background-color: var(--secondary-background-color) !important;
+  border-color: var(--border-color) !important;
+  color: var(--primary-color) !important;
+}
+
+.play .accomplishment-filter-button:hover {
+  background-color: var(--accent-color) !important;
+}
+
+.play .accomplishment-filter-button.active {
+  background-color: var(--accent-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.play .role-count {
+  background-color: var(--accent-color) !important;
+  color: var(--primary-color) !important;
+}
+
+.play .accomplishment-detail {
+  background-color: var(--secondary-background-color);
+  border-color: var(--border-color);
+}
+
+.play .empty-state h2 {
+  color: var(--primary-color);
+}
+
+.play .empty-state p {
+  color: var(--primary-color);
+}
+
+.play .role-summary {
+  border-bottom-color: var(--accent-color);
+}
+
+.play .role-summary h2 {
+  color: var(--primary-color);
+}
+
+.play .date-range {
+  color: var(--primary-color);
+}
+
+.play .career-story {
+  background-color: var(--accent-color);
+  border-color: var(--border-color);
+}
+
+.play .career-story p {
+  color: var(--primary-color);
+}
+
+.play .journey-milestone {
+  background-color: var(--secondary-background-color);
+  border-color: var(--border-color);
+}
+
+.play .milestone-header {
+  border-bottom-color: var(--accent-color);
+}
+
+.play .milestone-header h3 {
+  color: var(--primary-color);
+}
+
+.play .milestone-date {
+  color: var(--primary-color);
+}
+
+.play .milestone-accomplishments h4,
+.play .milestone-skills h4 {
+  color: var(--primary-color);
+}
+
+.play .accomplishment-item,
+.play .skill-item {
+  color: var(--primary-color);
+}
+
+/* Media query for responsiveness */
 @media (max-width: 768px) {
-  .accomplishment-layout.work {
-    padding: 1rem;
-  }
-  
-  .accomplishment-layout.work .filter-panel,
-  .accomplishment-layout.work .accomplishment-detail {
-    padding: 1.2rem;
-  }
-  
-  .accomplishment-layout.work .role-summary h2 {
-    font-size: 1.6rem;
-  }
-  
-  .accomplishment-layout.work .milestone-header {
+  .accomplishment-layout {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
   }
   
-  .accomplishment-layout.work .journey-milestone {
-    padding-left: 1rem;
+  .filter-panel {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .milestone-content {
+    grid-template-columns: 1fr;
   }
 }
