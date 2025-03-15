@@ -28,7 +28,7 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<ThemeType>('play');
+  const [theme, setTheme] = useState<ThemeType>('work');
   const [season, setSeason] = useState<number>(0.5);
   const [timeOfDay, setTimeOfDay] = useState<number>(0.5);
   const [overrideFlag, setOverrideFlag] = useState<boolean>(false);

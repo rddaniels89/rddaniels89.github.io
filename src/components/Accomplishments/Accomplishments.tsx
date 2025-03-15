@@ -153,8 +153,8 @@ const Accomplishments: React.FC = () => {
     } else {
       if (viewMode === 'role') {
         return `In my career as a ${selectedRole}, I've contributed to ${Object.keys(groupedAccomplishments).length} 
-        different organizations, completing ${filteredAccomplishments.length} significant 
-        projects and developing expertise in ${Array.from(new Set(filteredAccomplishments.flatMap(acc => acc.learnings))).length} 
+        different organizations, having ${filteredAccomplishments.length} key contributions 
+        and developing in ${Array.from(new Set(filteredAccomplishments.flatMap(acc => acc.learnings))).length} 
         distinct professional competencies.`;
       } else {
         return `During my tenure at ${selectedCompany}, ${quests.filter(acc => acc.company === selectedCompany).map(descr => descr.summary)}`;
