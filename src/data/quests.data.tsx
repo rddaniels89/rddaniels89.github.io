@@ -124,91 +124,93 @@ const quests: Quest[] = [
     company: 'Productive Edge',
     workTitle: 'Senior Consultant and Software Architect',
     description:
-      'Transformed legacy systems into modern applications while leading diverse technology teams.',
+      'I transformed legacy systems into modern applications while leading diverse technology teams.',
+    summary: 
+      'I modernized legacy healthcare systems while maintaining critical business continuity. I designed scalable cloud architectures, integrated secure payment solutions, and architected multi-tenant SaaS models that preserved essential EHR connections.',
     type: 'main',
     startDate: new Date('2020-02-01'),
-    endDate: new Date('2024-04-30'),
+    endDate: new Date('2024-05-01'),
     roles: ['Senior Consultant', 'Software Architect'],
     tags: ['Legacy Modernization', 'Cloud', 'SaaS', 'Healthcare', 'Payment Processing'],
     accomplishments: [
       {
         description:
-          'Transformed legacy healthcare systems into modern applications while maintaining business continuity.',
+          'I transformed legacy healthcare systems into modern applications while maintaining business continuity.',
         role: 'Software Architect',
         learnings: [
-          'Legacy modernization requires balancing business continuity with technical evolution',
-          'System transformation success depends on understanding the original architectural intent',
-          'Incremental modernization often succeeds where complete rewrites fail'
+          'I found that legacy modernization requires balancing business continuity with technical evolution',
+          'I observed that system transformation success depends on understanding the original architectural intent',
+          'I discovered that incremental modernization often succeeds where complete rewrites fail'
         ],
       },
       {
         description:
-          'Defined project scopes with clients and managed Azure cloud infrastructures from planning to support.',
+          'I defined project scopes with clients and managed Azure cloud infrastructures from planning to support.',
         role: 'Senior Consultant',
         learnings: [
-          'Cloud resource management requires understanding both technical capabilities and cost implications',
-          'Client scope definition benefits from creating clear technical boundaries',
-          'Azure infrastructure design decisions have long-term operational consequences'
+          'I learned that cloud resource management requires understanding both technical capabilities and cost implications',
+          'I recognized that client scope definition benefits from creating clear technical boundaries',
+          'I found that Azure infrastructure design decisions have long-term operational consequences'
         ],
       },
       {
         description:
-          'Delivered full-stack solutions across multiple technology stacks including .NET C#, Java Spring Boot, React, Angular, Flutter, and UWP.',
+          'I delivered full-stack solutions across multiple technology stacks including .NET C#, Java Spring Boot, React, Angular, Flutter, and UWP.',
         role: 'Software Architect',
         learnings: [
-          'Cross-platform architecture requires identifying common patterns despite framework differences',
-          'Technical versatility enables choosing the right tool for specific business problems',
-          'Full-stack delivery benefits from consistent patterns across frontend and backend'
+          'I observed that cross-platform architecture requires identifying common patterns despite framework differences',
+          'I discovered that technical versatility enables choosing the right tool for specific business problems',
+          'I realized that full-stack delivery benefits from consistent patterns across frontend and backend'
         ],
       },
       {
         description:
-          'Gained FreedomPay certification for client system and integrated secure payment solutions into client projects.',
+          'I gained FreedomPay certification for client system and integrated secure payment solutions into client projects.',
         role: 'Software Architect',
         learnings: [
-          'Payment integration requires balancing security compliance with user experience',
-          'Third-party certifications often reveal gaps in internal development practices',
-          'Secure solutions demand both technical controls and operational procedures'
+          'I determined that payment integration requires balancing security compliance with user experience',
+          'I found that third-party certifications often reveal gaps in internal development practices',
+          'I learned that secure solutions demand both technical controls and operational procedures'
         ],
       },
       {
         description:
-          'Led full stack modernization of healthcare applications.',
+          'I led full stack modernization of healthcare applications.',
         role: 'Software Architect',
         learnings: [
-          'Healthcare data handling demands specialized architectural considerations beyond standard practices',
-          'Compliance requirements can be abstracted into reusable patterns',
-          'Regulated environments benefit from separating business logic from compliance controls'
+          'I discovered that healthcare data handling demands specialized architectural considerations beyond standard practices',
+          'I observed that compliance requirements can be abstracted into reusable patterns',
+          'I recognized that regulated environments benefit from separating business logic from compliance controls'
         ],
       },
       {
         description:
-          'Created standardized project scaffolding templates to accelerate project initiation.',
+          'I created standardized project scaffolding templates to accelerate project initiation.',
         role: 'Software Architect',
         learnings: [
-          'Project templates provide most value when they embody architectural principles, not just boilerplate',
-          'Standardization must balance consistency with flexibility for project-specific needs',
-          'Reusable patterns should be extracted from successful implementations, not theoretical ideals'
+          'I found that project templates provide most value when they embody architectural principles, not just boilerplate',
+          'I learned that standardization must balance consistency with flexibility for project-specific needs',
+          'I realized that reusable patterns should be extracted from successful implementations, not theoretical ideals'
         ],
       },
       {
         description:
-          'Fostered team cohesion through transparent leadership and client-focused decision processes.',
+          'I fostered team cohesion through transparent leadership and client-focused decision processes.',
         role: 'Senior Consultant',
         learnings: [
-          'Technical leadership effectiveness depends on establishing shared purpose',
-          'Transparent decision processes build team trust even when outcomes are challenging',
-          'Client-focused teams perform better when they understand the business context'
+          'I observed that technical leadership effectiveness depends on establishing shared purpose',
+          'I recognized that transparent decision processes build team trust even when outcomes are challenging',
+          'I found that client-focused teams perform better when they understand the business context'
         ],
       },
       {
         description:
-          'Architected transition of monolithic systems to multi-tenant SaaS models.',
+          'I architected transition of monolithic systems to multi-tenant SaaS models.',
         role: 'Software Architect',
         learnings: [
-          'Multi-tenant architectures require careful isolation mechanisms at multiple technical layers',
-          'EHR integration patterns differ significantly from standard API approaches',
-          'Tenant-specific customizations should be handled through configuration, not code forks'
+          'I determined that multi-tenant architectures require careful isolation mechanisms at multiple technical layers',
+          'I discovered that EHR integration patterns differ significantly from standard API approaches',
+          'I learned that tenant-specific customizations should be handled through configuration, not code forks'
         ],
       },
     ],
@@ -222,7 +224,9 @@ const quests: Quest[] = [
     company: 'Lendr',
     workTitle: 'Team Lead / Interim Director of Engineering',
     description:
-      'Co-led technical implementations and maintained clear communication during leadership transitions.',
+      'I co-led technical implementations and maintained clear communication during leadership transitions.',
+    summary: 
+      'At Lendr, I led critical platform migrations and major refactoring efforts that transformed application performance while providing technical leadership during organizational transitions. I established effective feedback mechanisms with stakeholders and represented technical concerns to executive leadership.',
     type: 'main',
     startDate: new Date('2018-10-01'),
     endDate: new Date('2020-02-01'),
@@ -231,76 +235,64 @@ const quests: Quest[] = [
     accomplishments: [
       {
         description:
-          'Co-led technical implementations and maintained clear communication during leadership transitions.',
+          'I upgraded applications from .NET to .NET Core on day one, immediately improving performance and establishing technical direction.',
+        role: 'Team Lead',
+        learnings: [
+          'I found that framework migrations benefit from immediate visible wins to justify broader changes',
+          'I discovered that technical platform decisions should be validated through performance metrics',
+          'I learned that critical upgrades require both technical planning and organizational timing'
+        ],
+      },
+      {
+        description:
+          'I refactored a complex business application with 350k+ lines of code, implementing service-repository patterns that reversed negative sprint velocity.',
+        role: 'Team Lead',
+        learnings: [
+          'I observed that comprehensive refactoring requires understanding business domain, not just code structure',
+          'I recognized that team productivity correlates with codebase maintainability',
+          'I determined that systematic refactoring approaches yield better results than opportunistic cleanup'
+        ],
+      },
+      {
+        description:
+          'I co-led technical implementations during leadership transitions, maintaining continuity between development and executive leadership.',
         role: 'Interim Director of Engineering',
         learnings: [
-          'Organizational transitions require maintaining technical momentum while supporting change',
-          'Leadership continuity depends on clear documentation of decisions and their rationale',
-          'Effective transitions involve preserving institutional knowledge while enabling new direction'
+          'I discovered that organizational transitions require maintaining technical momentum while supporting change',
+          'I found that leadership continuity depends on clear documentation of decisions and their rationale',
+          'I recognized that effective transitions involve preserving institutional knowledge while enabling new direction'
         ],
       },
       {
         description:
-          'Achieved target KPIs as interim director, while onboarding incoming CTO and managing team.',
+          'I established a structured UAT process aligning business stakeholders with development priorities, improving feature quality.',
+        role: 'Team Lead',
+        learnings: [
+          'I learned that validation processes should match stakeholders\' technical sophistication',
+          'I observed that user acceptance testing effectiveness depends on clear acceptance criteria',
+          'I determined that feedback mechanisms should align with how features will actually be used'
+        ],
+      },
+      {
+        description:
+          'I collaborated with the architect to implement product-wide strategy and technical standards while mentoring team members.',
+        role: 'Team Lead',
+        learnings: [
+          'I found that technical standards require both clear guidelines and practical implementation paths',
+          'I realized that architectural strategy implementation needs tactical translation for development teams',
+          'I observed that enforcement approaches should educate and enable, not just restrict'
+        ],
+      },
+      {
+        description:
+          'I represented technical leadership to investors and the CEO during executive transitions, providing strategic guidance.',
         role: 'Interim Director of Engineering',
         learnings: [
-          'Interim leadership requires balancing short-term delivery with long-term sustainability',
-          'Effective leadership handoffs include transferring context, not just responsibilities',
-          'Performance metrics during transitions should acknowledge both stability and innovation'
+          'I discovered that interim leadership requires balancing short-term delivery with long-term sustainability',
+          'I learned that effective leadership handoffs include transferring context, not just responsibilities',
+          'I recognized that technical debt in compliance areas carries higher organizational risk than other technical debt'
         ],
-      },
-      {
-        description:
-          'Upgraded applications from .NET to .NET Core on day one, boosting performance and scalability.',
-        role: 'Team Lead',
-        learnings: [
-          'Framework migrations benefit from immediate visible wins to justify broader changes',
-          'Technical platform decisions should be validated through performance metrics',
-          'Critical upgrades require both technical planning and organizational timing',
-          'Migration strategies should prioritize components with highest impact-to-effort ratio'
-        ],
-      },
-      {
-        description:
-          'Refactored the entire business application within three months, reversing negative sprint velocity.',
-        role: 'Team Lead',
-        learnings: [
-          'Comprehensive refactoring requires understanding business domain, not just code structure',
-          'Team productivity often correlates with codebase maintainability',
-          'Systematic refactoring approaches yield better results than opportunistic cleanup',
-          'Recovery from technical debt requires both tactical fixes and strategic restructuring'
-        ],
-      },
-      {
-        description:
-          'Created UAT process so business can provide appropriate feedback on upcoming features.',
-        role: 'Team Lead',
-        learnings: [
-          'Validation processes should match stakeholders',
-          'User acceptance testing effectiveness depends on clear acceptance criteria',
-          'Feedback mechanisms should align with how features will actually be used'
-        ],
-      },
-      {
-        description:
-          'Collaborated with architect to implement product-wide strategy and enforce technical standards.',
-        role: 'Team Lead',
-        learnings: [
-          'Technical standards require both clear guidelines and practical implementation paths',
-          'Architectural strategy implementation needs tactical translation for development teams',
-          'Enforcement approaches should educate and enable, not just restrict'
-        ],
-      },
-      {
-        description:
-          'Aligned technical initiatives with regulatory requirements to reduce defects and prepare for new features.',
-        role: 'Interim Director of Engineering',
-        learnings: [
-          'Regulatory compliance can be integrated into technical practices rather than treated as separate concern',
-          'Feature roadmaps in regulated environments require compliance planning',
-          'Technical debt in compliance areas carries higher organizational risk than other technical debt'
-        ],
-      },
+      }
     ],
   },
   {
@@ -331,11 +323,11 @@ const quests: Quest[] = [
       },
       {
         description:
-          'Developed and refined scripts under mentorship, ensuring timely and accurate project delivery.',
+          'Contributed to internal company project repository .',
         role: 'Senior Consultant',
         learnings: [
           'Automation script development benefits from incremental validation approaches',
-          'Mentorship accelerates professional growth when combined with practical application',
+          'Visual Studio Tool and Code Generation development',
           'Script reliability depends on error handling more than core functionality'
         ],
       },
