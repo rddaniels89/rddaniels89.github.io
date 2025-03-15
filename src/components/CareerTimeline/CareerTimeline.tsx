@@ -60,10 +60,7 @@ const CareerTimeline: React.FC = () => {
             <>
               <div className="pixel-avatar"></div>
               <p className="summary-text">
-                Level 10+ Software Architect with special abilities in strategic leadership and 
-                system modernization. Has completed over 50 quests across multiple guilds, 
-                mastering skills in architecture, cloud systems, and team leadership. Ready for 
-                the next epic adventure!
+              Level 10+ Software Architect with special abilities in strategic leadership and system modernization. Has completed over 50 quests across multiple guilds, mastering skills in architecture, cloud systems, and team leadership. Ready for the next epic adventure!
               </p>
               <div className="summary-stats-container">
                 <div className="stat-item">
@@ -91,21 +88,28 @@ const CareerTimeline: React.FC = () => {
             </>
           ) : (
             <>
-              <p className="summary-text">
-                Strategic technology leader with over a decade of experience in software development. 
-                Proven success in leading cross-functional teams, modernizing legacy systems, and implementing 
-                scalable architectures. Adept at leveraging technical expertise to align technical strategies 
-                with business objectives.
-              </p>
+  <p className="summary-text">
+    Strategic technology leader with over a decade of experience in software architecture and development. Demonstrated expertise in transforming legacy systems, leading cross-functional teams, and implementing scalable architectures across multiple industries. Consistently delivers solutions through thoughtful architectural decisions and effective team leadership.
+  </p>
               
               <div className="competencies">
                 <h3>Core Competencies</h3>
                 <ul className="competency-list">
-                  <li>Applied Architecture: Extensive experience building robust applications across languages</li>
-                  <li>Healthcare Solutions: Delivering projects to medium and large healthcare companies</li>
-                  <li>Infrastructure/DevOps: Azure services and process optimization</li>
-                  <li>SDLC Leadership: SOLID principles and agile methodologies</li>
-                  <li>AI Integration: Leveraging AI tools to enhance workflows and productivity</li>
+                <li>
+        <strong>Technical Leadership:</strong> Proven ability to lead technical implementations during organizational transitions, providing continuity between development teams and executive leadership while mentoring senior developers.
+      </li>
+      <li>
+        <strong>Financial & Healthcare Solutions:</strong> Specialized experience delivering enterprise applications for financial lending platforms and healthcare systems, ensuring regulatory compliance and maintaining critical integrations.
+      </li>
+      <li>
+        <strong>Cloud Infrastructure Design:</strong> Advanced knowledge of Azure services with ability to define and manage cloud infrastructures from initial planning through implementation and ongoing support.
+      </li>
+      <li>
+        <strong>Multi-stack Development:</strong> Versatile technical proficiency across multiple technology stacks including .NET, Java Spring Boot, React, Angular, Flutter, and various other frameworks and languages.
+      </li>
+      <li>
+        <strong>AI Implementation:</strong> Practical experience leveraging AI tools and integrations to enhance workflows, automate processes, and improve productivity across both professional and personal projects.
+      </li>
                 </ul>
               </div>
             </>
