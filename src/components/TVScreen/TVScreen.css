@@ -30,7 +30,7 @@
   /* Absolutely positioned relative to .tv-frame-container */
   position: absolute;
   
-  /* Adjust these to align the “screen” portion with the TV graphic */
+  /* Adjust these to align the "screen" portion with the TV graphic */
   top: 1%;    /* move down from top edge */
   left: 8%;   /* move right from left edge */
   width: 66%;

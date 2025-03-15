@@ -12,7 +12,8 @@ const TVScreen: React.FC<TVScreenProps> = ({ type, children }) => {
   
   const {theme} = useTheme()!;
   
-  const label = labels[theme][type || "default"];
+  // Only apply the label if we're in play mode and have a type
+  const label = theme === 'play' && type ? labels[theme][type] : "";
 
   return (
     <div className="tv-frame-container">
@@ -20,7 +21,7 @@ const TVScreen: React.FC<TVScreenProps> = ({ type, children }) => {
         <div className="tv-content">
           {
             <>
-              <h1>{label}</h1>
+              {label && <h1>{label}</h1>}
               {children}
             </>
           }

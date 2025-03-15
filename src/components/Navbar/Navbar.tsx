@@ -77,75 +77,76 @@ const Navbar: React.FC = () => {
     setTimeOfDay(value);
     setDropdownOpen(true);
   };
+  
   return (
     <nav className={`navbar ${theme}`}>
       {/* === HAMBURGER MENU === */}
       <div className="mobile-menu-container" ref={mobileMenuRef}>
-  <button className="hamburger" onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
-    <FontAwesomeIcon icon={faBars} /> Menu
-  </button>
-
-  {isMobileMenuOpen && (
-    <div className="mobile-dropdown">
-      <Link to="/main-menu">
-        <FontAwesomeIcon icon={faHome} /> {labels[theme]["mainMenu"]}
-      </Link>
-      <Link to="/timeline">
-        <FontAwesomeIcon icon={faTimeline} /> {labels[theme]["timeline"]}
-      </Link>
-      <Link to="/accomplishments">
-        <FontAwesomeIcon icon={faMedal} /> {labels[theme]["accomplishments"]}
-      </Link>
-
-      {/* Divider for visual separation */}
-      <hr className="menu-divider" />
-
-      {/* Mode Toggle */}
-      <button className="mode-toggle" onClick={() => setTheme(theme === "play" ? "work" : "play")}>
-        <FontAwesomeIcon icon={modeIcon} /> {modeToggleText}
-      </button>
-
-      {/* Customize (only in Retro Mode) */}
-      {theme === "play" && (
-        <button className="customize-toggle" onClick={() => setCustomizeOpen(!isCustomizeOpen)}>
-          <FontAwesomeIcon icon={faPaintRoller} /> Customize
+        <button className={`hamburger ${theme}`} onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
+          <FontAwesomeIcon icon={faBars} /> Menu
         </button>
-      )}
-    </div>
-  )}
-</div>
+
+        {isMobileMenuOpen && (
+          <div className={`mobile-dropdown ${theme}`}>
+            <Link to="/main-menu">
+              <FontAwesomeIcon icon={faHome} /> {labels[theme]["mainMenu"]}
+            </Link>
+            <Link to="/timeline">
+              <FontAwesomeIcon icon={faTimeline} /> {labels[theme]["timeline"]}
+            </Link>
+            <Link to="/accomplishments">
+              <FontAwesomeIcon icon={faMedal} /> {labels[theme]["accomplishments"]}
+            </Link>
+
+            {/* Divider for visual separation */}
+            <hr className={`menu-divider ${theme}`} />
+
+            {/* Mode Toggle */}
+            <button className={`mode-toggle ${theme}`} onClick={() => setTheme(theme === "play" ? "work" : "play")}>
+              <FontAwesomeIcon icon={modeIcon} /> {modeToggleText}
+            </button>
+
+            {/* Customize (only in Retro Mode) */}
+            {theme === 'play' && (
+              <button className={`customize-toggle ${theme}`} onClick={() => setCustomizeOpen(!isCustomizeOpen)}>
+                <FontAwesomeIcon icon={faPaintRoller} /> Customize
+              </button>
+            )}
+          </div>
+        )}
+      </div>
 
       {/* === NAVIGATION LINKS (Hidden on mobile) === */}
-      <div className="nav-links">
+      <div className={`nav-links ${theme}`}>
         <Link to="/main-menu">
           <FontAwesomeIcon icon={faHome} /> {labels[theme]["mainMenu"]}
         </Link>
         <Link to="/timeline">
-        <FontAwesomeIcon icon={faTimeline} /> {labels[theme]["timeline"]}
-      </Link>
+          <FontAwesomeIcon icon={faTimeline} /> {labels[theme]["timeline"]}
+        </Link>
         <Link to="/accomplishments">
           <FontAwesomeIcon icon={faMedal} /> {labels[theme]["accomplishments"]}
         </Link>
 
         {/* Mode Toggle */}
-        <button className="mode-toggle" onClick={() => setTheme(theme === "play" ? "work" : "play")}>
+        <button className={`mode-toggle ${theme}`} onClick={() => setTheme(theme === "play" ? "work" : "play")}>
           <FontAwesomeIcon icon={modeIcon} /> {modeToggleText}
         </button>
 
         {/* Customize (only in Retro Mode) */}
-        {theme === "play" && (
-          <button className="customize-toggle" onClick={() => setCustomizeOpen(!isCustomizeOpen)}>
+        {theme === 'play' && (
+          <button className={`customize-toggle ${theme}`} onClick={() => setCustomizeOpen(!isCustomizeOpen)}>
             <FontAwesomeIcon icon={faPaintRoller} /> Customize
           </button>
         )}
       </div>
 
       {/* === CUSTOMIZE DROPDOWN (Only in Retro Mode) === */}
-      {theme === "play" && isCustomizeOpen && (
-        <div className="dropdown" ref={customizeContainerRef}>
-          <ul className="dropdown-menu">
+      {theme === 'play' && isCustomizeOpen && (
+        <div className={`dropdown ${theme}`} ref={customizeContainerRef}>
+          <ul className={`dropdown-menu ${theme}`}>
             <li>
-              <div className="group-title">
+              <div className={`group-title ${theme}`}>
                 Season
                 <br />
                 <label>
@@ -153,10 +154,10 @@ const Navbar: React.FC = () => {
                   Auto
                 </label>
               </div>
-              <div className="theme-control">
-                <input type="range" min="1" max="4" step="1" value={season} onChange={(e) => handleSetSeason(parseFloat(e.target.value))} className="slider" />
+              <div className={`theme-control ${theme}`}>
+                <input type="range" min="1" max="4" step="1" value={season} onChange={(e) => handleSetSeason(parseFloat(e.target.value))} className={`slider ${theme}`} />
               </div>
-              <div className="slider-labels">
+              <div className={`slider-labels ${theme}`}>
                 <span className="season-icon winter-icon">❄️</span>
                 <span className="season-icon spring-icon">🌸</span>
                 <span className="season-icon summer-icon">☀️</span>
@@ -164,9 +165,9 @@ const Navbar: React.FC = () => {
               </div>
             </li>
             <li>
-              <div className="group-title">Time of Day</div>
-              <div className="theme-control">
-                <input type="range" min="0" max="1" step="0.01" value={timeOfDay} onChange={(e) => handleSetTimeOfDay(parseFloat(e.target.value))} className="slider" />
+              <div className={`group-title ${theme}`}>Time of Day</div>
+              <div className={`theme-control ${theme}`}>
+                <input type="range" min="0" max="1" step="0.01" value={timeOfDay} onChange={(e) => handleSetTimeOfDay(parseFloat(e.target.value))} className={`slider ${theme}`} />
               </div>
             </li>
           </ul>
