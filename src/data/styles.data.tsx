@@ -1,120 +1,120 @@
 export interface ThemeProperties {
-    backgroundColor: string;
-    primaryColor: string;
-    accentColor: string;
-    borderColor: string;
-    hoverColor: string;
-    shadowColor: string;
-    highlightColor: string;
-    secondaryBackgroundColor:string;
-  }
-  
-  export interface SeasonalTheme {
-    day: ThemeProperties;
-    night: ThemeProperties;
-  }
-  
+  backgroundColor: string;
+  primaryColor: string;
+  accentColor: string;
+  borderColor: string;
+  hoverColor: string;
+  shadowColor: string;
+  highlightColor: string;
+  secondaryBackgroundColor: string;
+}
 
-  export const workTheme: ThemeProperties = {
-    backgroundColor: "#f5f5f5",      // Light background for contrast
-    primaryColor: "#333333",         // Darker text for contrast
-    accentColor: "#6b0f1a",          // Accent color used prominently
-    borderColor: "#6b0f1a",          // Accent border for important elements
-    hoverColor: "#6b0f1a",           // Hover color matches the accent
-    shadowColor: "rgba(0, 0, 0, 0.1)", // Soft shadows for depth
-    highlightColor: "#6b0f1a",       // Accent color for highlights
-    secondaryBackgroundColor: "#e0e0e0" // Muted secondary background
-  };
+export interface SeasonalTheme {
+  day: ThemeProperties;
+  night: ThemeProperties;
+}
 
-  export const themes: Record<string, SeasonalTheme> = {
-    autumn: {
-      day: {
-        backgroundColor: "#fff3e0",
-        primaryColor: "#4A2E14",
-        accentColor: "#ffab91",
-        borderColor: "#ff8a65",
-        hoverColor: "#ff7043",
-        shadowColor: "rgba(255, 112, 67, 0.5)",
-        highlightColor: "#ff7043",
-        secondaryBackgroundColor:"#fff3e0"
-      },
-      night: {
-          backgroundColor: "#3e2723",
-          primaryColor: "#FFFFFF",
-          accentColor: "#ff8a50",
-          borderColor: "#bf360c",
-          hoverColor: "#ff7043",
-          shadowColor: "rgba(255, 112, 67, 0.5)",
-          highlightColor: "#ff7043",
-          secondaryBackgroundColor:"#4e342e"
-      }
+export const workTheme: ThemeProperties = {
+  backgroundColor: "#f5f5f5",      // Light background for contrast
+  primaryColor: "#333333",         // Darker text for contrast
+  accentColor: "#6b0f1a",          // Accent color used prominently
+  borderColor: "#6b0f1a",          // Accent border for important elements
+  hoverColor: "#6b0f1a",           // Hover color matches the accent
+  shadowColor: "rgba(0, 0, 0, 0.1)", // Soft shadows for depth
+  highlightColor: "#6b0f1a",       // Accent color for highlights
+  secondaryBackgroundColor: "#e0e0e0" // Muted secondary background
+};
+
+export const themes: Record<string, SeasonalTheme> = {
+  autumn: {
+    day: {
+      backgroundColor: "#e8c9a9",     // Warm autumn background
+      primaryColor: "#4e3629",        // Dark brown text for contrast
+      accentColor: "#e67e22",         // Orange accent
+      borderColor: "#d35400",         // Darker orange
+      hoverColor: "#f39c12",          // Golden hover
+      shadowColor: "rgba(211, 84, 0, 0.4)",
+      highlightColor: "#e67e22",
+      secondaryBackgroundColor: "#dbc1a2"
     },
-    winter: {
-      day: {
-          backgroundColor: "#e0f7fa",
-          primaryColor: "#212121",
-          accentColor: "#80deea",
-          borderColor: "#b3e5fc",
-          hoverColor: "#00acc1",
-          shadowColor: "rgba(0, 188, 212, 0.5)",
-          highlightColor: "#00acc1",
-          secondaryBackgroundColor:"#e0f7fa"
-      },
-      night: {
-          backgroundColor: "#37474f",
-          primaryColor: "#e0f2f1",
-          accentColor: "#80deea",
-          borderColor: "#607d8b",
-          hoverColor: "#4fc3f7",
-          shadowColor: "rgba(38, 166, 154, 0.5)",
-          highlightColor: "#4fc3f7",
-          secondaryBackgroundColor:"#455a64"
-      }
-    },
-    spring: {
-        day: {
-            backgroundColor: "#dff0d8", /* Lighter pastel green */
-            primaryColor: "#3e4b33", /* Darker forest green text */
-            accentColor: "#a8e986", /* Bright pastel green/yellow for accents */
-            borderColor: "#b6d3a1", /* Subtle border color */
-            hoverColor: "#7cb342", /* Hover state for buttons and links */
-            shadowColor: "rgba(124, 179, 66, 0.3)",
-            highlightColor: "#7cb342",
-            secondaryBackgroundColor:"#f0f8e8"
-        },
-        night: {
-            backgroundColor: "#455a4f",
-            primaryColor: "#e0f7e8",
-            accentColor: "#81c784",
-            borderColor: "#607d8b",
-            hoverColor: "#4caf50",
-            shadowColor: "rgba(56, 142, 60, 0.5)",
-            highlightColor: "#81c784",
-            secondaryBackgroundColor:"#37493e"
-        }
-      },
-      summer: {
-        day: {
-            backgroundColor: "#ffe4b5",
-            primaryColor: "#5d4037",
-            accentColor: "#fcbf49",
-            borderColor: "#fbc49c",
-            hoverColor: "#ff7043",
-            shadowColor: "rgba(255, 112, 67, 0.3)",
-            highlightColor: "#ff7043",
-            secondaryBackgroundColor:"#ffefd5"
-        },
-        night: {
-            backgroundColor: "#5d4037",
-            primaryColor: "#ffe5d5",
-            accentColor: "#f48fb1",
-            borderColor: "#d7ccc8",
-            hoverColor: "#ff8a65",
-            shadowColor: "rgba(244, 143, 177, 0.5)",
-            highlightColor: "#ff8a65",
-            secondaryBackgroundColor:"#6d4c41"
-        }
-      },
-    // Define other seasons like spring and summer
-  };
+    night: {
+      backgroundColor: "#5d4c3c",     // Darker autumn night
+      primaryColor: "#f5eee5",        // Light text for contrast
+      accentColor: "#dd6b20",         // Warm orange accent
+      borderColor: "#ba4a00",         // Darker border
+      hoverColor: "#dd6b20",
+      shadowColor: "rgba(221, 107, 32, 0.4)",
+      highlightColor: "#dd6b20",
+      secondaryBackgroundColor: "#4d3d2d" 
+    }
+  },
   
+  winter: {
+    day: {
+      backgroundColor: "#e3f2fd",     // Light icy blue
+      primaryColor: "#102a43",        // Dark navy text
+      accentColor: "#4299e1",         // Bright blue accent
+      borderColor: "#2b6cb0",         // Darker blue
+      hoverColor: "#63b3ed",          // Light blue hover
+      shadowColor: "rgba(56, 189, 248, 0.4)",
+      highlightColor: "#4299e1",
+      secondaryBackgroundColor: "#d5e8f9"
+    },
+    night: {
+      backgroundColor: "#2a4365",     // Dark blue night
+      primaryColor: "#e3f8ff",        // Light icy text
+      accentColor: "#3182ce",         // Bright blue accent
+      borderColor: "#1e429f",         // Darker blue border
+      hoverColor: "#3182ce",
+      shadowColor: "rgba(49, 130, 206, 0.4)",
+      highlightColor: "#3182ce",
+      secondaryBackgroundColor: "#1a365d"
+    }
+  },
+  
+  spring: {
+    day: {
+      backgroundColor: "#ebf5e9",     // Light fresh green
+      primaryColor: "#22543d",        // Dark green text
+      accentColor: "#48bb78",         // Vibrant green
+      borderColor: "#38a169",         // Medium green
+      hoverColor: "#68d391",          // Light green hover
+      shadowColor: "rgba(72, 187, 120, 0.4)",
+      highlightColor: "#48bb78",
+      secondaryBackgroundColor: "#deeddb"
+    },
+    night: {
+      backgroundColor: "#2f4c3c",     // Dark forest green
+      primaryColor: "#e9fcef",        // Light mint text
+      accentColor: "#38a169",         // Medium green accent
+      borderColor: "#276749",         // Dark green border
+      hoverColor: "#38a169",
+      shadowColor: "rgba(56, 161, 105, 0.4)",
+      highlightColor: "#38a169",
+      secondaryBackgroundColor: "#1f3d2d"
+    }
+  },
+  
+  summer: {
+    day: {
+      backgroundColor: "#fff9db",     // Warm light yellow
+      primaryColor: "#744210",        // Dark brown text
+      accentColor: "#f6e05e",         // Bright yellow
+      borderColor: "#d69e2e",         // Gold
+      hoverColor: "#faf089",          // Light yellow hover
+      shadowColor: "rgba(246, 224, 94, 0.4)",
+      highlightColor: "#f6e05e",
+      secondaryBackgroundColor: "#fff0c1"
+    },
+    night: {
+      backgroundColor: "#744210",     // Dark gold/brown
+      primaryColor: "#fffff0",        // Light cream text
+      accentColor: "#ecc94b",         // Gold accent
+      borderColor: "#b7791f",         // Dark gold border
+      hoverColor: "#ecc94b",
+      shadowColor: "rgba(236, 201, 75, 0.4)",
+      highlightColor: "#ecc94b",
+      secondaryBackgroundColor: "#5f370d"
+    }
+  }
+};
