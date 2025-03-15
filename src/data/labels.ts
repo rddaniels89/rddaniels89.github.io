@@ -8,6 +8,7 @@ export const labels: Record<string, Record<string, string>> = {
       coreExperience:"",
       hobbyExperience:"",
       accomplishments: "Achievements",
+      timeline: "Quest Log",
       default: "",
     },
     work: {
@@ -17,6 +18,7 @@ export const labels: Record<string, Record<string, string>> = {
       coreExperience:"",
       hobbyExperience:"",
       accomplishments: "Accomplishments",
+      timeline: "Timeline",
       default: "",
     },
   };

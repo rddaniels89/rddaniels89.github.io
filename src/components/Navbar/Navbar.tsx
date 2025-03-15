@@ -8,6 +8,7 @@ import {
   faMoon,
   faPaintRoller,
   faBars,
+  faTimeline
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
@@ -92,6 +93,9 @@ const Navbar: React.FC = () => {
       <Link to="/accomplishments">
         <FontAwesomeIcon icon={faMedal} /> {labels[theme]["accomplishments"]}
       </Link>
+      <Link to="/timeline">
+        <FontAwesomeIcon icon={faTimeline} /> {labels[theme]["timeline"]}
+      </Link>
       <Link to="/quests/main">
         <FontAwesomeIcon icon={faTasks} /> {labels[theme]["main"]}
       </Link>
@@ -125,6 +129,9 @@ const Navbar: React.FC = () => {
         <Link to="/accomplishments">
           <FontAwesomeIcon icon={faMedal} /> {labels[theme]["accomplishments"]}
         </Link>
+        <Link to="/timeline">
+        <FontAwesomeIcon icon={faMedal} /> {labels[theme]["timeline"]}
+      </Link>
         <Link to="/quests/main">
           <FontAwesomeIcon icon={faTasks} /> {labels[theme]["main"]}
         </Link>

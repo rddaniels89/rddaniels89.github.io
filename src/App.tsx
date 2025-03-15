@@ -1,21 +1,10 @@
 // src/App.tsx
 import React, { useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useParams } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
-import Navbar from './components/Navbar/Navbar';
-import MainMenu from './components/MainMenu/MainMenu';
-import Accomplishments from './components/Accomplishments/Accomplishements';
-import QuestCarousel from './components/QuestCarousel/QuestCarousel';
-import QuestSwitcher from './components/QuestSwitcher/QuestSwitcher';
-import QuestDetail from './components/QuestDetail/QuestDetail';
+import AppRoutes from './AppRoutes';
 
-// Helper component to handle quest ID from URL
-const QuestDetailWrapper = () => {
-  const { id } = useParams<{ id: string }>();
-  return <QuestDetail id={parseInt(id || '-1', 10)} />;
-};
-
-// AppContent component that handles dynamic routing
+// AppContent component that handles theme body class
 const AppContent: React.FC = () => {
   const { theme } = useTheme()!;
   
@@ -24,39 +13,7 @@ const AppContent: React.FC = () => {
     document.body.classList.add(theme);
   }, [theme]);
   
-  return (
-    <>
-      <Routes>
-        {/* Routes remain the same */}
-        <Route path="/" element={<QuestSwitcher type='main'>
-              <Navbar />
-              <QuestCarousel type={'main'}  /> 
-            </QuestSwitcher>} />  
-        {/* Unified routes for quests */}
-        <Route path="/quests/main" element={<QuestSwitcher type="main">
-              <Navbar />
-              <QuestCarousel type={'main'}  /> 
-            </QuestSwitcher>} />
-
-
-            <Route path="/quests/side" element={<QuestSwitcher type="side">
-              <Navbar />
-              <QuestCarousel type={'side'}  /> 
-            </QuestSwitcher>} />  
-
-        {/* Main Menu */}
-        <Route path="/main-menu" element={<QuestSwitcher>
-              <Navbar />
-              <MainMenu /> 
-            </QuestSwitcher>} />
-
-            <Route path="/accomplishments" element={<QuestSwitcher type="main">
-              <Navbar />
-              <Accomplishments /> 
-            </QuestSwitcher>} />  
-      </Routes>
-    </>
-  );
+  return <AppRoutes />;
 };
 
 // App component that wraps the AppContent with ThemeProvider and Router
