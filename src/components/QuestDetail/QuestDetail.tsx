@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import quests from '../../data/quests.data';
 import { useTheme } from '../../context/ThemeContext';
 import './QuestDetail.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faBriefcase, faCalendarAlt, faTrophy, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 
 // This component can be used in two ways:
 // 1. With an ID prop directly (when used in a component)
@@ -32,47 +34,125 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
   const goBack = () => {
     navigate(-1);
   };
+  
+  // Format date nicely
+  const formatDate = (date: Date) => {
+    return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  };
+  
+  // Calculate duration between dates
+  const calculateDuration = () => {
+    const isPresent = quest.endDate.getFullYear() >= 2030;
+    const endDate = isPresent ? new Date() : quest.endDate;
+    
+    const diffInMonths = (endDate.getFullYear() - quest.startDate.getFullYear()) * 12 
+      + (endDate.getMonth() - quest.startDate.getMonth());
+    
+    const years = Math.floor(diffInMonths / 12);
+    const months = diffInMonths % 12;
+    
+    let result = '';
+    if (years > 0) {
+      result += `${years} year${years > 1 ? 's' : ''}`;
+    }
+    
+    if (months > 0) {
+      if (result.length > 0) result += ', ';
+      result += `${months} month${months > 1 ? 's' : ''}`;
+    }
+    
+    return result || 'Less than a month';
+  };
 
   return (
-    <div className={`quest-detail`}>
+    <div className="quest-detail">
+      {theme === 'work' && (
+        <div className="quest-header">
+          <button className="back-button" onClick={goBack}>
+            <FontAwesomeIcon icon={faArrowLeft} /> Back
+          </button>
+        </div>
+      )}
+
       <h1>{theme === 'work' ? quest.titles.sleek : quest.titles.retro}</h1>
-      {quest.company && <p>Company: {quest.company}</p>}
-      <p>
-        {quest.startDate.toLocaleDateString()} - 
-        {quest.endDate.getDate() === new Date(2038, 2, 10).getDate() 
-          ? "Present" 
-          : quest.endDate.toLocaleDateString()}
-      </p>
-      <p>{quest.description}</p>
-
-      <h3>Roles:</h3>
-      <ul className="role-badges">
-        {quest.roles.map((role, index) => (
-          <li key={index} className="badge">{role}</li>
-        ))}
-      </ul>
-
-      <h3>Accomplishments:</h3>
-      <ul>
-        {quest.accomplishments.map((accomplishment, index) => (
-          <li key={index}>
-            {accomplishment.description}
-          </li>
-        ))}
-      </ul>
-
-      <h3>{theme === 'play' ? 'Rewards' : 'Lessons Learned'}:</h3>
-
-      <ul className="learnings">
-        {quest.accomplishments
-          .flatMap((acc) => acc.learnings)
-          .filter((learning, index, self) => self.indexOf(learning) === index) // Remove duplicates
-          .map((learning, index) => (
-            <li key={index}>{learning}</li>
-          ))}
-      </ul>
       
-      <button className="back-button" onClick={goBack}>Back</button>
+      <div className="quest-metadata">
+        {quest.company && (
+          <div className="metadata-item">
+            <FontAwesomeIcon icon={faBriefcase} className="metadata-icon" />
+            <span>{quest.company}</span>
+          </div>
+        )}
+        
+        <div className="metadata-item">
+          <FontAwesomeIcon icon={faCalendarAlt} className="metadata-icon" />
+          <span>
+            {formatDate(quest.startDate)} - {quest.endDate.getFullYear() >= 2030 
+              ? "Present" 
+              : formatDate(quest.endDate)}
+            {' '}({calculateDuration()})
+          </span>
+        </div>
+      </div>
+
+      <div className="quest-description">
+        <p>{quest.description}</p>
+        {quest.summary && <p className="quest-summary">{quest.summary}</p>}
+      </div>
+
+      <div className="quest-section">
+        <h3>
+          <span className="section-icon">
+            <FontAwesomeIcon icon={faBriefcase} />
+          </span>
+          Roles
+        </h3>
+        <ul className="role-badges">
+          {quest.roles.map((role, index) => (
+            <li key={index} className="badge">{role}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="quest-section">
+        <h3>
+          <span className="section-icon">
+            <FontAwesomeIcon icon={faTrophy} />
+          </span>
+          {theme === 'work' ? 'Key Accomplishments' : 'Achievements'}
+        </h3>
+        <ul className="accomplishments-list">
+          {quest.accomplishments.map((accomplishment, index) => (
+            <li key={index} className="accomplishment-item">
+              {accomplishment.description}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="quest-section">
+        <h3>
+          <span className="section-icon">
+            <FontAwesomeIcon icon={faLightbulb} />
+          </span>
+          {theme === 'work' ? 'Skills & Insights' : 'Rewards'}
+        </h3>
+
+        <ul className="learnings-list">
+          {quest.accomplishments
+            .flatMap((acc) => acc.learnings)
+            .filter((learning, index, self) => learning && self.indexOf(learning) === index) // Remove duplicates
+            .map((learning, index) => (
+              <li key={index} className="learning-item">
+                {learning}
+              </li>
+            ))}
+        </ul>
+      </div>
+      
+      {theme === 'play' && (
+        <button className="back-button" onClick={goBack}>Back</button>
+      )}
     </div>
   );
 };

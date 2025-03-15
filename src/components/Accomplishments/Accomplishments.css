@@ -1,544 +1,319 @@
-/* src/components/Accomplishments/Accomplishments.css */
+/* Enhanced Accomplishments styling for Work Theme */
 
-/* === BASE LAYOUT === */
-.accomplishment-layout {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  height: auto;
-  background-color: var(--background-color);
-  overflow: visible;
-  overflow-x: auto;
+/* Work theme specific styling */
+.accomplishment-layout.work {
+  font-family: 'Inter', 'Roboto', sans-serif;
 }
 
-/* === FILTER PANEL === */
-.filter-panel {
-  width: 260px;
-  background: var(--secondary-background-color);
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 8px var(--shadow-color);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  height: fit-content;
-  position: sticky;
-  top: 90px;
+/* Filter panel */
+.accomplishment-layout.work .filter-panel {
+  background-color: var(--background-color);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.accomplishment-layout.work .filter-panel:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 }
 
 /* View mode selector */
-.view-mode-selector {
-  display: flex;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-/* === THEME SPECIFIC STYLES === */
-
-/* Play theme */
-.accomplishment-layout.play .filter-panel {
-  border: 4px solid var(--accent-color);
-  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
-  font-family: 'Press Start 2P', monospace;
-}
-
-.accomplishment-layout.play .view-mode-selector {
-  border: 3px solid var(--accent-color);
-}
-
-.accomplishment-layout.play .view-mode-btn {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.7rem;
-  padding: 8px 4px;
-  text-transform: uppercase;
-}
-
-.accomplishment-layout.play .accomplishment-filter-button {
-  border: 3px solid var(--accent-color);
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  transition: all 0.2s;
-  padding: 8px;
-}
-
-.accomplishment-layout.play .accomplishment-filter-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 0 var(--shadow-color);
-}
-
-.accomplishment-layout.play .accomplishment-filter-button.active {
-  background-color: var(--accent-color);
-  transform: translateY(2px);
-  box-shadow: none;
-}
-
-/* Work theme */
-.accomplishment-layout.work .filter-panel {
-  border: 1px solid var(--border-color);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Roboto', sans-serif;
-}
-
 .accomplishment-layout.work .view-mode-selector {
+  border-radius: 8px;
+  overflow: hidden;
   border: 1px solid var(--accent-color);
+  margin-bottom: 1.5rem;
 }
 
 .accomplishment-layout.work .view-mode-btn {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', 'Roboto', sans-serif;
   font-weight: 500;
   letter-spacing: 0.5px;
-}
-
-.accomplishment-layout.work .accomplishment-filter-button {
-  border: 1px solid var(--accent-color);
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-/* Shared view mode button styles */
-.view-mode-btn {
-  flex: 1;
-  padding: 10px 5px;
-  background: var(--background-color);
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  padding: 10px 0;
+  transition: all 0.3s ease;
+  background-color: transparent;
   color: var(--primary-color);
-  font-weight: bold;
 }
 
-.view-mode-btn.active {
-  background: var(--accent-color);
-  color: var(--background-color);
-}
-
-.view-mode-btn:first-child {
-  border-right: 1px solid var(--accent-color);
-}
-
-/* Filter button styles */
-.accomplishment-filter-button {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  margin-bottom: 8px;
-  background-color: var(--background-color);
-  border: 2px solid var(--accent-color);
-  border-radius: 8px;
-  color: var(--primary-color);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  width: 100%;
-  font-weight: bold;
-  text-align: left;
-}
-
-.accomplishment-filter-button:hover {
-  background: var(--hover-color);
-}
-
-.accomplishment-filter-button.active {
+.accomplishment-layout.work .view-mode-btn.active {
   background-color: var(--accent-color);
-  color: var(--background-color);
+  color: white;
 }
 
-.role-count {
-  background-color: var(--accent-color);
-  color: var(--background-color);
-  border-radius: 50%;
-  padding: 4px 8px;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-
-.filter-panel h3 {
-  color: var(--primary-color);
-  margin: 15px 0 10px;
-}
-
-.accomplishment-layout.play .filter-panel h3 {
-  font-size: 1rem;
-  text-align: center;
-  padding-bottom: 5px;
-  border-bottom: 2px solid var(--accent-color);
-}
-
+/* Filter panel heading */
 .accomplishment-layout.work .filter-panel h3 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--accent-color);
-}
-
-/* === MAIN CONTENT AREA === */
-.accomplishment-detail {
-  flex-grow: 1;
-  width: 85%;
-  max-width: 900px;
-  background: var(--secondary-background-color);
   color: var(--primary-color);
-  border-radius: 10px;
-  padding: 25px;
-  overflow-x: auto;
+  margin: 1.5rem 0 1rem;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  letter-spacing: 0.3px;
 }
 
-.accomplishment-layout.play .accomplishment-detail {
-  border: 4px solid var(--accent-color);
-  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.85rem;
+/* Filter buttons */
+.accomplishment-layout.work .accomplishment-filter-button {
+  background-color: transparent;
+  border: 1px solid rgba(107, 15, 26, 0.2);
+  border-radius: 8px;
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  transition: all 0.25s ease;
+  text-align: left;
 }
 
+.accomplishment-layout.work .accomplishment-filter-button:hover {
+  background-color: rgba(107, 15, 26, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.accomplishment-layout.work .accomplishment-filter-button.active {
+  background-color: var(--accent-color);
+  color: white;
+  border-color: transparent;
+}
+
+.accomplishment-layout.work .role-count {
+  background-color: rgba(107, 15, 26, 0.1);
+  color: var(--accent-color);
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 3px 8px;
+  font-size: 0.8rem;
+  transition: all 0.25s ease;
+}
+
+.accomplishment-layout.work .accomplishment-filter-button.active .role-count {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Main content area */
 .accomplishment-layout.work .accomplishment-detail {
-  border: 1px solid var(--border-color);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.accomplishment-layout.work .accomplishment-detail:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Accent element */
+.accomplishment-layout.work .accomplishment-detail::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-color), transparent);
 }
 
 /* Empty state */
-.empty-state {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 400px;
+.accomplishment-layout.work .empty-state {
   text-align: center;
+  padding: 3rem 1rem;
 }
 
-.accomplishment-layout.play .empty-state .pixel-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  animation: float 2s infinite ease-in-out;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.empty-state h2 {
-  color: var(--accent-color);
-  margin-bottom: 15px;
-}
-
-.empty-state p {
+.accomplishment-layout.work .empty-state h2 {
   color: var(--primary-color);
-  opacity: 0.7;
-  max-width: 400px;
-}
-
-.accomplishment-layout.play .empty-state p {
-  font-size: 0.8rem;
-  line-height: 1.5;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.3px;
 }
 
 .accomplishment-layout.work .empty-state p {
+  color: var(--primary-color);
+  opacity: 0.7;
   font-size: 1.1rem;
-  font-weight: 300;
   line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 /* Role summary */
-.role-summary {
-  margin-bottom: 30px;
-}
-
-.accomplishment-layout.play .role-summary {
-  border-bottom: 4px solid var(--accent-color);
-  padding-bottom: 20px;
-  text-align: center;
-}
-
 .accomplishment-layout.work .role-summary {
-  border-bottom: 1px solid var(--accent-color);
-  padding-bottom: 15px;
-}
-
-.role-summary h2 {
-  color: var(--accent-color);
-  margin-bottom: 10px;
-}
-
-.accomplishment-layout.play .role-summary h2 {
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  text-shadow: 3px 3px 0 var(--shadow-color);
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(107, 15, 26, 0.1);
 }
 
 .accomplishment-layout.work .role-summary h2 {
-  font-size: 1.8rem;
-  font-weight: 400;
-}
-
-.date-range {
-  display: block;
-  margin-top: 10px;
-}
-
-.accomplishment-layout.play .date-range {
-  font-size: 0.7rem;
-  color: var(--highlight-color);
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.3px;
 }
 
 .accomplishment-layout.work .date-range {
-  font-size: 1rem;
+  color: var(--accent-color);
   font-style: italic;
-  color: var(--primary-color);
-  opacity: 0.7;
-}
-
-.career-story {
-  margin-top: 20px;
-}
-
-.accomplishment-layout.play .career-story {
-  background-color: var(--background-color);
-  border: 3px solid var(--highlight-color);
-  border-radius: 5px;
-  padding: 15px;
-  margin-top: 20px;
-  font-size: 0.7rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+  display: block;
 }
 
 .accomplishment-layout.work .career-story {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  font-weight: 300;
+  padding: 1.5rem;
+  background-color: rgba(107, 15, 26, 0.02);
+  border-left: 3px solid var(--accent-color);
+  border-radius: 0 8px 8px 0;
+  margin: 1.5rem 0;
+}
+
+.accomplishment-layout.work .career-story p {
+  font-size: 1.05rem;
+  line-height: 1.7;
   color: var(--primary-color);
-  padding: 0 10px;
-  border-left: 3px solid var(--accent-color);
-}
-
-/* Journey section */
-.journey-section {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.journey-milestone {
-  margin-bottom: 30px;
-}
-
-.accomplishment-layout.play .journey-milestone {
-  border: 3px solid var(--accent-color);
-  border-radius: 8px;
-  background-color: var(--background-color);
-  padding: 15px;
-  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3);
-}
-
-.accomplishment-layout.work .journey-milestone {
-  border-left: 3px solid var(--accent-color);
-  padding-left: 20px;
-}
-
-.milestone-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.accomplishment-layout.play .milestone-header {
-  border-bottom: 2px dashed var(--accent-color);
-  padding-bottom: 10px;
-}
-
-.accomplishment-layout.work .milestone-header {
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 10px;
-}
-
-.milestone-header h3 {
-  color: var(--highlight-color);
   margin: 0;
 }
 
-.accomplishment-layout.play .milestone-header h3 {
-  font-size: 1rem;
-  text-transform: uppercase;
+/* Journey milestones */
+.accomplishment-layout.work .journey-milestone {
+  margin-bottom: 2.5rem;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--accent-color);
+  position: relative;
+}
+
+.accomplishment-layout.work .journey-milestone::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: white;
+  border: 3px solid var(--accent-color);
+  left: -9px;
+  top: 24px;
+}
+
+.accomplishment-layout.work .milestone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .accomplishment-layout.work .milestone-header h3 {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: var(--accent-color);
-}
-
-.milestone-date {
-  font-size: 0.8rem;
-}
-
-.accomplishment-layout.play .milestone-date {
-  color: var(--highlight-color);
-  font-size: 0.7rem;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.3px;
 }
 
 .accomplishment-layout.work .milestone-date {
   color: var(--primary-color);
   opacity: 0.7;
   font-style: italic;
-}
-
-.milestone-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.milestone-skills,
-.milestone-accomplishments {
-  margin-bottom: 15px;
-}
-
-.milestone-skills h4,
-.milestone-accomplishments h4 {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.accomplishment-layout.play .milestone-skills h4,
-.accomplishment-layout.play .milestone-accomplishments h4 {
-  font-size: 0.75rem;
-  color: var(--highlight-color);
-  text-transform: uppercase;
-}
-
-.accomplishment-layout.work .milestone-skills h4,
-.accomplishment-layout.work .milestone-accomplishments h4 {
-  font-size: 1.1rem;
-  color: var(--primary-color);
-  font-weight: 500;
+  font-size: 0.9rem;
 }
 
 /* Skills list */
-.skills-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.accomplishment-layout.work .milestone-skills h4,
+.accomplishment-layout.work .milestone-accomplishments h4 {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+  letter-spacing: 0.3px;
+}
+
+.accomplishment-layout.work .skills-list {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-}
-
-.skill-item {
-  background-color: var(--background-color);
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 0.9rem;
-}
-
-.accomplishment-layout.play .skill-item {
-  border: 2px solid var(--highlight-color);
-  font-size: 0.7rem;
-  background-color: var(--secondary-background-color);
+  margin-top: 1rem;
 }
 
 .accomplishment-layout.work .skill-item {
-  border: 1px solid var(--accent-color);
   background-color: rgba(107, 15, 26, 0.05);
+  color: var(--accent-color);
+  padding: 8px 15px;
+  border-radius: 20px;
   font-size: 0.9rem;
+  border: 1px solid rgba(107, 15, 26, 0.1);
+  transition: all 0.25s ease;
+}
+
+.accomplishment-layout.work .skill-item:hover {
+  background-color: rgba(107, 15, 26, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* Accomplishment list */
-.accomplishment-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.accomplishment-layout.work .accomplishment-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 15px;
-}
-
-.accomplishment-item {
-  background: var(--background-color);
-  padding: 12px 16px;
-  border-radius: 8px;
-  border-left: 4px solid var(--accent-color);
-  box-shadow: 1px 2px 4px var(--shadow-color);
-  line-height: 1.4;
-  transition: transform 0.15s ease-in-out, background 0.2s ease;
-}
-
-.accomplishment-layout.play .accomplishment-item {
-  border: 2px solid var(--accent-color);
-  font-size: 0.7rem;
-  line-height: 1.5;
-  border-radius: 5px;
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
-}
-
-.accomplishment-layout.play .accomplishment-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+  margin-top: 1rem;
 }
 
 .accomplishment-layout.work .accomplishment-item {
+  background-color: white;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
+  position: relative;
   border-left: 3px solid var(--accent-color);
   font-size: 0.95rem;
-  line-height: 1.5;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  line-height: 1.6;
+  transition: all 0.25s ease;
 }
 
 .accomplishment-layout.work .accomplishment-item:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
 }
 
-/* === RESPONSIVE ADJUSTMENTS === */
+/* Responsive adjustments */
 @media (max-width: 992px) {
-  .accomplishment-layout {
-    flex-direction: column;
-  }
-
-  .filter-panel {
-    width: 100%;
-    max-width: none;
-    margin-bottom: 15px;
-    position: static;
-  }
-
-  .accomplishment-detail {
-    width: 100%;
-    max-width: none;
-  }
-
-  .milestone-content {
-    flex-direction: column;
-  }
-
-  .accomplishment-list {
+  .accomplishment-layout.work .accomplishment-list {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 576px) {
-  .accomplishment-layout {
-    padding: 10px;
+@media (max-width: 768px) {
+  .accomplishment-layout.work {
+    padding: 1rem;
   }
   
-  .filter-panel,
-  .accomplishment-detail {
-    padding: 15px;
+  .accomplishment-layout.work .filter-panel,
+  .accomplishment-layout.work .accomplishment-detail {
+    padding: 1.2rem;
   }
   
-  .milestone-header {
+  .accomplishment-layout.work .role-summary h2 {
+    font-size: 1.6rem;
+  }
+  
+  .accomplishment-layout.work .milestone-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
   }
   
-  .accomplishment-layout.play .role-summary h2 {
-    font-size: 1rem;
-  }
-  
-  .accomplishment-layout.work .role-summary h2 {
-    font-size: 1.4rem;
+  .accomplishment-layout.work .journey-milestone {
+    padding-left: 1rem;
   }
 }
