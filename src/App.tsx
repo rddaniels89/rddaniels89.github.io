@@ -44,7 +44,7 @@ const AppContent: React.FC = () => {
 const App: React.FC = () => {
   return (
     <ThemeProvider>
-      <Router basename="/zowilliams.github.io">
+      <Router basename={process.env.PUBLIC_URL}>
         <AppContent />
       </Router>
     </ThemeProvider>
