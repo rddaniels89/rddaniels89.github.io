@@ -14,14 +14,6 @@ const MainMenu: React.FC = () => {
   const accomplishmentLabel = labels[theme]["accomplishments"];
   const timelineLabel = labels[theme]["timeline"];
 
-  const goToMainQuests = () => {
-    history('/quests/main');
-  };
-
-  const goToSideQuests = () => {
-    history('/quests/side');
-  };
-
   const goToAccomplishment = () => {
     history('/accomplishments');
   };
@@ -34,8 +26,6 @@ const MainMenu: React.FC = () => {
       <h1>Welcome to Alonzo's Adventures</h1>
       <button onClick={goToTimeline}>{timelineLabel}</button>
       <button onClick={goToAccomplishment}>{accomplishmentLabel}</button>
-      <button onClick={goToMainQuests}>{mainLabel}</button>
-      <button onClick={goToSideQuests}>{sideLabel}</button>
       
     </div>
   );

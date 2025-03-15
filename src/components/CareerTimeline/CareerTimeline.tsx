@@ -12,7 +12,7 @@ const CareerTimeline: React.FC = () => {
   // Filter and sort quests - only showing main quests in chronological order
   const sortedQuests = [...quests]
     .filter(quest => quest.type === 'main')
-    .sort((a, b) => a.startDate.getTime() - b.startDate.getTime()); // Chronological order
+    .sort((a, b) => b.startDate.getTime() - a.startDate.getTime()); // Chronological order
 
   const handleQuestClick = (id: number) => {
     navigate(`/quests/${id}`);

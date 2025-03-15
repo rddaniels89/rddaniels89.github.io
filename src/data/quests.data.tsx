@@ -38,7 +38,7 @@ const quests: Quest[] = [
   summary:
     'I elevated architectural practices across multiple teams by implementing design consistency, bridging communication gaps, and establishing efficient development workflows. I cultivated technical leadership through deliberate mentorship while strategically aligning technology decisions with business objectives.',
   type: 'main',
-  startDate: new Date('2023-05-01'),
+  startDate: new Date('2024-05-02'),
   endDate: new Date(2038, 2, 10), // Ongoing
   roles: ['Senior Consultant', 'Software Architect'],
   tags: ['Architecture', 'Leadership', 'UI Design', 'Cross-Team Collaboration'],
@@ -112,7 +112,7 @@ const quests: Quest[] = [
     'I modernized legacy healthcare systems while maintaining critical business continuity. I designed scalable cloud architectures, integrated secure payment solutions, and architected multi-tenant SaaS models that preserved essential EHR connections.',
   type: 'main',
   startDate: new Date('2020-02-01'),
-  endDate: new Date('2024-05-01'),
+  endDate: new Date('2024-04-31'),
   roles: ['Senior Consultant', 'Software Architect'],
   tags: ['Legacy Modernization', 'Cloud', 'SaaS', 'Healthcare', 'Payment Processing'],
   accomplishments: [

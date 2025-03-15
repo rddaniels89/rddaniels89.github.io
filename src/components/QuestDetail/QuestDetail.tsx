@@ -96,7 +96,6 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
       </div>
 
       <div className="quest-description">
-        <p>{quest.description}</p>
         {quest.summary && <p className="quest-summary">{quest.summary}</p>}
       </div>
 
