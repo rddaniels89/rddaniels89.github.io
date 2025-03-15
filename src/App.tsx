@@ -28,13 +28,32 @@ const AppContent: React.FC = () => {
     <>
       <Routes>
         {/* Routes remain the same */}
-        <Route path="/" element={<QuestSwitcher type="main"><Navbar /><QuestCarousel type="main" /></QuestSwitcher>} />
-        <Route path="/main-menu" element={<QuestSwitcher><Navbar /><MainMenu /></QuestSwitcher>} />
-        <Route path="/quests/main" element={<QuestSwitcher type="main"><Navbar /><QuestCarousel type="main" /></QuestSwitcher>} />
-        <Route path="/quests/side" element={<QuestSwitcher type="side"><Navbar /><QuestCarousel type="side" /></QuestSwitcher>} />
-        <Route path="/quests/:id" element={<QuestSwitcher><Navbar /><QuestDetailWrapper /></QuestSwitcher>} />
-        <Route path="/accomplishments" element={<QuestSwitcher type="main"><Navbar /><Accomplishments /></QuestSwitcher>} />
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="/" element={<QuestSwitcher type='main'>
+              <Navbar />
+              <QuestCarousel type={'main'}  /> 
+            </QuestSwitcher>} />  
+        {/* Unified routes for quests */}
+        <Route path="/quests/main" element={<QuestSwitcher type="main">
+              <Navbar />
+              <QuestCarousel type={'main'}  /> 
+            </QuestSwitcher>} />
+
+
+            <Route path="/quests/side" element={<QuestSwitcher type="side">
+              <Navbar />
+              <QuestCarousel type={'side'}  /> 
+            </QuestSwitcher>} />  
+
+        {/* Main Menu */}
+        <Route path="/main-menu" element={<QuestSwitcher>
+              <Navbar />
+              <MainMenu /> 
+            </QuestSwitcher>} />
+
+            <Route path="/accomplishments" element={<QuestSwitcher type="main">
+              <Navbar />
+              <Accomplishments /> 
+            </QuestSwitcher>} />  
       </Routes>
     </>
   );
@@ -42,9 +61,10 @@ const AppContent: React.FC = () => {
 
 // App component that wraps the AppContent with ThemeProvider and Router
 const App: React.FC = () => {
+  const basename = process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : '';
   return (
     <ThemeProvider>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router basename={basename}>
         <AppContent />
       </Router>
     </ThemeProvider>
