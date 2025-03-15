@@ -63,7 +63,7 @@ const AppContent: React.FC = () => {
 const App: React.FC = () => {
   return (
     <ThemeProvider>
-      <Router basename="">
+      <Router>
         <AppContent />
       </Router>
     </ThemeProvider>
