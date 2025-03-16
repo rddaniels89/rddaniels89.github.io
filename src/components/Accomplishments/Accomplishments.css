@@ -1,4 +1,4 @@
-/* Corrected CSS for Accomplishments Component */
+/* Refined Accomplishments Component CSS */
 
 /* Main layout structure */
 .accomplishment-layout {
@@ -17,14 +17,15 @@
   font-weight: bold;
   color: #333;
   margin: 15px 0 30px;
-  border-bottom: 2px solid #8b0000;
+  border-bottom: 2px solid ;
+  border-color: var(--accent-color);
   padding-bottom: 8px;
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Filter panel structure - styled to match Image 1 */
+/* Filter panel structure */
 .filter-panel {
   width: 300px;
   padding: 15px;
@@ -50,7 +51,7 @@
   text-align: center;
   cursor: pointer;
   border: 1px solid #ddd;
-  background-color: #f0f0f0;
+  background-color: var(--secondary-color)
 }
 
 .view-mode-btn.active {
@@ -67,7 +68,7 @@
   font-size: 16px;
 }
 
-/* Filter buttons styling to match Image 1 */
+/* Filter buttons styling */
 .accomplishment-filter-button {
   display: flex !important;
   justify-content: space-between !important;
@@ -92,7 +93,7 @@
   border-color: #8b0000 !important;
 }
 
-/* Role count badge styling to match Image 1 */
+/* Role count badge styling */
 .role-count {
   display: flex !important;
   align-items: center !important;
@@ -107,7 +108,7 @@
   margin-left: 8px !important;
 }
 
-/* Main content area - styled to match Image 1 */
+/* Main content area */
 .accomplishment-detail {
   flex: 1;
   border-radius: 5px;
@@ -117,7 +118,7 @@
   border: 1px solid #ddd;
 }
 
-/* Empty state styling - centered with elegant typography */
+/* Empty state styling with animation */
 .empty-state {
   display: flex;
   flex-direction: column;
@@ -126,6 +127,15 @@
   text-align: center;
   height: 100%;
   padding: 40px 20px;
+}
+
+/* Pixel icon and animation */
+.pixel-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #8b0000;
+  opacity: 1;
+  display: block;
 }
 
 .empty-state h2 {
@@ -142,7 +152,7 @@
   line-height: 1.5;
 }
 
-/* Role content styling - for when a role is selected */
+/* Role content styling */
 .role-content {
   display: flex;
   flex-direction: column;
@@ -243,7 +253,14 @@
   color: #333;
 }
 
-/* Color variables for play theme */
+/* Define floating animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Play theme styling */
 .play .filter-panel {
   background-color: var(--secondary-background-color);
   border-color: var(--border-color);
@@ -286,6 +303,15 @@
 .play .accomplishment-detail {
   background-color: var(--secondary-background-color);
   border-color: var(--border-color);
+}
+
+/* Apply animation to pixel icon in play mode */
+.play .pixel-icon {
+  color: var(--primary-color);
+  animation: float 2s ease-in-out infinite;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .play .empty-state h2 {

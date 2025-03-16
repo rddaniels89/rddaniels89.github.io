@@ -422,9 +422,9 @@ const quests: Quest[] = [
   id: 8,
   titles: {
     retro: 'Mastering the AI Frontier',
-    sleek: 'AI Enthusiast',
+    sleek: 'AI Enthusiast (Hybrid)',
   },
-  workTitle: 'AI Enthusiast',
+  workTitle: 'AI Enthusiast (Hybrid)',
   description:
     'I explored AI tools and applications to enhance development workflows and create innovative solutions.',
   summary: 
@@ -432,13 +432,13 @@ const quests: Quest[] = [
   type: 'side',
   startDate: new Date('2022-11-01'),
   endDate: new Date(2038, 2, 10), // Ongoing
-  roles: ['AI Enthusiast'],
+  roles: ['AI Enthusiast (Hybrid)'],
   tags: ['AI', 'Machine Learning', 'ChatGPT', 'Python', 'Productivity'],
   accomplishments: [
     {
       description:
         'I built a dynamic resume website using ChatGPT with minimal code.',
-      role: 'AI Enthusiast',
+      role: 'AI Enthusiast (Hybrid)',
       learnings: [
         'Effective prompt engineering generates better code from AI models',
         'AI shifts developer focus from writing code to defining solutions'
@@ -447,7 +447,7 @@ const quests: Quest[] = [
     {
       description:
         'I experimented with AI models using Oogabooga and Hugging Face, deepening practical ML expertise.',
-      role: 'AI Enthusiast',
+      role: 'AI Enthusiast (Hybrid)',
       learnings: [
         'Local AI deployment has different constraints than cloud solutions',
         'Domain-specific applications benefit from model fine-tuning'
@@ -456,7 +456,7 @@ const quests: Quest[] = [
     {
       description:
         'I enhanced Python skills and utilized Jupyter notebooks for data analysis and model interaction.',
-      role: 'AI Enthusiast',
+      role: 'AI Enthusiast (Hybrid)',
       learnings: [
         'Interactive notebooks excel for exploratory data analysis',
         'Statistical literacy enhances programming in data projects'
@@ -465,7 +465,7 @@ const quests: Quest[] = [
     {
       description:
         'I integrated OpenAI APIs and Playground, applying AI tools to streamline development workflows.',
-      role: 'AI Enthusiast',
+      role: 'AI Enthusiast (Hybrid)',
       learnings: [
         'API-based AI requires different approaches than UI-based tools',
         'Cost-effective AI implementation needs efficient prompt design'
@@ -474,7 +474,7 @@ const quests: Quest[] = [
     {
       description:
         'I leveraged AI tools (ChatGPT, Udio, Claude, MidJourney) in both professional and personal projects.',
-      role: 'AI Enthusiast',
+      role: 'AI Enthusiast (Hybrid)',
       learnings: [
         'Different AI models excel at specific task types',
         'Match AI tools to specific workflow requirements'

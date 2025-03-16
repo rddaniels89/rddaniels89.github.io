@@ -28,13 +28,25 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<ThemeType>('work');
+  const [theme, setTheme] = useState<ThemeType>(() => {
+    // Only access localStorage in browser environment
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('appTheme') as ThemeType;
+      // Validate that it's a valid theme option before using it
+      if (savedTheme === 'work' || savedTheme === 'play') {
+        return savedTheme;
+      }
+    }
+    return 'work'; // Default theme
+  });
   const [season, setSeason] = useState<number>(0.5);
   const [timeOfDay, setTimeOfDay] = useState<number>(0.5);
   const [overrideFlag, setOverrideFlag] = useState<boolean>(false);
 
   // Effect to set initial season and time of day based on current date
   useEffect(() => {
+
+    localStorage.setItem('appTheme', theme);
     if (theme === "work") {
       // For work theme, use the predefined workTheme properties
       const props = workTheme;
