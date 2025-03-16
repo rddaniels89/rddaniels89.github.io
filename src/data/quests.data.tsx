@@ -36,7 +36,7 @@ const quests: Quest[] = [
   workTitle: 'Senior Software Architect',
   description: 'Led architectural strategy across multiple teams to improve code consistency and efficiency.',
   summary:
-    'I elevated architectural practices across multiple teams by implementing design consistency, bridging communication gaps, and establishing efficient development workflows. I cultivated technical leadership through deliberate mentorship while strategically aligning technology decisions with business objectives.',
+    'Elevated architectural practices across multiple teams by implementing design consistency, bridging communication gaps, and establishing efficient development workflows. I cultivated technical leadership through deliberate mentorship while strategically aligning technology decisions with business objectives.',
   type: 'main',
   startDate: new Date('2024-05-02'),
   endDate: new Date(2038, 2, 10), // Ongoing
@@ -45,55 +45,55 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        'I led and refined UI architectural strategy across 5 teams.',
+        'Led and refined UI architectural strategy across 5 teams.',
       role: 'Software Architect',
       learnings: [
-        'I learned architectural effectiveness requires balancing team autonomy with system-wide consistency',
-        'I learned that friction against architecture patterns emerge when watching how disparate teams naturally solve problems'
+        'Learned architectural effectiveness requires balancing team autonomy with system-wide consistency',
+        'Learned that friction against architecture patterns emerge when watching how disparate teams naturally solve problems'
       ],
     },
     {
       description:
-        'I operated as full stack architect for one team and UI architect for 5 teams.',
+        'Operated as full stack architect for one team and UI architect for 5 teams.',
       role: 'Software Architect',
       learnings: [
-        'I found that specialized depth and broad oversight can be balanced through effective delegation',
-        'I recognized that cross-cutting concerns often manifest differently in UI versus backend systems',
-        'I determined that consistent design principles matter more than standardizing on specific implementations'
+        'Found that specialized depth and broad oversight can be balanced through effective delegation',
+        'Recognized that cross-cutting concerns often manifest differently in UI versus backend systems',
+        'Determined that consistent design principles matter more than standardizing on specific implementations'
       ],
     },
     {
       description:
-        'I improved cross-team and intra-team communication to align development with management expectations.',
+        'Improved cross-team and intra-team communication to align development with management expectations.',
       role: 'Senior Consultant',
       learnings: [],
     },
     {
       description:
-        'I collaborated with design teams to implement global UI components, ensuring consistency.',
+        'Collaborated with design teams to implement global UI components, ensuring consistency.',
       role: 'Software Architect',
       learnings: [
-        'I learned that component libraries still deliver value even when implemented late in project'
+        'Learned that component libraries still deliver value even when implemented late in project'
       ],
     },
     {
       description:
-        'I translated Figma designs into technical directives and user stories, streamlining development.',
+        'Translated Figma designs into technical directives and user stories, streamlining development.',
       role: 'Senior Consultant',
       learnings: [],
     },
     {
       description:
-        'I mentored senior developers via pair programming and coaching sessions to enhance team capabilities.',
+        'Mentored senior developers via pair programming and coaching sessions to enhance team capabilities.',
       role: 'Senior Consultant',
       learnings: [],
     },
     {
       description:
-        'I interfaced with any necessary part of the SDLC to complete tasks assigned to team.',
+        'Interfaced with any necessary part of the SDLC to complete tasks assigned to team.',
       role: 'Software Architect',
       learnings: [
-        'I learned that maximizing team velocity requires teams to appropriately understand the strategic direction and implementation goal'
+        'Learned that maximizing team velocity requires teams to appropriately understand the strategic direction and implementation goal'
       ],
     },
   ],
@@ -107,9 +107,9 @@ const quests: Quest[] = [
   company: 'Productive Edge',
   workTitle: 'Software Architect',
   description:
-    'I transformed legacy systems into modern applications while leading diverse technology teams.',
+    'Transformed legacy systems into modern applications while leading diverse technology teams.',
   summary: 
-    'I modernized legacy healthcare systems while maintaining critical business continuity. I designed scalable cloud architectures, integrated secure payment solutions, and architected multi-tenant SaaS models that preserved essential EHR connections.',
+    'Modernized legacy healthcare systems while maintaining critical business continuity. I designed scalable cloud architectures, integrated secure payment solutions, and architected multi-tenant SaaS models that preserved essential EHR connections.',
   type: 'main',
   startDate: new Date('2020-02-01'),
   endDate: new Date('2024-04-31'),
@@ -118,65 +118,65 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        'I transformed legacy healthcare systems into modern applications while maintaining business continuity.',
+        'Transformed legacy healthcare systems into modern applications while maintaining business continuity.',
       role: 'Software Architect',
       learnings: [
-        'I found that legacy modernization requires balancing business continuity with technical evolution',
-        'I learned to make decisions WITH constraints instead of against constraints'
+        'Found that legacy modernization requires balancing business continuity with technical evolution',
+        'Learned to make decisions WITH constraints instead of against constraints'
       ],
     },
     {
       description:
-        'I defined project scopes with clients and managed Azure cloud infrastructures from planning to support.',
+        'Defined project scopes with clients and managed Azure cloud infrastructures from planning to support.',
       role: 'Senior Consultant',
       learnings: [
-        'I learned to be proficient in architecting for a language I was not well-versed in'
+        'Learned to be proficient in architecting for a language I was not well-versed in'
       ],
     },
     {
       description:
-        'I delivered full-stack solutions across multiple technology stacks including .NET C#, Java Spring Boot, React, Angular, Flutter, and UWP.',
+        'Delivered full-stack solutions across multiple technology stacks including .NET C#, Java Spring Boot, React, Angular, Flutter, and UWP.',
       role: 'Software Architect',
       learnings: [],
     },
     {
       description:
-        'I gained FreedomPay certification for client system and integrated secure payment solutions into client projects.',
+        'Gained FreedomPay certification for client system and integrated secure payment solutions into client projects.',
       role: 'Software Architect',
       learnings: [
-        'I learned how to build IdP integrations from the ground up'
+        'Learned how to build IdP integrations from the ground up'
       ],
     },
     {
       description:
-        'I led full stack modernization of healthcare applications.',
+        'Led full stack modernization of healthcare applications.',
       role: 'Software Architect',
       learnings: [
-        'I learned that healthcare data practices impact technical decisions and constraints',
-        'I learned that compliance requirements should be considered in reusable patterns'
+        'Learned that healthcare data practices impact technical decisions and constraints',
+        'Learned that compliance requirements should be considered in reusable patterns'
       ],
     },
     {
       description:
-        'I created standardized project scaffolding templates to accelerate project initiation.',
+        'Created standardized project scaffolding templates to accelerate project initiation.',
       role: 'Software Architect',
       learnings: [
-        'I learned that project templates work easier when teams build working relationships',
-        'I learned that standardization must balance consistency with flexibility for project-specific needs'
+        'Learned that project templates work easier when teams build working relationships',
+        'Learned that standardization must balance consistency with flexibility for project-specific needs'
       ],
     },
     {
       description:
-        'I fostered team cohesion through transparent leadership and client-focused decision processes.',
+        'Fostered team cohesion through transparent leadership and client-focused decision processes.',
       role: 'Senior Consultant',
       learnings: [],
     },
     {
       description:
-        'I architected transition of monolithic systems to multi-tenant SaaS models.',
+        'Architected transition of monolithic systems to multi-tenant SaaS models.',
       role: 'Software Architect',
       learnings: [
-        'I learned that multi-tenant architectures can be effectively handled through configuration'
+        'Learned that multi-tenant architectures can be effectively handled through configuration'
       ],
     },
   ],
@@ -190,9 +190,9 @@ const quests: Quest[] = [
   company: 'Lendr',
   workTitle: 'Team Lead / Interim Director of Engineering',
   description:
-    'I co-led technical implementations and maintained clear communication during leadership transitions.',
+    'Co-led technical implementations and maintained clear communication during leadership transitions.',
   summary: 
-    'I led critical platform migrations and major refactoring efforts that transformed application performance while providing technical leadership during organizational transitions. I established effective feedback mechanisms with stakeholders and represented technical concerns to executive leadership.',
+    'Led critical platform migrations and major refactoring efforts that transformed application performance while providing technical leadership during organizational transitions. I established effective feedback mechanisms with stakeholders and represented technical concerns to executive leadership.',
   type: 'main',
   startDate: new Date('2018-10-01'),
   endDate: new Date('2020-02-01'),
@@ -201,49 +201,49 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        'I upgraded applications from .NET to .NET Core on day one, immediately improving performance and establishing technical direction.',
+        'Upgraded applications from .NET to .NET Core on day one, immediately improving performance and establishing technical direction.',
       role: 'Team Lead',
       learnings: [
-        'I learned how to read code for intent and clarity very effectively',
-        'I learned how to effectively leverage pair programming with other team members'
+        'Learned how to read code for intent and clarity very effectively',
+        'Learned how to effectively leverage pair programming with other team members'
       ],
     },
     {
       description:
-        'I refactored a complex business application with 350k+ lines of code, implementing service-repository patterns that reversed negative sprint velocity.',
+        'Refactored a complex business application with 350k+ lines of code, implementing service-repository patterns that reversed negative sprint velocity.',
       role: 'Team Lead',
       learnings: [
-        'I learned how to perform every function of and be involved in most decisions for the SDLC',
-        'I learned how to build a culture of technical excellence for a small team'
+        'Learned how to perform every function of and be involved in most decisions for the SDLC',
+        'Learned how to build a culture of technical excellence for a small team'
       ],
     },
     {
       description:
-        'I co-led technical implementations during leadership transitions, maintaining continuity between development and executive leadership.',
+        'Co-led technical implementations during leadership transitions, maintaining continuity between development and executive leadership.',
       role: 'Interim Director of Engineering',
       learnings: [
-        'I learned that technical leadership requires communication as much as technical proficiency',
-        'I learned how to communicate to leaders what outcomes to expect from the technical department'
+        'Learned that technical leadership requires communication as much as technical proficiency',
+        'Learned how to communicate to leaders what outcomes to expect from the technical department'
       ],
     },
     {
       description:
-        'I established a structured UAT process aligning business stakeholders with development priorities, improving feature quality.',
+        'Established a structured UAT process aligning business stakeholders with development priorities, improving feature quality.',
       role: 'Team Lead',
       learnings: [
-        'I learned the importance of talking directly to end users',
-        'I learned that educating our business on technical practices positively impacted velocity'
+        'Learned the importance of talking directly to end users',
+        'Learned that educating our business on technical practices positively impacted velocity'
       ],
     },
     {
       description:
-        'I collaborated with the architect to implement product-wide strategy and technical standards while mentoring team members.',
+        'Collaborated with the architect to implement product-wide strategy and technical standards while mentoring team members.',
       role: 'Team Lead',
       learnings: [],
     },
     {
       description:
-        'I represented technical leadership to investors and the CEO during executive transitions, providing strategic guidance.',
+        'Represented technical leadership to investors and the CEO during executive transitions, providing strategic guidance.',
       role: 'Interim Director of Engineering',
       learnings: [],
     }

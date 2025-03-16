@@ -56,7 +56,6 @@ const ResumeView: React.FC = () => {
     <h1>Alonzo Williams</h1>
     <div className="contact-info">
       awilliams9293@gmail.com<br/>
-      (951) 443-6246<br/>
       https://www.linkedin.com/in/alonzo-williams-1160a7b0/<br/>
       Chicago, IL<br/>
     </div>
