@@ -140,13 +140,13 @@ const Accomplishments: React.FC = () => {
     
     if (theme === 'play') {
       if (viewMode === 'role') {
-        return `As a ${selectedRole}, you've embarked on ${filteredAccomplishments.length} 
+        return `As a ${selectedRole}, I've embarked on ${filteredAccomplishments.length} 
         quests across ${Object.keys(groupedAccomplishments).length} different guilds, 
         mastering ${Array.from(new Set(filteredAccomplishments.flatMap(acc => acc.learnings))).length} 
-        unique skills along your journey.`;
+        unique skills along my journey.`;
       } else {
-        return `Your adventures with the ${selectedCompany} guild have led you through 
-        ${filteredAccomplishments.length} challenging quests, where you've taken on 
+        return `My adventures with the ${selectedCompany} guild have led me through 
+        ${filteredAccomplishments.length} challenging quests, where I've taken on 
         ${Object.keys(groupedAccomplishments).length} different roles and gained 
         ${Array.from(new Set(filteredAccomplishments.flatMap(acc => acc.learnings))).length} powerful abilities.`;
       }
