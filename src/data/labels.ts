@@ -10,6 +10,7 @@ export const labels: Record<string, Record<string, string>> = {
       accomplishments: "Achievements",
       timeline: "Quest Log",
       mainTitle: "Welcome to Alonzo's Adventures",
+      resume: "Resume",
       default: "",
     },
     work: {
@@ -21,6 +22,7 @@ export const labels: Record<string, Record<string, string>> = {
       accomplishments: "Accomplishments",
       mainTitle: "Alonzo's Career Summary",
       timeline: "Timeline",
+      resume: "Resume",
       default: "",
     },
   };

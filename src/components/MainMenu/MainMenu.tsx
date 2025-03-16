@@ -12,6 +12,7 @@ const MainMenu: React.FC = () => {
   const accomplishmentLabel = labels[theme]["accomplishments"];
   const timelineLabel = labels[theme]["timeline"];
   const titleLabel = labels[theme]['mainTitle']
+  const resumeLabel = labels[theme]['resume']
 
   const goToAccomplishment = () => {
     history('/accomplishments');
@@ -19,12 +20,16 @@ const MainMenu: React.FC = () => {
   const goToTimeline = () => {
     history('/timeline');
   };
+  const goToResume = () => {
+    history('/resume');
+  };
 
   return (
     <div className="main-menu">
       <h1>{titleLabel}</h1>
       <button onClick={goToTimeline}>{timelineLabel}</button>
       <button onClick={goToAccomplishment}>{accomplishmentLabel}</button>
+      <button onClick={goToResume}>{resumeLabel}</button>
       
     </div>
   );

@@ -8,13 +8,15 @@ import {
   faMoon,
   faPaintRoller,
   faBars,
-  faTimeline
+  faTimeline,
+  faStickyNote
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
 import { labels } from "../../data/labels";
 import "./Navbar.css";
+
 
 const Navbar: React.FC = () => {
   const {
@@ -97,7 +99,9 @@ const Navbar: React.FC = () => {
             <Link to="/accomplishments">
               <FontAwesomeIcon icon={faMedal} /> {labels[theme]["accomplishments"]}
             </Link>
-
+            {theme === 'work' && (<Link to="/resume">
+          <FontAwesomeIcon icon={faStickyNote} /> {labels[theme]["resume"]}
+        </Link>)}
             {/* Divider for visual separation */}
             <hr className={`menu-divider ${theme}`} />
 
@@ -127,6 +131,9 @@ const Navbar: React.FC = () => {
         <Link to="/accomplishments">
           <FontAwesomeIcon icon={faMedal} /> {labels[theme]["accomplishments"]}
         </Link>
+        {theme === 'work' && (<Link to="/resume">
+          <FontAwesomeIcon icon={faStickyNote} /> {labels[theme]["resume"]}
+        </Link>)}
 
         {/* Mode Toggle */}
         <button className={`mode-toggle ${theme}`} onClick={() => setTheme(theme === "play" ? "work" : "play")}>

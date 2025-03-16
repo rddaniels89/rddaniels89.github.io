@@ -9,6 +9,7 @@ import QuestDetail from './components/QuestDetail/QuestDetail';
 import NotFound from './components/NotFound/NotFound';
 import quests from './data/quests.data';
 import CareerTimeline from './components/CareerTimeline/CareerTimeline';
+import ResumeView from './components/ResumeView/ResumeView';
 
 // ScrollToTop component to reset scroll position when navigating
 const ScrollToTop = () => {
@@ -84,6 +85,13 @@ const AppRoutes: React.FC = () => {
           </QuestSwitcher>
         } />
         
+        <Route path="/resume" element={
+          <QuestSwitcher type="main">
+            <Navbar />
+            <ResumeView />
+          </QuestSwitcher>
+        } />
+
         {/* 404 Not Found */}
         <Route path="/not-found" element={
           <QuestSwitcher>

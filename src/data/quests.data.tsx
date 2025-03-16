@@ -11,7 +11,7 @@ export interface Quest {
   description: string;
   summary?:string;
   accomplishments: Accomplishment[];
-  type: 'main' | 'side';
+  type: 'main' | 'side' | 'education';
   startDate: Date;
   endDate: Date;
   roles: string[];
@@ -33,7 +33,7 @@ const quests: Quest[] = [
     sleek: 'Senior Consultant & Software Architect at Inspire11',
   },
   company: 'Inspire11',
-  workTitle: 'Senior Consultant and Software Architect',
+  workTitle: 'Senior Software Architect',
   description: 'Led architectural strategy across multiple teams to improve code consistency and efficiency.',
   summary:
     'I elevated architectural practices across multiple teams by implementing design consistency, bridging communication gaps, and establishing efficient development workflows. I cultivated technical leadership through deliberate mentorship while strategically aligning technology decisions with business objectives.',
@@ -105,7 +105,7 @@ const quests: Quest[] = [
     sleek: 'Senior Consultant & Software Architect at Productive Edge',
   },
   company: 'Productive Edge',
-  workTitle: 'Senior Consultant and Software Architect',
+  workTitle: 'Software Architect',
   description:
     'I transformed legacy systems into modern applications while leading diverse technology teams.',
   summary: 
@@ -482,6 +482,29 @@ const quests: Quest[] = [
     },
   ],
 },
+{
+  id: 9,
+  titles: {
+    retro: "Education",
+    sleek: "Education"
+  },
+  company: "California State University Fullerton",
+  workTitle: "Bachelor of Science in Computer Science",
+  description: "Concentration: Software Architecture",
+  summary: "Completed undergraduate studies in Computer Science with focus on software architecture principles and practices.",
+  accomplishments: [
+    {
+      description: "B.S. Computer Science, Concentration: Software Architecture",
+      role: "Student",
+      learnings: ["Software Architecture", "Computer Science"]
+    }
+  ],
+  type: "education",
+  startDate: new Date("2006-08-01"),
+  endDate: new Date("2012-05-31"),
+  roles: ["Student"],
+  tags: ["Education", "Degree"]
+}
 ];
 
 export default quests;
