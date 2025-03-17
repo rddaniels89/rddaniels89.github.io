@@ -102,8 +102,8 @@ const ResumeView: React.FC = () => {
     </div>
     
     <div className="competency-item">
-      <h3>Technology Modernization</h3>
-      <p>Demonstrated success in leading legacy system transformations while ensuring business continuity and stakeholder satisfaction.</p>
+      <h3>AI/Technology Modernization</h3>
+      <p>Demonstrated success in leading legacy system transformations. Active AI enthusiast integrating AI into workflows.</p>
     </div>
   </div>
 </section>
