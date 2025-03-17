@@ -258,9 +258,9 @@ const quests: Quest[] = [
   company: 'SWC Technology Partners',
   workTitle: 'Senior Consultant',
   description:
-    'I enhanced desktop applications and maintained project delivery while developing professional estimation skills.',
+    'Enhanced desktop applications and maintained project delivery while developing professional estimation skills.',
   summary: 
-    'At SWC, I focused on desktop application enhancement and workflow automation while developing strong project estimation and delivery skills. I applied UX improvements to legacy systems and created reliable automation tools.',
+    'Focused on desktop application enhancement and workflow automation while developing strong project estimation and delivery skills. I applied UX improvements to legacy systems and created reliable automation tools.',
   type: 'main',
   startDate: new Date('2017-10-01'),
   endDate: new Date('2018-10-01'),
@@ -269,32 +269,32 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        'I enhanced desktop applications using WinForms and Kendo UI to improve user experience.',
+        'Enhanced desktop applications using WinForms and Kendo UI to improve user experience.',
       role: 'Senior Consultant',
       learnings: ['I learned how to balance modern UI expectations with legacy application constraints'
       ],
     },
     {
       description:
-        'I developed and refined scripts under mentorship, ensuring timely and accurate project delivery.',
+        'Developed and refined scripts under mentorship, ensuring timely and accurate project delivery.',
       role: 'Senior Consultant',
       learnings: [
       ],
     },
     {
       description:
-        'I maintained project estimation accuracy within a 10% margin while optimizing delivery.',
+        'Maintained project estimation accuracy within a 10% margin while optimizing delivery.',
       role: 'Senior Consultant',
       learnings: [
-        'I learned that accurate estimation correlates with thorough requirement understanding'
+        'Learned that accurate estimation correlates with thorough requirement understanding'
       ],
     },
     {
       description:
-        'I proactively monitored progress and applied problem-solving strategies to enhance system functionality.',
+        'Proactively monitored progress and applied problem-solving strategies to enhance system functionality.',
       role: 'Senior Consultant',
       learnings: [
-        'I learned that proactive issue identification is more valuable than reactive problem solving'
+        'Learned that proactive issue identification is more valuable than reactive problem solving'
       ],
     },
   ],
@@ -308,9 +308,9 @@ const quests: Quest[] = [
   company: 'Manor Resources',
   workTitle: 'Developer',
   description:
-    'I developed components for financial applications while enhancing my technical skills through mentorship and test-driven development.',
+    'Developed components for financial applications while enhancing my technical skills through mentorship and test-driven development.',
   summary: 
-    'At Manor Resources, I built key features for financial systems while improving code quality through comprehensive testing strategies. I benefited from structured mentorship that accelerated my professional growth.',
+    'Built key features for financial systems while improving code quality through comprehensive testing strategies. I benefited from structured mentorship that accelerated my professional growth.',
   type: 'main',
   startDate: new Date('2016-08-01'),
   endDate: new Date('2017-09-01'),
@@ -319,26 +319,26 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        'I developed key components for a car loan application, directly enhancing functionality and user experience.',
+        'Developed key components for a car loan application, directly enhancing functionality and user experience.',
       role: 'Developer',
       learnings: [],
     },
     {
       description:
-        'I strengthened technical proficiency through close mentorship from senior developers.',
+        'Strengthened technical proficiency through close mentorship from senior developers.',
       role: 'Developer',
       learnings: [
-        'I learned that mentorship accelerates technical growth beyond self-directed learning',
-        'I learned that code review feedback provides contextual learning opportunities'
+        'Learned that mentorship accelerates technical growth beyond self-directed learning',
+        'Learned that code review feedback provides contextual learning opportunities'
       ],
     },
     {
       description:
-        'I increased test coverage using AutoFixture and Moq, leading to more reliable and timely releases.',
+        'Increased test coverage using AutoFixture and Moq, leading to more reliable and timely releases.',
       role: 'Developer',
       learnings: [
-        'I learned that test-driven approaches improve both code design and defect prevention',
-        'I learned that well-designed test fixtures improve both coverage metrics and test readability'
+        'Learned that test-driven approaches improve both code design and defect prevention',
+        'Learned that well-designed test fixtures improve both coverage metrics and test readability'
       ],
     },
   ],
@@ -352,9 +352,9 @@ const quests: Quest[] = [
   company: 'The Boeing Company',
   workTitle: 'ITCFP Participant / Developer',
   description:
-    'I rotated through diverse IT roles as part of a selective program, gaining broad exposure while developing enterprise applications for critical operations.',
+    'Rotated through diverse IT roles as part of a selective program, gaining broad exposure while developing enterprise applications for critical operations.',
   summary: 
-    'At Boeing, I participated in the selective IT Career Foundation Program (ITCFP), rotating through multiple technical domains to build cross-functional expertise. I developed mission-critical financial applications while improving development processes across teams.',
+    'Participated in the selective IT Career Foundation Program (ITCFP), rotating through multiple technical domains to build cross-functional expertise. I developed mission-critical financial applications while improving development processes across teams.',
   type: 'main',
   startDate: new Date('2012-06-01'),
   endDate: new Date('2016-08-01'),
@@ -363,28 +363,28 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        'I rotated through diverse IT roles, gaining broad exposure across multiple technical domains.',
+        'Rotated through diverse IT roles, gaining broad exposure across multiple technical domains.',
       role: 'ITCFP Participant',
       learnings: [
-        'I learned how technology choices affect different business units in distinct ways',
-        'I learned to appreciate the interconnected nature of enterprise systems'
+        'Learned how technology choices affect different business units in distinct ways',
+        'Learned to appreciate the interconnected nature of enterprise systems'
       ],
     },
     {
       description:
-        'I developed and deployed C# MVC applications to automate critical financial operations.',
+        'Developed and deployed C# MVC applications to automate critical financial operations.',
       role: 'Developer',
       learnings: [
-        'I learned that enterprise-scale applications require additional focus on stability and maintenance',
-        'I learned that financial systems require extensive validation and audit capabilities'
+        'Learned that enterprise-scale applications require additional focus on stability and maintenance',
+        'Learned that financial systems require extensive validation and audit capabilities'
       ],
     },
     {
       description:
-        'I enhanced SDLC practices, leading to improved code quality and more efficient project management.',
+        'Enhanced SDLC practices, leading to improved code quality and more efficient project management.',
       role: 'Developer',
       learnings: [
-        'I learned that financial systems require extensive validation and audit capabilities'
+        'Learned that financial systems require extensive validation and audit capabilities'
       ],
     },
   ],
@@ -397,7 +397,7 @@ const quests: Quest[] = [
   },
   workTitle: 'Game Developer (Personal Projects)',
   description:
-    'I applied software engineering principles to game development through self-directed learning in Unity.',
+    'Applied software engineering principles to game development through self-directed learning in Unity.',
   summary: 
     'In my personal projects, I\'ve explored game development as both a creative outlet and a way to apply software architecture principles in a different domain. This has expanded my technical versatility while providing insights into performance optimization and interactive system design.',
   type: 'side',
@@ -408,12 +408,12 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        'I taught myself Unity game development, focusing on C# programming and game mechanics.',
+        'Taught myself Unity game development, focusing on C# programming and game mechanics.',
       role: 'Game Developer (Personal Projects)',
       learnings: [
-        'I learned that game development requires different performance optimization approaches than business applications',
-        'I learned that creative coding reveals different architectural patterns than enterprise development',
-        'I discovered that game mechanics design balances technical implementation with user enjoyment'
+        'Learned that game development requires different performance optimization approaches than business applications',
+        'Learned that creative coding reveals different architectural patterns than enterprise development',
+        'Discovered that game mechanics design balances technical implementation with user enjoyment'
       ],
     },
   ],
@@ -426,9 +426,9 @@ const quests: Quest[] = [
   },
   workTitle: 'AI Enthusiast (Hybrid)',
   description:
-    'I explored AI tools and applications to enhance development workflows and create innovative solutions.',
+    'Explored AI tools and applications to enhance development workflows and create innovative solutions.',
   summary: 
-    'I\'ve leveraged AI tools to accelerate development and broaden my technical capabilities, building applications like this resume site with minimal code. By experimenting with various AI models and APIs, I\'ve developed practical expertise in applying these technologies to solve real-world problems.',
+    'Leveraged AI tools to accelerate development and broaden my technical capabilities, building applications like this resume site with minimal code. By experimenting with various AI models and APIs, I\'ve developed practical expertise in applying these technologies to solve real-world problems.',
   type: 'side',
   startDate: new Date('2022-11-01'),
   endDate: new Date(2038, 2, 10), // Ongoing
@@ -437,7 +437,7 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        'I built a dynamic resume website using ChatGPT with minimal code.',
+        'Built a dynamic resume website using ChatGPT with minimal code.',
       role: 'AI Enthusiast (Hybrid)',
       learnings: [
         'Effective prompt engineering generates better code from AI models',
@@ -446,7 +446,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        'I experimented with AI models using Oogabooga and Hugging Face, deepening practical ML expertise.',
+        'Experimented with AI models using Oogabooga and Hugging Face, deepening practical ML expertise.',
       role: 'AI Enthusiast (Hybrid)',
       learnings: [
         'Local AI deployment has different constraints than cloud solutions',
@@ -455,7 +455,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        'I enhanced Python skills and utilized Jupyter notebooks for data analysis and model interaction.',
+        'Enhanced Python skills and utilized Jupyter notebooks for data analysis and model interaction.',
       role: 'AI Enthusiast (Hybrid)',
       learnings: [
         'Interactive notebooks excel for exploratory data analysis',
@@ -464,7 +464,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        'I integrated OpenAI APIs and Playground, applying AI tools to streamline development workflows.',
+        'Integrated OpenAI APIs and Playground, applying AI tools to streamline development workflows.',
       role: 'AI Enthusiast (Hybrid)',
       learnings: [
         'API-based AI requires different approaches than UI-based tools',
@@ -473,7 +473,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        'I leveraged AI tools (ChatGPT, Udio, Claude, MidJourney) in both professional and personal projects.',
+        'Leveraged AI tools (ChatGPT, Udio, Claude, MidJourney) in both professional and personal projects.',
       role: 'AI Enthusiast (Hybrid)',
       learnings: [
         'Different AI models excel at specific task types',
