@@ -36,7 +36,7 @@ const quests: Quest[] = [
   workTitle: 'Senior Software Architect',
   description: 'Led architectural strategy across multiple teams to improve code consistency and efficiency.',
   summary:
-    'Elevated architectural practices across multiple teams by implementing design consistency, bridging communication gaps, and establishing efficient development workflows. I cultivated technical leadership through deliberate mentorship while strategically aligning technology decisions with business objectives.',
+    'Elevated architectural practices across multiple teams by implementing design consistency, bridging communication gaps, and establishing efficient development workflows. Cultivated technical leadership through deliberate mentorship while strategically aligning technology decisions with business objectives.',
   type: 'main',
   startDate: new Date('2024-05-02'),
   endDate: new Date(2038, 2, 10), // Ongoing
@@ -109,7 +109,7 @@ const quests: Quest[] = [
   description:
     'Transformed legacy systems into modern applications while leading diverse technology teams.',
   summary: 
-    'Modernized legacy healthcare systems while maintaining critical business continuity. I designed scalable cloud architectures, integrated secure payment solutions, and architected multi-tenant SaaS models that preserved essential EHR connections.',
+    'Modernized legacy healthcare systems while maintaining critical business continuity. Designed scalable cloud architectures, integrated secure payment solutions, and architected conversions to a multi-tenant SaaS model',
   type: 'main',
   startDate: new Date('2020-02-01'),
   endDate: new Date('2024-04-31'),
@@ -192,7 +192,7 @@ const quests: Quest[] = [
   description:
     'Co-led technical implementations and maintained clear communication during leadership transitions.',
   summary: 
-    'Led critical platform migrations and major refactoring efforts that transformed application performance while providing technical leadership during organizational transitions. I established effective feedback mechanisms with stakeholders and represented technical concerns to executive leadership.',
+    'Led critical platform migrations and major refactoring efforts that transformed application performance while providing technical leadership during organizational transitions. Established effective feedback mechanisms with stakeholders and represented technical concerns to executive leadership.',
   type: 'main',
   startDate: new Date('2018-10-01'),
   endDate: new Date('2020-02-01'),
