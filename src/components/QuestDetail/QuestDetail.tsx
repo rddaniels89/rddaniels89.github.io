@@ -70,7 +70,7 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
 
   return (
     <div className="quest-detail">
-      {theme === 'work' && (
+      {(
         <div className="quest-header">
           <button className="back-button" onClick={goBack}>
             <FontAwesomeIcon icon={faArrowLeft} /> Back
@@ -155,10 +155,6 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
             ))}
         </ul>
       </div>
-      
-      {theme === 'play' && (
-        <button className="back-button" onClick={goBack}>Back</button>
-      )}
     </div>
   );
 };
