@@ -4,7 +4,7 @@ import quests from '../../data/quests.data';
 import { useTheme } from '../../context/ThemeContext';
 import './QuestDetail.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faBriefcase, faCalendarAlt, faTrophy, faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faBriefcase, faCalendarAlt, faTrophy, faLightbulb, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 // This component can be used in two ways:
 // 1. With an ID prop directly (when used in a component)
@@ -22,7 +22,8 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
   
   // Get ID either from props or URL params
   const id = propId !== undefined ? propId : params.id ? parseInt(params.id, 10) : -1;
-  
+  const MAX_QUEST = quests.length-1;
+
   // Find the quest by ID
   const quest = quests.find((q) => q.id === id);
   const { theme } = themeContext;
@@ -33,6 +34,9 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
 
   const goBack = () => {
     navigate(-1);
+  };
+  const goForward = () => {
+    navigate(`/quests/${((id+1)%MAX_QUEST) +1})`);
   };
   
   // Format date nicely
@@ -70,6 +74,9 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
         <div className="quest-header">
           <button className="back-button" onClick={goBack}>
             <FontAwesomeIcon icon={faArrowLeft} /> Back
+          </button>
+          <button className="back-button" onClick={goForward}>
+          Next<FontAwesomeIcon icon={faArrowRight} />
           </button>
         </div>
       )}
