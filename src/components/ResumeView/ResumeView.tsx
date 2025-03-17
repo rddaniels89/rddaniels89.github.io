@@ -12,7 +12,7 @@ const ResumeView: React.FC = () => {
   const resumeData = useMemo(() => {
     // Extract and organize professional experience
     const experience = quests
-      .filter(quest => quest.company && quest.company !== 'Personal Project')
+      .filter(quest => quest.company && quest.company !== 'Personal Project' && quest.type !== 'education')
       .map(quest => ({
         company: quest.company,
         role: quest.workTitle,
