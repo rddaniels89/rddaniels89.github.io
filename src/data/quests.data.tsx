@@ -434,58 +434,59 @@ const quests: Quest[] = [
   endDate: new Date(2038, 2, 10), // Ongoing
   roles: ['AI Enthusiast (Hybrid)'],
   tags: ['AI', 'Machine Learning', 'ChatGPT', 'Python', 'Productivity'],
-  accomplishments: [
-    {
-      description:
-        'Built a dynamic resume website using ChatGPT with minimal code.',
-      role: 'AI Enthusiast (Hybrid)',
-      learnings: [
-        'Effective prompt engineering generates better code from AI models',
-        'AI shifts developer focus from writing code to defining solutions'
-      ],
-    },
-    {
-      description:
-        'Experimented with AI models using Oogabooga and Hugging Face, deepening practical ML expertise.',
-      role: 'AI Enthusiast (Hybrid)',
-      learnings: [
-        'Local AI deployment has different constraints than cloud solutions',
-        'Domain-specific applications benefit from model fine-tuning'
-      ],
-    },
-    {
-      description:
-        'Enhanced Python skills and utilized Jupyter notebooks for data analysis and model interaction.',
-      role: 'AI Enthusiast (Hybrid)',
-      learnings: [
-        'Interactive notebooks excel for exploratory data analysis',
-        'Statistical literacy enhances programming in data projects'
-      ],
-    },
-    {
-      description:
-        'Integrated OpenAI APIs and Playground, applying AI tools to streamline development workflows.',
-      role: 'AI Enthusiast (Hybrid)',
-      learnings: [
-        'API-based AI requires different approaches than UI-based tools',
-        'Cost-effective AI implementation needs efficient prompt design'
-      ],
-    },
-    {
-      description:
-        'Leveraged AI tools (ChatGPT, Udio, Claude, MidJourney) in both professional and personal projects.',
-      role: 'AI Enthusiast (Hybrid)',
-      learnings: [
-        'Different AI models excel at specific task types',
-        'Match AI tools to specific workflow requirements'
-      ],
-    },
-  ],
+  accomplishments:
+  [
+      {
+        description:
+          'Built a dynamic resume website using ChatGPT/Claude/Cursor with minimal code.',
+        role: 'AI Enthusiast (Hybrid)',
+        learnings: [
+          'Simple, clear prompts produce better code results',
+          'Spent more time reviewing code and minimal time writing actual code'
+        ],
+      },
+      {
+        description:
+          'Experimented with AI models using Oogabooga and Hugging Face, deepening practical ML expertise.',
+        role: 'AI Enthusiast (Hybrid)',
+        learnings: [
+          'Running AI locally works differently than using cloud services',
+          'Expplored the hugging face ecosystem for AI models and tools'
+        ],
+      },
+      {
+        description:
+          'Enhanced Python skills by building a family of agents for my family',
+        role: 'AI Enthusiast (Hybrid)',
+        learnings: [
+          'Started learning with HuggingFace Agent course',
+          'Created personalized AI assistants using Replit, Discord bots, and Cursor'
+        ],
+      },
+      {
+        description:
+          'Integrated OpenAI APIs and Playground, applying AI tools to streamline development workflows.',
+        role: 'AI Enthusiast (Hybrid)',
+        learnings: [
+          'API integration requires different skills than using web interfaces',
+          'Careful prompt design saves money when using paid AI services'
+        ],
+      },
+      {
+        description:
+          'Leveraged AI tools (ChatGPT, Udio, Claude, MidJourney) in both professional and personal projects.',
+        role: 'AI Enthusiast (Hybrid)',
+        learnings: [
+          'Each AI tool has its own strengths for different tasks',
+          'Matching the right AI tool to each project improves results'
+        ],
+      },
+    ]
 },
 {
   id: 9,
   titles: {
-    retro: "Education",
+    retro: "The Scholar's Path",
     sleek: "Education"
   },
   company: "California State University Fullerton",

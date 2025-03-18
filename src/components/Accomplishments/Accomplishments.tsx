@@ -1,5 +1,5 @@
 // src/components/Accomplishments/Accomplishments.tsx
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
 import './Accomplishments.css';
 import quests from '../../data/quests.data';
 import { useTheme } from '../../context/ThemeContext';
@@ -135,32 +135,75 @@ const Accomplishments: React.FC = () => {
   };
 
   // Get story summary based on view mode and theme
-  const getStorySummary = () => {
+  const getStorySummary = useCallback(() => {
     if (!filteredAccomplishments.length) return null;
     
-    if (theme === 'play') {
+    const uniqueLearningsCount = new Set(filteredAccomplishments.flatMap(acc => acc.learnings)).size;
+    const groupCount = Object.keys(groupedAccomplishments).length;
+    
+    // Helper to check if current selection is education/personal growth
+    const isEducationOrPersonal = () => {
       if (viewMode === 'role') {
-        return `As a ${selectedRole}, I've embarked on ${filteredAccomplishments.length} 
-        quests across ${Object.keys(groupedAccomplishments).length} different guilds, 
-        mastering ${Array.from(new Set(filteredAccomplishments.flatMap(acc => acc.learnings))).length} 
-        unique skills along my journey.`;
+        return selectedRole === 'Student' || selectedRole === 'AI Enthusiast (Hybrid)';
       } else {
-        return `My adventures with the ${selectedCompany} guild have led me through 
-        ${filteredAccomplishments.length} challenging quests, where I've taken on 
-        ${Object.keys(groupedAccomplishments).length} different roles and gained 
-        ${Array.from(new Set(filteredAccomplishments.flatMap(acc => acc.learnings))).length} powerful abilities.`;
+        return selectedCompany === 'California State University Fullerton' || selectedCompany === 'Personal Project';
+      }
+    };
+
+    if (theme === 'play') {
+      if (isEducationOrPersonal()) {
+        if (viewMode === 'role') {
+          if (selectedRole === 'Student') {
+            return `As a Student, I've completed ${filteredAccomplishments.length} 
+            training quests on my path to graduation.`;
+          } else {
+            return `As an AI Enthusiast, I've completed ${filteredAccomplishments.length} 
+            personal projects exploring AI and machine learning.`;
+          }
+        } else {
+          return `My adventures in ${selectedCompany} have led me through 
+          ${filteredAccomplishments.length} enlightening quests, where I've gained 
+          ${uniqueLearningsCount} powerful abilities through dedicated study and practice.`;
+        }
+      } else {
+        if (viewMode === 'role') {
+          return `As a ${selectedRole}, I've embarked on ${filteredAccomplishments.length} 
+          quests across ${groupCount} different guilds, 
+          mastering ${uniqueLearningsCount} unique skills along my journey.`;
+        } else {
+          return `My adventures with the ${selectedCompany} guild have led me through 
+          ${filteredAccomplishments.length} challenging quests, where I've taken on 
+          ${groupCount} different roles and gained ${uniqueLearningsCount} powerful abilities.`;
+        }
       }
     } else {
-      if (viewMode === 'role') {
-        return `In my career as a ${selectedRole}, I've contributed to ${Object.keys(groupedAccomplishments).length} 
-        different organizations, having ${filteredAccomplishments.length} key contributions 
-        and developing in ${Array.from(new Set(filteredAccomplishments.flatMap(acc => acc.learnings))).length} 
-        distinct professional competencies.`;
+      if (isEducationOrPersonal()) {
+        if (viewMode === 'role') {
+          if (selectedRole === 'Student') {
+            return `As a Student, I've completed ${filteredAccomplishments.length} 
+            key academic milestones in pursuit of my degree.`;
+          } else {
+            return `As an AI Enthusiast, I've completed ${filteredAccomplishments.length} 
+            personal projects exploring AI and machine learning.`;
+          }
+        } else {
+          return `During my time at ${selectedCompany}, I've completed ${filteredAccomplishments.length} 
+          significant learning milestones, developing expertise in ${uniqueLearningsCount} 
+          distinct areas through focused study and hands-on experience.`;
+        }
       } else {
-        return `During my tenure at ${selectedCompany}, ${quests.filter(acc => acc.company === selectedCompany).map(descr => descr.summary)}`;
+        if (viewMode === 'role') {
+          return `In my professional career as a ${selectedRole}, I've contributed to ${groupCount} 
+          different organizations, having ${filteredAccomplishments.length} key contributions 
+          and developing in ${uniqueLearningsCount} distinct professional competencies.`;
+        } else {
+          return `During my tenure at ${selectedCompany}, I've made ${filteredAccomplishments.length} 
+          significant contributions across ${groupCount} different roles, developing expertise in 
+          ${uniqueLearningsCount} distinct professional areas.`;
+        }
       }
     }
-  };
+  }, [filteredAccomplishments, groupedAccomplishments, theme, viewMode, selectedRole, selectedCompany]);
 
   return (
     <div className={`accomplishment-layout ${theme}`}>
@@ -190,25 +233,59 @@ const Accomplishments: React.FC = () => {
         <h3>{viewMode === 'role' ? (theme === 'play' ? 'Classes' : 'Roles') : (theme === 'play' ? 'Guilds' : 'Companies')}</h3>
         
         {viewMode === 'role' ? (
-          roles.map(role => (
-            <button
-              key={role}
-              className={`accomplishment-filter-button ${selectedRole === role ? 'active' : ''}`}
-              onClick={() => setSelectedRole(role === selectedRole ? null : role)}
-            >
-              {role} <span className="role-count">{roleCounts[role]}</span>
-            </button>
-          ))
+          <>
+            <div className="filter-section">
+              <h4>Career Roles</h4>
+              {roles.filter(r => r !== 'Student' && r !== 'AI Enthusiast (Hybrid)').map(role => (
+                <button
+                  key={role}
+                  className={`accomplishment-filter-button ${selectedRole === role ? 'active' : ''}`}
+                  onClick={() => setSelectedRole(role === selectedRole ? null : role)}
+                >
+                  {role} <span className="role-count">{roleCounts[role]}</span>
+                </button>
+              ))}
+            </div>
+            <div className="filter-section secondary">
+              <h4>Education & Personal Growth</h4>
+              {roles.filter(r => r === 'Student' || r === 'AI Enthusiast (Hybrid)').map(role => (
+                <button
+                  key={role}
+                  className={`accomplishment-filter-button education ${selectedRole === role ? 'active' : ''}`}
+                  onClick={() => setSelectedRole(role === selectedRole ? null : role)}
+                >
+                  {role} <span className="role-count">{roleCounts[role]}</span>
+                </button>
+              ))}
+            </div>
+          </>
         ) : (
-          companies.map(company => (
-            <button
-              key={company}
-              className={`accomplishment-filter-button ${selectedCompany === company ? 'active' : ''}`}
-              onClick={() => setSelectedCompany(company === selectedCompany ? null : company)}
-            >
-              {company} <span className="role-count">{companyCounts[company]}</span>
-            </button>
-          ))
+          <>
+            <div className="filter-section">
+              <h4>Professional Experience</h4>
+              {companies.filter(c => c !== 'California State University Fullerton' && c !== 'Personal Project').map(company => (
+                <button
+                  key={company}
+                  className={`accomplishment-filter-button ${selectedCompany === company ? 'active' : ''}`}
+                  onClick={() => setSelectedCompany(company === selectedCompany ? null : company)}
+                >
+                  {company} <span className="role-count">{companyCounts[company]}</span>
+                </button>
+              ))}
+            </div>
+            <div className="filter-section secondary">
+              <h4>Education & Personal Growth</h4>
+              {companies.filter(c => c === 'California State University Fullerton' || c === 'Personal Project').map(company => (
+                <button
+                  key={company}
+                  className={`accomplishment-filter-button education ${selectedCompany === company ? 'active' : ''}`}
+                  onClick={() => setSelectedCompany(company === selectedCompany ? null : company)}
+                >
+                  {company} <span className="role-count">{companyCounts[company]}</span>
+                </button>
+              ))}
+            </div>
+          </>
         )}
       </div>
 
