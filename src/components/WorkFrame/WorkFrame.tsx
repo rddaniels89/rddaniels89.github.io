@@ -2,7 +2,7 @@ import React from 'react';
 import './WorkFrame.css';
 
 interface WorkFrameProps {
-  type?: 'main' | 'side';
+  type?: 'career' | 'hobby' | 'education' | 'independent';
   children?: React.ReactNode;
 }
 
@@ -11,7 +11,7 @@ const WorkFrame: React.FC<WorkFrameProps> = ({ type, children }) => {
   const getHeading = () => {
     if (!type) return "";
     
-    return type === 'main' 
+    return type === 'career' 
       ? "Professional Experience" 
       : "Personal Projects & Interests";
   };

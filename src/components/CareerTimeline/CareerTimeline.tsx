@@ -11,7 +11,7 @@ const CareerTimeline: React.FC = () => {
   
   // Filter and sort quests - only showing main quests in chronological order
   const sortedQuests = [...quests]
-    .filter(quest => quest.type === 'main')
+    .filter(quest => quest.type !== 'hobby')
     .sort((a, b) => b.startDate.getTime() - a.startDate.getTime()); // Chronological order
 
   const handleQuestClick = (id: number) => {
@@ -136,10 +136,11 @@ const CareerTimeline: React.FC = () => {
             <div 
               key={quest.id} 
               className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}
+              data-type={quest.type || 'career'}
               onClick={() => handleQuestClick(quest.id)}
             >
               <div className="timeline-connector"></div>
-              <div className="timeline-content">
+              <div className="timeline-content" data-type={quest.type || 'career'}>
                 {theme === 'play' && (
                   <div className="pixel-icon role-icon-${quest.roles[0].toLowerCase().replace(/\s+/g, '-')}"></div>
                 )}

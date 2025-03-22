@@ -71,22 +71,22 @@ const AppRoutes: React.FC = () => {
         
         {/* Accomplishments */}
         <Route path="/accomplishments" element={
-          <QuestSwitcher type="main">
+          <QuestSwitcher type="career">
             <Navbar />
             <Accomplishments />
           </QuestSwitcher>
         } />
 
-                {/* Timelines */}
-                <Route path="/timeline" element={
-          <QuestSwitcher type="main">
+        {/* Timelines */}
+        <Route path="/timeline" element={
+          <QuestSwitcher type="career">
             <Navbar />
             <CareerTimeline />
           </QuestSwitcher>
         } />
         
         <Route path="/resume" element={
-          <QuestSwitcher type="main">
+          <QuestSwitcher type="career">
             <Navbar />
             <ResumeView />
           </QuestSwitcher>

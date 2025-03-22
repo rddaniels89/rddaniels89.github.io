@@ -4,7 +4,7 @@ import { useTheme } from '../../context/ThemeContext';
 import { labels } from '../../data/labels';
 
 interface TVScreenProps {
-  type?: 'main' | 'side';
+  type?: 'career' | 'hobby' | 'education' | 'independent';
   children?: React.ReactNode;
 }
 

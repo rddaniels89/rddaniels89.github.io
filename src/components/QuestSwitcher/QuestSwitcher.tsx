@@ -5,7 +5,7 @@ import TVScreen from '../TVScreen/TVScreen';
 import WorkFrame from '../WorkFrame/WorkFrame';
 
 interface QuestSwitcherProps {
-  type?: 'main' | 'side';
+  type?: 'career' | 'hobby' | 'education' | 'independent';
   children?: React.ReactNode;
 }
 

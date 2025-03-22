@@ -57,15 +57,39 @@
   background-color: var(--accent-color);
 }
 
-/* Add futuristic accent line at top */
+/* Type indicator at the top */
 .quest-detail::before {
-  content: '';
+  content: attr(data-type);
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-color), transparent);
+  right: 0;
+  padding: 0.5rem 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: white;
+  z-index: 2;
+}
+
+/* Type-specific gradients */
+.quest-detail[data-type="career"]::before {
+  background: linear-gradient(to bottom, var(--accent-color) 0%, transparent 100%);
+}
+
+.quest-detail[data-type="hobby"]::before {
+  background: linear-gradient(to bottom, #4287f5, transparent);
+  color: white;
+}
+
+.quest-detail[data-type="education"]::before {
+  background: linear-gradient(to bottom, #32CD32, transparent);
+  color: white;
+}
+
+.quest-detail[data-type="independent"]::before {
+  background: linear-gradient(to bottom, #9C27B0, transparent);
+  color: white;
 }
 
 .quest-detail p {
@@ -207,6 +231,7 @@ ul.learnings li::before {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
+  margin-top: 2rem;
 }
 
 .quest-metadata {
@@ -319,6 +344,31 @@ ul.learnings li::before {
   background-color: rgba(107, 15, 26, 0.1);
   transform: translateY(-3px);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Type-specific accent colors */
+.quest-detail[data-type="career"] .badge {
+  background-color: rgba(107, 15, 26, 0.1);
+  color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.quest-detail[data-type="hobby"] .badge {
+  background-color: rgba(66, 135, 245, 0.1);
+  color: var(--side-color);
+  border-color: var(--side-color);
+}
+
+.quest-detail[data-type="education"] .badge {
+  background-color: rgba(50, 205, 50, 0.1);
+  color: var(--education-color);
+  border-color: var(--education-color);
+}
+
+.quest-detail[data-type="independent"] .badge {
+  background-color: rgba(156, 39, 176, 0.1);
+  color: var(--independent-color);
+  border-color: var(--independent-color);
 }
 
 /* Responsive adjustments */

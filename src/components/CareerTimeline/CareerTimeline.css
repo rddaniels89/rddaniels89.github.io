@@ -236,10 +236,11 @@
     padding-bottom: 3rem;
   }
   
-  /* Center line */
-  .timeline-line {
+  /* Timeline center line */
+  .timeline::before {
+    content: '';
     position: absolute;
-    width: 6px;
+    width: 4px;
     background-color: var(--accent-color);
     top: 0;
     bottom: 0;
@@ -248,8 +249,9 @@
     z-index: 1;
   }
   
-  .timeline-container.play .timeline-line {
-    width: 8px;
+  /* Theme-specific timeline line */
+  .timeline-container.play .timeline::before {
+    width: 6px;
     background: repeating-linear-gradient(
       to bottom,
       var(--accent-color),
@@ -259,7 +261,7 @@
     );
   }
   
-  .timeline-container.work .timeline-line {
+  .timeline-container.work .timeline::before {
     width: 4px;
     background-color: var(--accent-color);
     opacity: 0.6;
@@ -271,76 +273,146 @@
     width: 50%;
     margin-bottom: 4rem;
     z-index: 2;
-    cursor: pointer;
   }
   
-  .timeline-item.left {
-    left: 0;
-    padding-right: 3rem;
+  /* Content styling with proper spacing */
+  .timeline-content {
+    position: relative;
+    width: 70%;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  .timeline-item.right {
+  /* Left side items */
+  .timeline-item:nth-child(odd) .timeline-content {
+    margin-right: 6rem;
+    margin-left: auto;
+  }
+  
+  .timeline-item:nth-child(odd)::before {
+    right: -8px;
+    border-color: var(--timeline-dot-color);
+  }
+  
+  .timeline-item:nth-child(odd)::after {
+    right: 8px;
+    width: 6rem;
+    background: var(--accent-color);
+  }
+  
+  /* Right side items */
+  .timeline-item:nth-child(even) {
     left: 50%;
-    padding-left: 3rem;
   }
   
-  /* Timeline connector dots */
+  .timeline-item:nth-child(even) .timeline-content {
+    margin-left: 6rem;
+    margin-right: auto;
+  }
+  
+  .timeline-item:nth-child(even)::before {
+    left: -8px;
+    border-color: var(--timeline-dot-color);
+  }
+  
+  .timeline-item:nth-child(even)::after {
+    left: 8px;
+    width: 6rem;
+    background: var(--accent-color);
+  }
+  
+  /* Circle connectors - common styles */
   .timeline-item::before {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: var(--accent-color);
-    top: 15px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
+    background: var(--background-color);
+    border: 3px solid;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 3;
   }
   
-  .timeline-container.play .timeline-item::before {
-    border: 4px solid var(--highlight-color);
-    border-radius: 0; /* Square for retro look */
-  }
-  
-  .timeline-container.work .timeline-item::before {
-    border: 3px solid var(--background-color);
-  }
-  
-  .timeline-item.left::before {
-    right: -10px;
-  }
-  
-  .timeline-item.right::before {
-    left: -10px;
-  }
-  
   /* Connector lines */
-  .timeline-connector {
+  .timeline-item::after {
+    content: '';
     position: absolute;
     height: 2px;
-    background-color: var(--accent-color);
-    top: 24px;
-    width: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 2;
   }
   
-  .timeline-item.left .timeline-connector {
-    right: 0;
+  /* Theme-specific circle styles */
+  .timeline-container.play .timeline-item::before {
+    width: 20px;
+    height: 20px;
+    border: 4px solid;
+    border-radius: 0;
   }
   
-  .timeline-item.right .timeline-connector {
+  .timeline-container.work .timeline-item::before {
+    width: 16px;
+    height: 16px;
+    border: 3px solid;
+    border-radius: 50%;
+  }
+  
+  /* Type pill indicator */
+  .timeline-container.work .timeline-content::before {
+    content: attr(data-type);
+    position: absolute;
+    top: 0;
     left: 0;
+    right: 0;
+    padding: 0.3rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    border-radius: 8px 8px 0 0;
+    color: white;
   }
   
-  .timeline-container.play .timeline-connector {
-    height: 4px;
+  /* Type-specific pill colors */
+  .timeline-container.work .timeline-item[data-type="career"] .timeline-content::before {
+    background: linear-gradient(to bottom, var(--accent-color), transparent);
+    color: white;
   }
   
-  /* Content styling */
-  .timeline-content {
-    padding: 1.5rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    position: relative;
+  .timeline-container.work .timeline-item[data-type="hobby"] .timeline-content::before {
+    background: linear-gradient(to bottom, #4287f5, transparent);
+    color: white;
+  }
+  
+  .timeline-container.work .timeline-item[data-type="education"] .timeline-content::before {
+    background: linear-gradient(to bottom, #32CD32, transparent);
+    color: white;
+  }
+  
+  .timeline-container.work .timeline-item[data-type="independent"] .timeline-content::before {
+    background: linear-gradient(to bottom, #9C27B0, transparent);
+    color: white;
+  }
+  
+  /* Type-specific colors for dots */
+  .timeline-item[data-type="career"]::before {
+    border-color: var(--accent-color),
+  }
+  
+  .timeline-item[data-type="hobby"]::before {
+    border-color: #4287f5;
+  }
+  
+  .timeline-item[data-type="education"]::before {
+    border-color: #32CD32;
+  }
+  
+  .timeline-item[data-type="independent"]::before {
+    border-color: #9C27B0,;
   }
   
   /* Role icons for retro mode */
@@ -385,14 +457,6 @@
   .timeline-container.play .timeline-content:hover {
     transform: translateY(-5px);
     box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.4);
-  }
-  
-  .timeline-container.work .timeline-content {
-    background-color: var(--background-color);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-    font-family: 'Roboto', sans-serif;
   }
   
   .timeline-container.work .timeline-content:hover {
@@ -664,24 +728,30 @@
   }
   
   @media (max-width: 768px) {
-    .timeline-line {
+    .timeline::before {
       left: 20px;
     }
     
     .timeline-item {
       width: 100%;
-      padding-left: 4rem !important;
-      padding-right: 1rem !important;
       left: 0 !important;
     }
     
-    .timeline-item::before {
-      left: 11px !important;
+    .timeline-content {
+      width: calc(100% - 7rem);
+      margin-left: 7rem !important;
+      margin-right: 1rem !important;
     }
     
-    .timeline-connector {
-      left: 20px !important;
-      width: 2rem;
+    .timeline-item::before {
+      left: 12px !important;
+      right: auto !important;
+    }
+    
+    .timeline-item::after {
+      left: 28px !important;
+      right: auto !important;
+      width: 5rem !important;
     }
     
     .competency-list {

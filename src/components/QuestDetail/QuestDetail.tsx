@@ -26,6 +26,12 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
 
   // Find the quest by ID
   const quest = quests.find((q) => q.id === id);
+  // Create a sorted map of quest IDs by date
+  const questIdByDate = quests
+    .sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
+    .map(q => ({ id: q.id, startDate: q.startDate }));
+
+  const currentIndex = questIdByDate.findIndex(q => q.id === id);
   const { theme } = themeContext;
 
   if (!quest) {
@@ -33,10 +39,15 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
   }
 
   const goBack = () => {
-    navigate(-1);
+    if (currentIndex > 0) {
+      navigate(`/quests/${questIdByDate[currentIndex - 1].id}`);
+    }
   };
+
   const goForward = () => {
-    navigate(`/quests/${((id+1)%MAX_QUEST) +1})`);
+    if (currentIndex < questIdByDate.length - 1) {
+      navigate(`/quests/${questIdByDate[currentIndex + 1].id}`);
+    }
   };
   
   // Format date nicely
@@ -69,7 +80,7 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
   };
 
   return (
-    <div className="quest-detail">
+    <div className="quest-detail" data-type={quest.type || 'main'}>
       {(
         <div className="quest-header">
           <button className="back-button" onClick={goBack}>

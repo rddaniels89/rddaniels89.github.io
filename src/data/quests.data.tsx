@@ -11,7 +11,7 @@ export interface Quest {
   description: string;
   summary?:string;
   accomplishments: Accomplishment[];
-  type: 'main' | 'side' | 'education';
+  type: 'career' | 'hobby' | 'education' | 'independent';
   startDate: Date;
   endDate: Date;
   roles: string[];
@@ -37,7 +37,7 @@ const quests: Quest[] = [
   description: 'Led architectural strategy across multiple teams to improve code consistency and efficiency.',
   summary:
     'Elevated architectural practices across multiple teams by implementing design consistency, bridging communication gaps, and establishing efficient development workflows. Cultivated technical leadership through deliberate mentorship while strategically aligning technology decisions with business objectives.',
-  type: 'main',
+  type: 'career',
   startDate: new Date('2024-05-02'),
   endDate: new Date(2038, 2, 10), // Ongoing
   roles: ['Senior Consultant', 'Software Architect'],
@@ -110,7 +110,7 @@ const quests: Quest[] = [
     'Transformed legacy systems into modern applications while leading diverse technology teams.',
   summary: 
     'Modernized legacy healthcare systems while maintaining critical business continuity. Designed scalable cloud architectures, integrated secure payment solutions, and architected conversions to a multi-tenant SaaS model',
-  type: 'main',
+  type: 'career',
   startDate: new Date('2020-02-01'),
   endDate: new Date('2024-04-31'),
   roles: ['Senior Consultant', 'Software Architect'],
@@ -193,7 +193,7 @@ const quests: Quest[] = [
     'Co-led technical implementations and maintained clear communication during leadership transitions.',
   summary: 
     'Led critical platform migrations and major refactoring efforts that transformed application performance while providing technical leadership during organizational transitions. Established effective feedback mechanisms with stakeholders and represented technical concerns to executive leadership.',
-  type: 'main',
+  type: 'career',
   startDate: new Date('2018-10-01'),
   endDate: new Date('2020-02-01'),
   roles: ['Team Lead', 'Interim Director of Engineering'],
@@ -261,7 +261,7 @@ const quests: Quest[] = [
     'Enhanced desktop applications and maintained project delivery while developing professional estimation skills.',
   summary: 
     'Focused on desktop application enhancement and workflow automation while developing strong project estimation and delivery skills. I applied UX improvements to legacy systems and created reliable automation tools.',
-  type: 'main',
+  type: 'career',
   startDate: new Date('2017-10-01'),
   endDate: new Date('2018-10-01'),
   roles: ['Senior Consultant'],
@@ -311,7 +311,7 @@ const quests: Quest[] = [
     'Developed components for financial applications while enhancing my technical skills through mentorship and test-driven development.',
   summary: 
     'Built key features for financial systems while improving code quality through comprehensive testing strategies. I benefited from structured mentorship that accelerated my professional growth.',
-  type: 'main',
+  type: 'career',
   startDate: new Date('2016-08-01'),
   endDate: new Date('2017-09-01'),
   roles: ['Developer'],
@@ -355,7 +355,7 @@ const quests: Quest[] = [
     'Rotated through diverse IT roles as part of a selective program, gaining broad exposure while developing enterprise applications for critical operations.',
   summary: 
     'Participated in the selective IT Career Foundation Program (ITCFP), rotating through multiple technical domains to build cross-functional expertise. I developed mission-critical financial applications while improving development processes across teams.',
-  type: 'main',
+  type: 'career',
   startDate: new Date('2012-06-01'),
   endDate: new Date('2016-08-01'),
   roles: ['ITCFP Participant', 'Developer'],
@@ -400,7 +400,7 @@ const quests: Quest[] = [
     'Applied software engineering principles to game development through self-directed learning in Unity.',
   summary: 
     'In my personal projects, I\'ve explored game development as both a creative outlet and a way to apply software architecture principles in a different domain. This has expanded my technical versatility while providing insights into performance optimization and interactive system design.',
-  type: 'side',
+  type: 'hobby',
   startDate: new Date('2012-06-01'),
   endDate: new Date(2038, 2, 10), // Ongoing
   roles: ['Game Developer (Personal Projects)'],
@@ -429,7 +429,7 @@ const quests: Quest[] = [
     'Explored AI tools and applications to enhance development workflows and create innovative solutions.',
   summary: 
     'Leveraged AI tools to accelerate development and broaden my technical capabilities, building applications like this resume site with minimal code. By experimenting with various AI models and APIs, I\'ve developed practical expertise in applying these technologies to solve real-world problems.',
-  type: 'side',
+  type: 'hobby',
   startDate: new Date('2022-11-01'),
   endDate: new Date(2038, 2, 10), // Ongoing
   roles: ['AI Enthusiast (Hybrid)'],
@@ -505,6 +505,106 @@ const quests: Quest[] = [
   endDate: new Date("2012-05-31"),
   roles: ["Student"],
   tags: ["Education", "Degree"]
+},
+{
+  id: 10, // Assuming next available ID is 10
+  titles: {
+    retro: "The Portfolio Advisor's Quest",
+    sleek: "Independent Technical Consultant for Hedge Fund Company"
+  },
+  company: "Independent Consulting (CEO of Lendr)",
+  workTitle: "Technical Strategy Consultant",
+  description: "Performed comprehensive analysis of company's software suite and provided strategic recommendations to improve KPIs.",
+  summary: "Hired directly by the CEO of Lendr to diagnose technical challenges affecting key performance indicators at one of his portfolio companies. Conducted code review using SOLID principles to identify structural issues and created a strategic roadmap for technical improvement that aligned with business objectives.",
+  type: "independent",
+  startDate: new Date("2022-03-01"),
+  endDate: new Date("2022-06-30"),
+  roles: ["Technical Strategy Consultant"],
+  tags: ["Code Analysis", "Technical Strategy", "Executive Advisory", "Performance Optimization"],
+  accomplishments: [
+    {
+      description: "Analyzed existing software architecture against SOLID principles, identifying systemic issues impacting performance.",
+      role: "Technical Strategy Consultant",
+      learnings: [
+        "Learned how to effectively communicate technical debt concepts to executive leadership",
+        "Discovered my reputation for technical excellence created trust that facilitated difficult conversations"
+      ]
+    },
+    {
+      description: "Created comprehensive strategic recommendations deck that connected technical issues to business KPIs.",
+      role: "Technical Strategy Consultant",
+      learnings: [
+        "Developed heuristics for predicting how technical architecture impacts business outcomes",
+        "Learned that sampling code can effectively reveal patterns that apply to the broader codebase"
+      ]
+    },
+    {
+      description: "Presented findings to executive leadership team with actionable remediation steps.",
+      role: "Technical Strategy Consultant",
+      learnings: [
+        "Found that executives value clear connections between technical recommendations and business outcomes",
+        "Learned the importance of presenting technical strategies in business-value terms"
+      ]
+    },
+    {
+      description: "Developed a phased implementation plan that balanced immediate improvements with long-term architectural goals.",
+      role: "Technical Strategy Consultant",
+      learnings: [
+        "Refined my ability to prioritize technical improvements based on business impact",
+        "Learned that effective technical strategy considers both immediate wins and sustainable architecture"
+      ]
+    }
+  ]
+},
+{
+  id: 11, // Next available ID
+  titles: {
+    retro: "The Legal Patent Expedition",
+    sleek: "Technical Director Consultant for Legal Patent Startup"
+  },
+  company: "Independent Consulting (Previous Sr Manager at Boeing)",
+  workTitle: "Technical Director Consultant",
+  description: "Established technical direction and built complete SPA solution for a startup in the legal patent space.",
+  summary: "Engaged by founders to establish technical direction for their application. Managed the complete software development lifecycle while building a highly customizable SPA, including infrastructure and DevOps processes. Successfully translated stakeholder vision into functional requirements and technical implementation.",
+  type: "independent",
+  startDate: new Date("2024-03-01"),
+  endDate: new Date("2024-07-28"),
+  roles: ["Technical Director Consultant", "Full Stack Developer"],
+  tags: ["SPA Development", "Legal", "Technical Leadership", "Full Stack", "DevOps"],
+  accomplishments: [
+    {
+      description: "Established complete technical direction for the product and guided founders through key technology decisions.",
+      role: "Technical Director Consultant",
+      learnings: [
+        "Discovered my ability to anticipate product needs before stakeholders had fully articulated them",
+        "Learned that early architecture decisions have amplified impact on product trajectory"
+      ]
+    },
+    {
+      description: "Translated stakeholder vision into functional requirements and developed a fully working, highly customizable SPA.",
+      role: "Full Stack Developer",
+      learnings: [
+        "Refined techniques for converting abstract business goals into concrete functional requirements",
+        "Learned that customization capabilities need to be balanced with maintenance complexity"
+      ]
+    },
+    {
+      description: "Managed complete SDLC including DevOps infrastructure from initial planning through deployment.",
+      role: "Technical Director Consultant",
+      learnings: [
+        "Found that well-designed deployment pipelines significantly reduce operational overhead",
+        "Learned that infrastructure decisions should anticipate scaling needs without overengineering"
+      ]
+    },
+    {
+      description: "Created architecture that optimized for both initial delivery timeline and future product evolution.",
+      role: "Technical Director Consultant",
+      learnings: [
+        "Identified optimal ways to deliver immediate business value while establishing architecture for long-term growth",
+        "Refined techniques for balancing technical ideals with practical delivery constraints"
+      ]
+    }
+  ]
 }
 ];
 
