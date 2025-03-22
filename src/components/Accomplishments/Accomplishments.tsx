@@ -205,6 +205,63 @@ const Accomplishments: React.FC = () => {
     }
   }, [filteredAccomplishments, groupedAccomplishments, theme, viewMode, selectedRole, selectedCompany]);
 
+  // Group roles/companies by type
+  const getFilteredItems = useMemo(() => {
+    const items = {
+      career: [] as { name: string; count: number }[],
+      independent: [] as { name: string; count: number }[],
+      hobby: [] as { name: string; count: number }[],
+      education: [] as { name: string; count: number }[]
+    };
+
+    if (viewMode === 'role') {
+      roles.forEach(role => {
+        const count = roleCounts[role];
+        const questType = quests.find(q => q.accomplishments.some(a => a.role === role))?.type || 'career';
+        items[questType].push({ name: role, count });
+      });
+    } else {
+      companies.forEach(company => {
+        const count = companyCounts[company];
+        const questType = quests.find(q => q.company === company)?.type || 'career';
+        items[questType].push({ name: company, count });
+      });
+    }
+
+    return items;
+  }, [viewMode, roles, companies, roleCounts, companyCounts]);
+
+  // Get section label based on theme and type
+  const getSectionLabel = (type: string) => {
+    if (theme === 'work' ) {
+      switch (type) {
+        case 'career':
+          return viewMode === 'role' ? 'Career Roles' : 'Career Companies';
+        case 'independent':
+          return 'Independent Consulting';
+        case 'hobby':
+          return 'Personal Growth';
+        case 'education':
+          return 'Education';
+        default:
+          return 'Other';
+      }
+    } else {
+      switch (type) {
+        case 'career':
+          return 'Guild Quests';
+        case 'independent':
+          return 'Solo Adventures';
+        case 'hobby':
+          return 'Side Quests';
+        case 'education':
+          return 'Training Path';
+        default:
+          return 'Mystery Quests';
+      }
+    }
+  };
+
   return (
     <div className={`accomplishment-layout ${theme}`}>
       {/* Filter Panel */}
@@ -232,60 +289,88 @@ const Accomplishments: React.FC = () => {
 
         <h3>{viewMode === 'role' ? (theme === 'play' ? 'Classes' : 'Roles') : (theme === 'play' ? 'Guilds' : 'Companies')}</h3>
         
-        {viewMode === 'role' ? (
-          <>
-            <div className="filter-section">
-              <h4>Career Roles</h4>
-              {roles.filter(r => r !== 'Student' && r !== 'AI Enthusiast (Hybrid)').map(role => (
-                <button
-                  key={role}
-                  className={`accomplishment-filter-button ${selectedRole === role ? 'active' : ''}`}
-                  onClick={() => setSelectedRole(role === selectedRole ? null : role)}
-                >
-                  {role} <span className="role-count">{roleCounts[role]}</span>
-                </button>
-              ))}
-            </div>
-            <div className="filter-section secondary">
-              <h4>Education & Personal Growth</h4>
-              {roles.filter(r => r === 'Student' || r === 'AI Enthusiast (Hybrid)').map(role => (
-                <button
-                  key={role}
-                  className={`accomplishment-filter-button education ${selectedRole === role ? 'active' : ''}`}
-                  onClick={() => setSelectedRole(role === selectedRole ? null : role)}
-                >
-                  {role} <span className="role-count">{roleCounts[role]}</span>
-                </button>
-              ))}
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="filter-section">
-              <h4>Professional Experience</h4>
-              {companies.filter(c => c !== 'California State University Fullerton' && c !== 'Personal Project').map(company => (
-                <button
-                  key={company}
-                  className={`accomplishment-filter-button ${selectedCompany === company ? 'active' : ''}`}
-                  onClick={() => setSelectedCompany(company === selectedCompany ? null : company)}
-                >
-                  {company} <span className="role-count">{companyCounts[company]}</span>
-                </button>
-              ))}
-            </div>
-            <div className="filter-section secondary">
-              <h4>Education & Personal Growth</h4>
-              {companies.filter(c => c === 'California State University Fullerton' || c === 'Personal Project').map(company => (
-                <button
-                  key={company}
-                  className={`accomplishment-filter-button education ${selectedCompany === company ? 'active' : ''}`}
-                  onClick={() => setSelectedCompany(company === selectedCompany ? null : company)}
-                >
-                  {company} <span className="role-count">{companyCounts[company]}</span>
-                </button>
-              ))}
-            </div>
-          </>
+        {/* Career Roles */}
+        {getFilteredItems.career.length > 0 && (
+          <div className="filter-section career">
+            <h4>{getSectionLabel('career')}</h4>
+            {getFilteredItems.career.map(item => (
+              <button
+                key={item.name}
+                className={`accomplishment-filter-button career ${
+                  (viewMode === 'role' ? selectedRole : selectedCompany) === item.name ? 'active' : ''
+                }`}
+                onClick={() => viewMode === 'role' 
+                  ? setSelectedRole(item.name === selectedRole ? null : item.name)
+                  : setSelectedCompany(item.name === selectedCompany ? null : item.name)
+                }
+              >
+                {item.name} <span className="role-count">{item.count}</span>
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Independent Consulting */}
+        {getFilteredItems.independent.length > 0 && (
+          <div className="filter-section independent">
+            <h4>{getSectionLabel('independent')}</h4>
+            {getFilteredItems.independent.map(item => (
+              <button
+                key={item.name}
+                className={`accomplishment-filter-button independent ${
+                  (viewMode === 'role' ? selectedRole : selectedCompany) === item.name ? 'active' : ''
+                }`}
+                onClick={() => viewMode === 'role'
+                  ? setSelectedRole(item.name === selectedRole ? null : item.name)
+                  : setSelectedCompany(item.name === selectedCompany ? null : item.name)
+                }
+              >
+                {item.name} <span className="role-count">{item.count}</span>
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Personal Growth */}
+        {getFilteredItems.hobby.length > 0 && (
+          <div className="filter-section hobby">
+            <h4>{getSectionLabel('hobby')}</h4>
+            {getFilteredItems.hobby.map(item => (
+              <button
+                key={item.name}
+                className={`accomplishment-filter-button hobby ${
+                  (viewMode === 'role' ? selectedRole : selectedCompany) === item.name ? 'active' : ''
+                }`}
+                onClick={() => viewMode === 'role'
+                  ? setSelectedRole(item.name === selectedRole ? null : item.name)
+                  : setSelectedCompany(item.name === selectedCompany ? null : item.name)
+                }
+              >
+                {item.name} <span className="role-count">{item.count}</span>
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Education */}
+        {getFilteredItems.education.length > 0 && (
+          <div className="filter-section education">
+            <h4>{getSectionLabel('education')}</h4>
+            {getFilteredItems.education.map(item => (
+              <button
+                key={item.name}
+                className={`accomplishment-filter-button education ${
+                  (viewMode === 'role' ? selectedRole : selectedCompany) === item.name ? 'active' : ''
+                }`}
+                onClick={() => viewMode === 'role'
+                  ? setSelectedRole(item.name === selectedRole ? null : item.name)
+                  : setSelectedCompany(item.name === selectedCompany ? null : item.name)
+                }
+              >
+                {item.name} <span className="role-count">{item.count}</span>
+              </button>
+            ))}
+          </div>
         )}
       </div>
 
