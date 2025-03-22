@@ -585,22 +585,20 @@ const quests: Quest[] = [
       role: "Full Stack Developer",
       learnings: [
         "Refined techniques for converting abstract business goals into concrete functional requirements",
-        "Learned that customization capabilities need to be balanced with maintenance complexity"
+        "Learned how to balance investing in customization capabilities and maintenance complexity"
       ]
     },
     {
       description: "Managed complete SDLC including DevOps infrastructure from initial planning through deployment.",
       role: "Technical Director Consultant",
       learnings: [
-        "Found that well-designed deployment pipelines significantly reduce operational overhead",
-        "Learned that infrastructure decisions should anticipate scaling needs without overengineering"
+        "Learned that infrastructure decisions should anticipate scaling needs without over-engineering"
       ]
     },
     {
       description: "Created architecture that optimized for both initial delivery timeline and future product evolution.",
       role: "Technical Director Consultant",
       learnings: [
-        "Identified optimal ways to deliver immediate business value while establishing architecture for long-term growth",
         "Refined techniques for balancing technical ideals with practical delivery constraints"
       ]
     }
