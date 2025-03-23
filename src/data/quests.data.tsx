@@ -512,10 +512,10 @@ const quests: Quest[] = [
     retro: "The Portfolio Advisor's Quest",
     sleek: "Independent Technical Consultant for Hedge Fund Company"
   },
-  company: "Independent Consulting (CEO of Lendr)",
+  company: "Independent Consulting",
   workTitle: "Technical Strategy Consultant",
   description: "Performed comprehensive analysis of company's software suite and provided strategic recommendations to improve KPIs.",
-  summary: "Hired directly by the CEO of Lendr to diagnose technical challenges affecting key performance indicators at one of his portfolio companies. Conducted code review using SOLID principles to identify structural issues and created a strategic roadmap for technical improvement that aligned with business objectives.",
+  summary: "Hired directly by the CEO of Lendr to diagnose technical challenges affecting key performance indicators at one of his other companies. Conducted code review using SOLID principles to identify structural issues and created a strategic roadmap for technical improvement that aligned with business objectives.",
   type: "independent",
   startDate: new Date("2022-03-01"),
   endDate: new Date("2022-06-30"),
@@ -562,7 +562,7 @@ const quests: Quest[] = [
     retro: "The Legal Patent Expedition",
     sleek: "Technical Director Consultant for Legal Patent Startup"
   },
-  company: "Independent Consulting (Previous Sr Manager at Boeing)",
+  company: "Independent Consulting",
   workTitle: "Technical Director Consultant",
   description: "Established technical direction and built complete SPA solution for a startup in the legal patent space.",
   summary: "Engaged by founders to establish technical direction for their application. Managed the complete software development lifecycle while building a highly customizable SPA, including infrastructure and DevOps processes. Successfully translated stakeholder vision into functional requirements and technical implementation.",
