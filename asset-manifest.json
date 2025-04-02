@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.aa032b7e.css",
-    "main.js": "/static/js/main.f5636bb9.js",
-    "static/js/977.a9eb2898.chunk.js": "/static/js/977.a9eb2898.chunk.js",
-    "static/js/732.cc456c8a.chunk.js": "/static/js/732.cc456c8a.chunk.js",
-    "static/js/453.4114e58a.chunk.js": "/static/js/453.4114e58a.chunk.js",
-    "static/media/tvScreen.png": "/static/media/tvScreen.184bede378f457d78df8.png",
-    "index.html": "/index.html",
-    "main.aa032b7e.css.map": "/static/css/main.aa032b7e.css.map",
-    "main.f5636bb9.js.map": "/static/js/main.f5636bb9.js.map",
-    "732.cc456c8a.chunk.js.map": "/static/js/732.cc456c8a.chunk.js.map",
-    "453.4114e58a.chunk.js.map": "/static/js/453.4114e58a.chunk.js.map"
+    "main.css": "/Financial-Strategist/static/css/main.24c3f089.css",
+    "main.js": "/Financial-Strategist/static/js/main.564c5bd1.js",
+    "static/js/977.a9eb2898.chunk.js": "/Financial-Strategist/static/js/977.a9eb2898.chunk.js",
+    "static/js/732.cc456c8a.chunk.js": "/Financial-Strategist/static/js/732.cc456c8a.chunk.js",
+    "static/js/453.4114e58a.chunk.js": "/Financial-Strategist/static/js/453.4114e58a.chunk.js",
+    "static/media/tvScreen.png": "/Financial-Strategist/static/media/tvScreen.184bede378f457d78df8.png",
+    "index.html": "/Financial-Strategist/index.html",
+    "main.24c3f089.css.map": "/Financial-Strategist/static/css/main.24c3f089.css.map",
+    "main.564c5bd1.js.map": "/Financial-Strategist/static/js/main.564c5bd1.js.map",
+    "732.cc456c8a.chunk.js.map": "/Financial-Strategist/static/js/732.cc456c8a.chunk.js.map",
+    "453.4114e58a.chunk.js.map": "/Financial-Strategist/static/js/453.4114e58a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aa032b7e.css",
-    "static/js/main.f5636bb9.js"
+    "static/css/main.24c3f089.css",
+    "static/js/main.564c5bd1.js"
   ]
 }
