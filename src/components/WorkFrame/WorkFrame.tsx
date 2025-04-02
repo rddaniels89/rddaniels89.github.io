@@ -1,5 +1,7 @@
 import React from 'react';
 import './WorkFrame.css';
+import { useTheme } from '../../context/ThemeContext';
+import { labels } from '../../data/labels';
 
 interface WorkFrameProps {
   type?: 'career' | 'hobby' | 'education' | 'independent';
@@ -7,13 +9,12 @@ interface WorkFrameProps {
 }
 
 const WorkFrame: React.FC<WorkFrameProps> = ({ type, children }) => {
-  // Function to get the appropriate heading based on type
+  const { theme } = useTheme();
+  
+  // Get the appropriate heading based on type and theme
   const getHeading = () => {
     if (!type) return "";
-    
-    return type === 'career' 
-      ? "Professional Experience" 
-      : "Personal Projects & Interests";
+    return labels[theme][type] || "";
   };
   
   // Generate accent decorative element

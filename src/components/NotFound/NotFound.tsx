@@ -18,20 +18,20 @@ const NotFound: React.FC = () => {
 
   return (
     <div className={`not-found-container ${theme}`}>
-      {theme === 'play' ? (
-        // Retro game style 404
-        <div className="pixel-art-container">
-          <h1 className="glitch-text">404</h1>
-          <div className="pixel-character"></div>
-          <p className="blink-text">QUEST NOT FOUND</p>
-          <p>The princess is in another castle!</p>
+      {theme === 'recon' ? (
+        // Cyberpunk terminal style 404
+        <div className="terminal-container">
+          <h1 className="glitch-text">ERROR 404</h1>
+          <div className="terminal-line"></div>
+          <p className="blink-text">ACCESS DENIED: RESOURCE NOT FOUND</p>
+          <p>SECURITY PROTOCOL: REDIRECTING TO SECURE SECTOR</p>
           
           <div className="button-container">
-            <button onClick={goBack} className="pixel-button">
-              ← Previous Area
+            <button onClick={goBack} className="terminal-button">
+              ← RETURN TO PREVIOUS SECTOR
             </button>
-            <button onClick={goHome} className="pixel-button">
-              Return to Main Menu
+            <button onClick={goHome} className="terminal-button">
+              RETURN TO COMMAND CENTER
             </button>
           </div>
         </div>

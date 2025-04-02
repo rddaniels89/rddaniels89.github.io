@@ -12,8 +12,8 @@ const ThemeToggle: React.FC = () => {
 
   return (
     <div className={`app-container ${theme}`}>
-      {/* Conditionally render TVScreen or PCMonitor */}
-      {theme === 'play' ? <TVScreen type={'career'} /> : <WorkFrame type={'career'} />}
+      {/* Conditionally render TVScreen or WorkFrame */}
+      {theme === 'recon' ? <TVScreen type={'career'} /> : <WorkFrame type={'career'} />}
     </div>
   );
 };

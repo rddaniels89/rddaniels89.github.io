@@ -1,36 +1,82 @@
 .collapsible-section {
     margin-bottom: 20px;
-    background-color: var(--secondary-background-color); /* Background to differentiate sections */
-    border: 2px solid var(--accent-color); /* Accent border */
     border-radius: 5px;
     overflow: hidden;
     transition: height 0.3s ease;
   }
   
-  .collapsible-title {
-    cursor: pointer;
-    padding: 10px;
-    color: #6b0f1a; /* Accent color */
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
+  /* Sleek theme styles */
+  .sleek .collapsible-section {
+    background-color: var(--sleek-surface);
+    border: 1px solid var(--sleek-border);
+  }
+
+  .sleek .collapsible-section.education {
+    border-color: var(--sleek-accent);
+  }
+
+  /* Recon theme styles */
+  .recon .collapsible-section {
+    background-color: var(--recon-surface);
+    border: 1px solid var(--recon-border);
+    box-shadow: var(--terminal-glow);
+  }
+
+  .recon .collapsible-section.education {
+    border-color: var(--recon-accent);
   }
 
   .collapsible-title {
     cursor: pointer;
     padding: 10px;
-    color: var(--accent-color);
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-weight: bold;
   }
 
-  
+  /* Sleek theme title styles */
+  .sleek .collapsible-title {
+    color: var(--sleek-primary);
+  }
+
+  .sleek .collapsible-title:hover {
+    background-color: var(--sleek-surface);
+  }
+
+  /* Recon theme title styles */
+  .recon .collapsible-title {
+    color: var(--recon-primary);
+    font-family: var(--font-family-mono);
+    text-transform: uppercase;
+  }
+
+  .recon .collapsible-title:hover {
+    background-color: var(--recon-secondary);
+    box-shadow: var(--terminal-glow);
+  }
+
   .collapsible-content {
     padding: 10px;
   }
   
   .toggle-icon {
     font-size: 1.2em;
+  }
+
+  .subtitle {
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin-left: 8px;
+  }
+
+  /* Sleek theme subtitle styles */
+  .sleek .subtitle {
+    color: var(--sleek-subtext);
+  }
+
+  /* Recon theme subtitle styles */
+  .recon .subtitle {
+    color: var(--recon-subtext);
   }
   

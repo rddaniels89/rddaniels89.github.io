@@ -27,9 +27,9 @@ const ViewportWarning: React.FC = () => {
 
   if (!showWarning) return null;
 
-  if (theme === 'play') {
+  if (theme === 'recon') {
     return (
-      <div className="viewport-warning play">
+      <div className="viewport-warning recon">
         <div className="pixel-icon">🐉</div>
         <h2>There be dragons here!</h2>
         <p>This portfolio is best viewed on larger screens.</p>
@@ -41,7 +41,7 @@ const ViewportWarning: React.FC = () => {
   }
 
   return (
-    <div className="viewport-warning work">
+    <div className="viewport-warning sleek">
       <h2>Viewport Warning</h2>
       <p>This portfolio is optimized for larger screens.</p>
       <button className="close-button" onClick={handleClose}>

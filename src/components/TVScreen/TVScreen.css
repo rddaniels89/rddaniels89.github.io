@@ -159,3 +159,132 @@
     transform-origin: top left;
   }
 }
+
+.terminal-frame-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.terminal-screen {
+  background: #000;
+  border: 2px solid #00ffff;
+  border-radius: 8px;
+  padding: 20px;
+  color: #00ffff;
+  font-family: 'Courier New', monospace;
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #00ffff;
+  margin-bottom: 20px;
+}
+
+.terminal-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00ffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.terminal-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.control-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #00ffff;
+  opacity: 0.7;
+}
+
+.terminal-content {
+  padding: 20px;
+  position: relative;
+}
+
+.terminal-label {
+  font-size: 20px;
+  color: #00ffff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.terminal-data {
+  background: rgba(0, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.terminal-footer {
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid #00ffff;
+}
+
+.terminal-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.status-indicator {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+.status-text {
+  color: #00ffff;
+  opacity: 0.8;
+}
+
+/* Add a subtle scanning effect */
+.terminal-screen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(0, 255, 255, 0.2);
+  animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Add a glowing effect to the border */
+.terminal-frame-container {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  }
+}

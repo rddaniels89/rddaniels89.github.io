@@ -21,9 +21,288 @@ code {
 
 /* Default variables */
 :root {
-  transition: background-color 1s ease-in-out, color 1s ease-in-out, border-color 1s ease-in-out;
-  justify-content: center;
-  align-items: center;
+  /* Common Variables */
+  --font-family-main: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --font-family-mono: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  --font-family-script: 'Playfair Display', 'Times New Roman', serif;
+  
+  /* Sleek Theme - The Essence of Affluence */
+  --sleek-primary: #2C2C2C;        /* Deep Charcoal */
+  --sleek-secondary: #1A1A1A;      /* Rich Black */
+  --sleek-accent: #8B0000;         /* Oxblood */
+  --sleek-text: #2C2C2C;           /* Deep Charcoal Text */
+  --sleek-subtext: #666666;        /* Muted Gray */
+  --sleek-background: #FDFDFD;     /* Ivory White */
+  --sleek-surface: #FFFFFF;        /* Pure White */
+  --sleek-border: #E5E5E5;         /* Soft Gray */
+  --sleek-success: #1B5E20;        /* Deep Green */
+  --sleek-error: #8B0000;          /* Oxblood */
+  --sleek-link: #2C2C2C;           /* Deep Charcoal */
+  --sleek-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --sleek-glass: rgba(255, 255, 255, 0.95);
+  
+  /* Education & Certification Colors */
+  --sleek-education: #1B3C87;      /* Deep Navy */
+  --sleek-certification: #2C5282;  /* Royal Blue */
+  --sleek-education-light: #EBF4FF; /* Light Blue Background */
+  --sleek-certification-light: #F0F7FF; /* Lighter Blue Background */
+  
+  /* Recon Theme - Cyberpunk */
+  --recon-primary: #00FFF0;        /* Neon Cyan */
+  --recon-secondary: #1A1A1A;      /* Near Black */
+  --recon-accent: #FFB300;         /* Amber */
+  --recon-text: #00FFF0;           /* Neon Cyan Text */
+  --recon-subtext: #80FFF8;        /* Lighter Cyan */
+  --recon-background: #0A0A0A;     /* Deep Black */
+  --recon-surface: #1A1A1A;        /* Slightly Lighter Black */
+  --recon-border: #333333;         /* Dark Gray */
+  --recon-success: #00FF66;        /* Neon Green */
+  --recon-error: #FF3333;          /* Neon Red */
+  --recon-link: #00FFF0;           /* Cyan Link */
+  
+  /* Terminal Effects */
+  --terminal-glow: 0 0 10px rgba(0, 255, 240, 0.5);
+  --terminal-scanline: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(0, 0, 0, 0.1) 50%
+  );
+}
+
+/* Theme-specific body styles */
+body.sleek {
+  background-color: var(--sleek-background);
+  color: var(--sleek-text);
+  font-family: var(--font-family-main);
+  background-image: linear-gradient(135deg, var(--sleek-background) 0%, #FFFFFF 100%);
+}
+
+body.recon {
+  background-color: var(--recon-background);
+  color: var(--recon-text);
+  position: relative;
+  font-family: var(--font-family-mono);
+}
+
+/* Sleek theme specific styles */
+.sleek .nav-brand,
+.sleek .section-title,
+.sleek h1,
+.sleek h2,
+.sleek h3,
+.sleek h4,
+.sleek h5,
+.sleek h6 {
+  font-family: var(--font-family-script);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--sleek-primary);
+}
+
+.sleek .nav-brand {
+  font-size: 1.4rem;
+  color: var(--sleek-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sleek .nav-center a {
+  font-family: var(--font-family-main);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* Professional styles for sleek theme */
+.sleek .professional-card {
+  background: var(--sleek-surface);
+  border: 1px solid var(--sleek-border);
+  box-shadow: var(--sleek-shadow);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.sleek .professional-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.sleek .section-title {
+  color: var(--sleek-primary);
+  font-weight: 700;
+  border-bottom: 2px solid var(--sleek-accent);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.sleek .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--sleek-accent);
+}
+
+/* Glass effect for navbar */
+.sleek .navbar {
+  background: var(--sleek-glass);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--sleek-border);
+  box-shadow: var(--sleek-shadow);
+}
+
+/* Button styles */
+.sleek .theme-toggle,
+.sleek .view-button,
+.sleek .role-button,
+.sleek .company-button {
+  background: var(--sleek-surface);
+  border: 1px solid var(--sleek-border);
+  color: var(--sleek-text);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.sleek .theme-toggle:hover,
+.sleek .view-button:hover,
+.sleek .role-button:hover,
+.sleek .company-button:hover {
+  background: var(--sleek-primary);
+  color: var(--sleek-surface);
+  border-color: var(--sleek-primary);
+  box-shadow: var(--sleek-shadow);
+}
+
+.sleek .theme-toggle.active,
+.sleek .view-button.active,
+.sleek .role-button.active,
+.sleek .company-button.active {
+  background: var(--sleek-accent);
+  color: var(--sleek-surface);
+  border-color: var(--sleek-accent);
+}
+
+/* Terminal effect for recon theme */
+body.recon::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--terminal-scanline);
+  background-size: 100% 2px;
+  pointer-events: none;
+  opacity: 0.1;
+  z-index: 999999;
+  animation: scanline 8s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+/* Terminal text effect */
+.recon .terminal-text {
+  text-shadow: var(--terminal-glow);
+  font-family: var(--font-family-mono);
+}
+
+/* Data visualization styles for recon theme */
+.recon .data-display {
+  border: 1px solid var(--recon-border);
+  background: var(--recon-surface);
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: var(--terminal-glow);
+}
+
+.recon .data-value {
+  color: var(--recon-accent);
+  font-family: var(--font-family-mono);
+  font-weight: bold;
+}
+
+/* Education specific styles */
+.sleek .professional-card.education {
+  background: var(--sleek-education-light);
+  border-left: 4px solid var(--sleek-education);
+}
+
+.sleek .professional-card.education .section-title {
+  color: var(--sleek-education);
+  border-bottom-color: var(--sleek-education);
+}
+
+.sleek .professional-card.education .section-title::after {
+  background-color: var(--sleek-education);
+}
+
+/* Certification specific styles */
+.sleek .professional-card.certification {
+  background: var(--sleek-certification-light);
+  border-left: 4px solid var(--sleek-certification);
+}
+
+.sleek .professional-card.certification .section-title {
+  color: var(--sleek-certification);
+  border-bottom-color: var(--sleek-certification);
+}
+
+.sleek .professional-card.certification .section-title::after {
+  background-color: var(--sleek-certification);
+}
+
+/* Role type indicators */
+.sleek .role-type {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.sleek .role-type.education {
+  background: var(--sleek-education);
+  color: white;
+}
+
+.sleek .role-type.certification {
+  background: var(--sleek-certification);
+  color: white;
+}
+
+.sleek .role-type.employment {
+  background: var(--sleek-primary);
+  color: white;
+}
+
+/* Hover effects */
+.sleek .professional-card.education:hover {
+  box-shadow: 0 8px 16px rgba(27, 60, 135, 0.1);
+}
+
+.sleek .professional-card.certification:hover {
+  box-shadow: 0 8px 16px rgba(44, 82, 130, 0.1);
 }
 
 

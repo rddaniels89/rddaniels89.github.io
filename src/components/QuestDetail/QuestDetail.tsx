@@ -16,13 +16,10 @@ interface QuestDetailProps {
 const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
   const params = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const themeContext = useTheme();
-  
-  if (!themeContext) return null;
+  const { theme } = useTheme();
   
   // Get ID either from props or URL params
   const id = propId !== undefined ? propId : params.id ? parseInt(params.id, 10) : -1;
-  const MAX_QUEST = quests.length-1;
 
   // Find the quest by ID
   const quest = quests.find((q) => q.id === id);
@@ -32,7 +29,6 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
     .map(q => ({ id: q.id, startDate: q.startDate }));
 
   const currentIndex = questIdByDate.findIndex(q => q.id === id);
-  const { theme } = themeContext;
 
   if (!quest) {
     return <p>Quest not found</p>;
@@ -92,7 +88,7 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
         </div>
       )}
 
-      <h1>{theme === 'work' ? quest.titles.sleek : quest.titles.retro}</h1>
+      <h1>{theme === 'recon' ? quest.titles.recon : quest.titles.sleek}</h1>
       
       <div className="quest-metadata">
         {quest.company && (
@@ -136,7 +132,7 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
           <span className="section-icon">
             <FontAwesomeIcon icon={faTrophy} />
           </span>
-          {theme === 'work' ? 'Key Accomplishments' : 'Achievements'}
+          {theme === 'recon' ? 'Achievements' : 'Key Accomplishments'}
         </h3>
         <ul className="accomplishments-list">
           {quest.accomplishments.map((accomplishment, index) => (
@@ -152,7 +148,7 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
           <span className="section-icon">
             <FontAwesomeIcon icon={faLightbulb} />
           </span>
-          {theme === 'work' ? 'Skills & Insights' : 'Rewards'}
+          {theme === 'recon' ? 'Rewards' : 'Skills & Insights'}
         </h3>
 
         <ul className="learnings-list">
@@ -165,6 +161,22 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
               </li>
             ))}
         </ul>
+      </div>
+
+      {/* Quest Stats */}
+      <div className="quest-stats">
+        <div className="stat">
+          <span className="stat-label">{theme === 'recon' ? 'Quest Level' : 'Duration'}</span>
+          <span className="stat-value">{calculateDuration()}</span>
+        </div>
+        <div className="stat">
+          <span className="stat-label">{theme === 'recon' ? 'XP Gained' : 'Skills Gained'}</span>
+          <span className="stat-value">{new Set(quest.accomplishments.flatMap(a => a.learnings)).size}</span>
+        </div>
+        <div className="stat">
+          <span className="stat-label">{theme === 'recon' ? 'Quests' : 'Achievements'}</span>
+          <span className="stat-value">{quest.accomplishments.length}</span>
+        </div>
       </div>
     </div>
   );

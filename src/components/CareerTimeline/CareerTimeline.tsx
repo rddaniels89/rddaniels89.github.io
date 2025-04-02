@@ -53,10 +53,10 @@ const CareerTimeline: React.FC = () => {
     <div className={`timeline-container ${theme}`}>
       {/* Summary Section at the top */}
       <div className="career-summary">
-        <h2>{theme === 'play' ? 'Alonzo\'s Adventure Scroll' : 'Professional Summary'}</h2>
+        <h2>{theme === 'recon' ? 'Alonzo\'s Adventure Scroll' : 'Professional Summary'}</h2>
         
         <div className="summary-content">
-          {theme === 'play' ? (
+          {theme === 'recon' ? (
             <>
               <div className="pixel-avatar"></div>
               <p className="summary-text">
@@ -118,7 +118,7 @@ const CareerTimeline: React.FC = () => {
       </div>
       
       <h2 className="timeline-title">
-        {theme === 'play' ? 'Adventure Map' : 'Career Timeline'}
+        {theme === 'recon' ? 'Adventure Map' : 'Career Timeline'}
       </h2>
       
       <div className="timeline">
@@ -128,7 +128,7 @@ const CareerTimeline: React.FC = () => {
           const isPresent = quest.endDate.getFullYear() >= 2030;
           
           // Create more concise descriptions based on theme
-          const conciseDescription = theme === 'play' 
+          const conciseDescription = theme === 'recon' 
             ? getRetroDescription(quest.description, quest.roles[0])
             : getSleekDescription(quest.description, quest.roles[0]);
           
@@ -141,7 +141,7 @@ const CareerTimeline: React.FC = () => {
             >
               <div className="timeline-connector"></div>
               <div className="timeline-content" data-type={quest.type || 'career'}>
-                {theme === 'play' && (
+                {theme === 'recon' && (
                   <div className="pixel-icon role-icon-${quest.roles[0].toLowerCase().replace(/\s+/g, '-')}"></div>
                 )}
                 
@@ -152,7 +152,7 @@ const CareerTimeline: React.FC = () => {
                 </div>
                 
                 <h3 className="timeline-heading">
-                  {theme === 'play' ? quest.titles.retro : quest.titles.sleek}
+                  {theme === 'recon' ? quest.titles.recon : quest.titles.sleek}
                 </h3>
                 
                 {quest.company && (
@@ -173,12 +173,12 @@ const CareerTimeline: React.FC = () => {
                 
                 <div className="timeline-stats">
                   <div className="timeline-stat">
-                    <span className="stat-label">{theme === 'play' ? 'Quests' : 'Achievements'}</span>
+                    <span className="stat-label">{theme === 'recon' ? 'Quests' : 'Achievements'}</span>
                     <span className="stat-value">{quest.accomplishments.length}</span>
                   </div>
                   
                   <div className="timeline-stat">
-                    <span className="stat-label">{theme === 'play' ? 'Skills' : 'Skills Gained'}</span>
+                    <span className="stat-label">{theme === 'recon' ? 'Skills' : 'Skills Gained'}</span>
                     <span className="stat-value">
                       {new Set(quest.accomplishments.flatMap(a => a.learnings)).size}
                     </span>
@@ -186,7 +186,7 @@ const CareerTimeline: React.FC = () => {
                 </div>
                 
                 <div className="timeline-cta">
-                  {theme === 'play' ? 'View Quest Details' : 'View Details'}
+                  {theme === 'recon' ? 'View Quest Details' : 'View Details'}
                 </div>
               </div>
             </div>

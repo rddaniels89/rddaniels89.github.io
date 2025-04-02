@@ -7,10 +7,12 @@ import ViewportWarning from './components/ViewportWarning/ViewportWarning';
 
 // AppContent component that handles theme body class
 const AppContent: React.FC = () => {
-  const { theme } = useTheme()!;
+  const { theme } = useTheme();
   
   useEffect(() => {
-    document.body.classList.remove('work', 'play');
+    // Remove any existing theme classes
+    document.body.classList.remove('sleek', 'recon');
+    // Add the current theme class
     document.body.classList.add(theme);
   }, [theme]);
   

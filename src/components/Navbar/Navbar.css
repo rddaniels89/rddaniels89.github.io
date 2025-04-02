@@ -2,333 +2,255 @@
    NAVBAR (Updated)
 ----------------------------------------- */
 .navbar {
-  /* Fixed at the top so it remains visible */
-  position: fixed;         /* NEW: fix the navbar at top */
-  top: 0;                  /* NEW */
-  left: 0;                 /* NEW */
-  width: 100%;             /* NEW */
-  z-index: 999;            /* NEW: ensure it stays above other elements */
-
-  padding: 0.5rem 1rem;
-  display: flex;
-  justify-content: center;
-  background-color: var(--background-color);
-  border-bottom: 3px solid var(--accent-color);
-}
-
-/* Because the navbar is fixed, ensure your page content
-   isn't hidden behind it. One approach is to give the body
-   or a top-level container a top margin: */
-body {
-  margin-top: 70px; /* Adjust to match the navbar’s height if needed */
-}
-
-/* Links in the navbar */
-.navbar a {
-  color: var(--primary-color);
-  margin: 0 1rem;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: color 0.2s ease;
-}
-
-.navbar a:hover {
-  color: var(--accent-color);
-}
-
-/* Theme toggle button */
-.navbar .theme-toggle {
-  background-color: var(--button-background);
-  color: var(--button-color);
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.navbar .theme-toggle:hover {
-  background-color: var(--button-hover-color);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Theme button for date/time toggle */
-.navbar .date-time-toggle {
-  background-color: var(--button-background);
-  color: var(--button-color);
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  margin-left: auto;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.navbar .date-time-toggle:hover {
-  background-color: var(--button-hover-color);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* -----------------------------------------
-   THEME BUTTON CONTAINER (NEW)
-   Wraps the "Theme" button + dropdown
------------------------------------------ */
-.theme-button-container {
-  position: relative; /* So .dropdown can be positioned under the button */
-  display: inline-block; 
-}
-
-/* -----------------------------------------
-   DROPDOWN MENU (UPDATED)
------------------------------------------ */
-.dropdown {
-  /* Use absolute positioning relative to .theme-button-container */
-  position: absolute;    /* CHANGED from fixed */
-  top: calc(100% + 5px); /* CHANGED: appear just below the button */
-  right: 0;             /* align with the right edge of the container */
-  left: calc(60%);
-  /* Rest of your existing styles */
-  background-color: var(--background-color);
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 100;
-  padding: 15px;
-  width: 200px;
-}
-
-.dropdown-menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.dropdown-menu .group-title {
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--primary-color);
-  margin-bottom: 10px;
-}
-
-.dropdown-menu li {
-  margin-bottom: 10px;
-}
-
-.radio-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-}
-
-.radio-group label {
-  margin-bottom: 5px;
-  cursor: pointer;
-  color: var(--primary-color);
-}
-
-input[type="radio"] {
-  margin-right: 10px;
-}
-
-/* -----------------------------------------
-   SLIDER / SEASON CONTROL (unchanged)
------------------------------------------ */
-.slider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
   width: 100%;
-  height: 10px;
-  background: linear-gradient(to right, var(--background-color), var(--hover-color));
-  outline: none;
-  -webkit-appearance: none;
-  opacity: 0.7;
-  transition: opacity 0.2s;
-}
-.slider:hover {
-  opacity: 1;
-}
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background: var(--highlight-color);
-  border-radius: 50%;
-  cursor: pointer;
-}
-.slider::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  background: var(--highlight-color);
-  border-radius: 50%;
-  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
-.season-control {
-  position: relative;
-  width: 100%;
+.navbar.scrolled {
+  padding: 0.5rem 1rem;
+  backdrop-filter: blur(10px);
 }
 
-.slider-labels {
+/* Sleek theme styles */
+.navbar.sleek {
+  background-color: var(--sleek-background);
+  border-bottom: 1px solid var(--sleek-border);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.sleek.scrolled {
+  background-color: rgba(var(--sleek-background-rgb), 0.95);
+}
+
+/* Recon theme styles */
+.navbar.recon {
+  background-color: var(--recon-surface);
+  border-bottom: 1px solid var(--recon-border);
+  box-shadow: var(--terminal-glow);
+}
+
+.navbar.recon.scrolled {
+  background-color: rgba(var(--recon-surface-rgb), 0.95);
+}
+
+/* Desktop Navigation */
+.desktop-nav {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-.season-icon {
-  font-size: 1.5rem;
+.nav-left, .nav-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
-.winter-icon, .spring-icon, .summer-icon, .autumn-icon {
-  position: relative;
+.nav-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.hamburger {
-  /* Hide by default on large screens; shown on mobile below */
-  display: none;
+/* Brand/Logo */
+.nav-brand {
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sleek .nav-brand {
+  color: var(--sleek-primary);
+  font-size: 1.2rem;
+}
+
+.recon .nav-brand {
+  color: var(--recon-primary);
+  font-family: var(--font-family-mono);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-shadow: var(--terminal-glow);
+}
+
+/* Navigation Links */
+.nav-center a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sleek .nav-center a {
+  color: var(--sleek-text);
+}
+
+.sleek .nav-center a:hover,
+.sleek .nav-center a.active {
+  background-color: var(--sleek-surface);
+  color: var(--sleek-primary);
+}
+
+.recon .nav-center a {
+  color: var(--recon-text);
+  font-family: var(--font-family-mono);
+  text-transform: uppercase;
+}
+
+.recon .nav-center a:hover,
+.recon .nav-center a.active {
+  background-color: var(--recon-secondary);
+  box-shadow: var(--terminal-glow);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
   background: none;
   border: none;
-  font-size: 1.5rem;
-  color: var(--primary-color);
   cursor: pointer;
-  margin-right: 1rem;
-}
-
-/* The 'customize-toggle' replaced 'date-time-toggle' in the markup */
-.customize-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  font-family: "Press Start 2P", sans-serif; /* Pixel-style font */
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  padding: 8px 14px;
-  border-radius: 8px;
-  border: 3px solid var(--accent-color);
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
-}
-.customize-toggle:hover {
-  background-color: var(--button-hover-color);
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-}
-.mode-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  font-family: "Press Start 2P", sans-serif; /* Pixel-style font */
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  padding: 8px 14px;
-  border-radius: 8px;
-  border: 3px solid var(--accent-color);
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
-}
-
-.mode-toggle:hover {
-  background-color: var(--accent-color);
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-/* If you're using the .theme-button-container approach */
-.theme-button-container {
-  position: relative;
-  display: inline-block;
-}
-
-/* DROPDOWN (same as before, but positioned absolutely in .theme-button-container) */
-.dropdown {
-  position: absolute;
-  top: calc(100% + 5px);
-  right: 0;
-  background-color: var(--background-color);
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 100;
-  padding: 15px;
-  width: 200px;
-}
-/* === HAMBURGER MENU BUTTON === */
-.hamburger {
-  display: none;
-  align-items: center;
-  gap: 8px;
-  background: var(--button-background);
-  border: 3px solid var(--accent-color);
-  color: var(--button-color);
-  font-family: "Press Start 2P", sans-serif;
-  font-size: 0.8rem;
-  padding: 10px 14px;
-  border-radius: 3px;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: all 0.2s ease-in-out;
-  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
-}
-
-.hamburger:hover {
-  background: var(--button-hover-color);
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
-}
-
-/* === MOBILE DROPDOWN MENU === */
-.mobile-dropdown {
-  position: absolute;
-  top: 50px; /* Aligns the menu under the hamburger */
-  left: center;
-  width: 220px;
-  background: var(--background-color);
-  padding: 12px;
-  border-radius: 5px;
-  border: 3px solid var(--accent-color);
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s;
   display: flex;
-  flex-direction: column; /* Ensures a single-column layout */
-  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
 }
 
-/* Fix the text alignment */
-.mobile-dropdown a,
-.mobile-dropdown button {
-  text-align: left;
-  padding: 10px;
-  border-radius: 6px;
-  width: 100%;
-  font-size: 0.9rem;
-  font-family: "Press Start 2P", sans-serif;
+.sleek .theme-toggle {
+  color: var(--sleek-text);
+}
+
+.sleek .theme-toggle:hover {
+  background-color: var(--sleek-surface);
+  color: var(--sleek-primary);
+}
+
+.recon .theme-toggle {
+  color: var(--recon-text);
+  font-family: var(--font-family-mono);
+}
+
+.recon .theme-toggle:hover {
+  background-color: var(--recon-secondary);
+  box-shadow: var(--terminal-glow);
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.mobile-menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.sleek .mobile-menu-button {
+  color: var(--sleek-text);
+}
+
+.recon .mobile-menu-button {
+  color: var(--recon-text);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.sleek .mobile-menu {
+  background-color: var(--sleek-background);
+  border-top: 1px solid var(--sleek-border);
+}
+
+.recon .mobile-menu {
+  background-color: var(--recon-surface);
+  border-top: 1px solid var(--recon-border);
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 4px;
+}
+
+.sleek .mobile-menu a {
+  color: var(--sleek-text);
+}
+
+.sleek .mobile-menu a:hover,
+.sleek .mobile-menu a.active {
+  background-color: var(--sleek-surface);
+  color: var(--sleek-primary);
+}
+
+.recon .mobile-menu a {
+  color: var(--recon-text);
+  font-family: var(--font-family-mono);
   text-transform: uppercase;
 }
 
-/* Add a bit of retro-style for menu items */
-.mobile-dropdown a:hover,
-.mobile-dropdown button:hover {
-  background: var(--button-hover-color);
-  color: var(--accent-color);
+.recon .mobile-menu a:hover,
+.recon .mobile-menu a.active {
+  background-color: var(--recon-secondary);
+  box-shadow: var(--terminal-glow);
 }
 
-/* MEDIA QUERY to show hamburger on small screens, hide .nav-links unless open */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .hamburger {
-    display: block; /* Show hamburger on mobile */
-  }
-
-  .nav-links {
+  .desktop-nav {
     display: none;
-    position: absolute;
-    top: 60px; /* or your navbar height */
-    left: 0;
-    width: 100%;
-    background-color: var(--background-color);
-    flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
   }
-  .nav-links.open {
+  
+  .mobile-nav {
+    display: flex;
+  }
+  
+  .mobile-menu {
     display: flex;
   }
 }

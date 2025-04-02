@@ -10,15 +10,14 @@ interface QuestSwitcherProps {
 }
 
 const QuestSwitcher: React.FC<QuestSwitcherProps> = ({ type, children }) => {
-  const themeContext = useTheme()!;  // Get the current theme from context
-  const {theme} = themeContext;
+  const { theme } = useTheme();
 
   return (
     <>
-      {theme === 'play' ? (
-        <TVScreen type={type} children={children}/>  // Render TVScreen (Play) for the given quest type
+      {theme === 'recon' ? (
+        <TVScreen type={type}>{children}</TVScreen>
       ) : (
-        <WorkFrame type={type} children={children}/>  // Render PCMonitor (Work) for the given quest type
+        <WorkFrame type={type}>{children}</WorkFrame>
       )}
     </>
   );

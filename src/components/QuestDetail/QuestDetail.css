@@ -387,3 +387,226 @@ ul.learnings li::before {
     text-align: center;
   }
 }
+
+/* Sleek theme styles */
+.sleek .quest-detail {
+  background-color: var(--sleek-background);
+  color: var(--sleek-text);
+  border: 1px solid var(--sleek-border);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Recon theme styles */
+.recon .quest-detail {
+  background-color: var(--recon-surface);
+  color: var(--recon-text);
+  border: 1px solid var(--recon-border);
+  border-radius: 4px;
+  padding: 2rem;
+  box-shadow: var(--terminal-glow);
+}
+
+/* Header styles */
+.quest-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* Navigation buttons */
+.sleek .back-button {
+  background-color: var(--sleek-primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sleek .back-button:hover {
+  background-color: var(--sleek-secondary);
+}
+
+.recon .back-button {
+  background-color: var(--recon-surface);
+  color: var(--recon-primary);
+  border: 1px solid var(--recon-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: var(--font-family-mono);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+}
+
+.recon .back-button:hover {
+  background-color: var(--recon-primary);
+  color: var(--recon-background);
+  box-shadow: var(--terminal-glow);
+}
+
+/* Title styles */
+.sleek .quest-detail h1 {
+  color: var(--sleek-primary);
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--sleek-accent);
+  padding-bottom: 0.5rem;
+}
+
+.recon .quest-detail h1 {
+  color: var(--recon-primary);
+  font-family: var(--font-family-mono);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: var(--terminal-glow);
+  text-transform: uppercase;
+}
+
+/* Metadata styles */
+.quest-metadata {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.sleek .metadata-item {
+  color: var(--sleek-subtext);
+}
+
+.sleek .metadata-icon {
+  color: var(--sleek-accent);
+}
+
+.recon .metadata-item {
+  color: var(--recon-subtext);
+  font-family: var(--font-family-mono);
+}
+
+.recon .metadata-icon {
+  color: var(--recon-accent);
+}
+
+/* Stats section */
+.quest-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+.sleek .quest-stats {
+  background-color: var(--sleek-surface);
+  border: 1px solid var(--sleek-border);
+}
+
+.recon .quest-stats {
+  background-color: var(--recon-secondary);
+  border: 1px solid var(--recon-border);
+  font-family: var(--font-family-mono);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sleek .stat-label {
+  color: var(--sleek-subtext);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.sleek .stat-value {
+  color: var(--sleek-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.recon .stat-label {
+  color: var(--recon-subtext);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.recon .stat-value {
+  color: var(--recon-accent);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 179, 0, 0.5);
+}
+
+/* Role badges */
+.role-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.sleek .badge {
+  background-color: var(--sleek-surface);
+  color: var(--sleek-primary);
+  border: 1px solid var(--sleek-border);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.recon .badge {
+  background-color: var(--recon-secondary);
+  color: var(--recon-primary);
+  border: 1px solid var(--recon-border);
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  font-family: var(--font-family-mono);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Section styles */
+.quest-section {
+  margin-bottom: 2rem;
+}
+
+.sleek .quest-section h3 {
+  color: var(--sleek-primary);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.recon .quest-section h3 {
+  color: var(--recon-primary);
+  font-family: var(--font-family-mono);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  text-shadow: var(--terminal-glow);
+}
+
+.sleek .section-icon {
+  color: var(--sleek-accent);
+}
+
+.recon .section-icon {
+  color: var(--recon-accent);
+}
